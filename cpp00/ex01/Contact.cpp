@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 09:45:16 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/08 16:07:27 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/08/21 09:56:05 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/08/21 11:33:58 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,76 +14,77 @@
 
 Contact::Contact()
 {
-    
+	
 }
-
-Contact::Contact(std:: string firstName, std:: string lastName, std::string nickName, std:: string phoneNumber, std::string darkestSecret){
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->phoneNumber = phoneNumber;   
-    this->nickName = nickName;
-    this->darkestSecret = darkestSecret;
-}
-
-void Contact::setFirstName(std:: string firstName)
+Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
-    this->firstName = firstName;
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->nickName = nickName;
+	this->phoneNumber = phoneNumber;
+	this->darkestSecret = darkestSecret;
 }
-
+/****************************************************************/
 std::string Contact::getFirstName()
 {
-    return (this->firstName);
+	return (this->firstName);	
+}
+
+std::string Contact::getLastName()
+{
+	return (this->lastName);
+}
+
+std::string Contact::getNickName()
+{
+	return (this->nickName);
+}
+
+std::string Contact::getPhoneNumber()
+{
+	return (this->phoneNumber);
+}
+
+std::string Contact::getDarkestSecret()
+{
+	return (this->darkestSecret);
+}
+/*********************************************************************/
+
+void Contact::setFirstName(std::string firstName)
+{
+	this->firstName = firstName;
 }
 
 void Contact::setLastName(std::string lastName)
 {
-    this->lastName = lastName;
+	this->lastName = lastName;
 }
 
-std::string Contact:: getLastName()
+void Contact::setNickName(std::string nickName)
 {
-    return (this->lastName);
+	this->nickName = nickName;
 }
 
-void Contact:: setPhoneNumber(std::string phoneNumber)
+void Contact::setPhoneNumber(std::string phoneNumber)
 {
-    this->phoneNumber = phoneNumber;
+	this->phoneNumber = phoneNumber;
 }
 
-std::string Contact:: getPhoneNumber()
+void Contact::setDarkestSecret(std::string darkestSecret)
 {
-    return (this->phoneNumber);
+	this->darkestSecret = darkestSecret;
 }
 
-void Contact:: setNickName(std:: string nickName)
+/*********************************************************************/
+
+void Contact::displayContact()
 {
-    this->nickName = nickName;
+	std::cout << "******************************************************\n";
+	std::cout << "First Name: " << this->firstName << std::endl;
+	std::cout << "Last Name: " << this->lastName << std::endl;
+	std::cout << "Nick Name: " << this->nickName << std::endl;
+	std::cout << "Phone Number: " << this->phoneNumber << std::endl;
+	std::cout << "Darkset Secret: " << this->darkestSecret << std::endl;
+	std::cout << "******************************************************\n";
 }
-
-std::string Contact:: getNickName()
-{
-    return (this->nickName);
-}
-
-void Contact:: setDarkestSecret(std:: string darkestSecret)
-{
-    this->darkestSecret = darkestSecret;
-}
-
-std::string Contact:: getDarketSecret()
-{
-    return (this->darkestSecret);
-}
-
-
-
-void Contact::displayInfo()
-{
-    std::cout << "First Name: " << this->firstName << std::endl;
-    std::cout << "Last Name: " << this->lastName << std::endl;
-    std::cout << "Phone Number : " << this->phoneNumber << std::endl;
-    std::cout << "Nick Name : " << this->nickName << std::endl;
-    std::cout << "Darkest Secret : " << this->darkestSecret << std::endl;
-}
-
-
