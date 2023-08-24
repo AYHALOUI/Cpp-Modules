@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/24 10:28:33 by ahaloui           #+#    #+#              #
-#    Updated: 2023/08/24 10:48:36 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/08/24 13:24:03 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Zombie.cpp main.cpp
+SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

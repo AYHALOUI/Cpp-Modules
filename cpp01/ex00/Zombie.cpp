@@ -6,16 +6,12 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:31:23 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 13:07:39 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:24:28 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
-{
-    
-}
 
 Zombie::Zombie(std::string name)
 {
@@ -45,16 +41,4 @@ void Zombie::announce()
     else
         std::cout 
         << "<" << this->name << ">:" << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie* Zombie:: newZombie(std::string name)
-{
-    Zombie *newZombie = new Zombie(name);
-    return (newZombie);
-}
-
-void Zombie::randomChump(std::string name)
-{
-    Zombie *newZombie = new Zombie(name);
-    (*newZombie).announce();
 }
