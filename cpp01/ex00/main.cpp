@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:31:26 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 12:56:05 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:07:06 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int main()
 {
-    Zombie z1("z1");
-    Zombie *z2 = z1.newZombie("Foo");
+    Zombie z1("zombie 1");
+    z1.announce();
+    
+    Zombie *z2 = z1.newZombie("zombie 2");
     z2->announce();
-    // z2->Hello();
-    z2->randomChump("oo");
-    // Zombie *z3 = z2->randomChump("z3");
+
+    z2->randomChump("Zombie 3");
+
+    delete z2;
 }

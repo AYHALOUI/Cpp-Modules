@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:31:19 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 12:55:33 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:07:37 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie
 	public:
 		Zombie();
 		Zombie(std::string name);
+		~Zombie();
 		
 		void setName(std::string name);
 		std::string getName();
