@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 10:31:40 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 09:59:01 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/08/24 16:23:48 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/08/25 15:00:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
 
-Zombie *newZombie(std::string name)
+
+HumanA::HumanA(std::string& name, Weapon& wen): weapon(wen)
 {
-    Zombie *newZombie = new Zombie(name);
-    return (newZombie);
+	this->name = name;
+}
+
+std::string HumanA::getName()
+{
+	return (this->name);
+}
+
+
+void HumanA::setName(std::string name)
+{
+	this->name = name;
+}
+
+void HumanA::attack()
+{
+	std::cout << "<" 
+		<< this->name << ">" " attacks with their <" 
+		<< this->weapon.getType() << ">" << std::endl;
 }
 
 

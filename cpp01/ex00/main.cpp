@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:31:26 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 14:33:19 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/25 10:04:50 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int main()
 
     randomChump("Zombie 3");
     delete z2;
+    return (1);
 }

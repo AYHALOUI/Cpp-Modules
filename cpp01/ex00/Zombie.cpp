@@ -6,22 +6,21 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:31:23 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 13:24:28 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/24 14:45:15 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-
 Zombie::Zombie(std::string name)
 {
     this->name = name;
-    std::cout << "Zombie Created" << std::endl;
+    std::cout<< this->name << " Created" << std::endl;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << "Zombie Destroyed" << std::endl;
+    std::cout << this->name << " Destroyed" << std::endl;
 }
 
 void Zombie::setName(std::string name)

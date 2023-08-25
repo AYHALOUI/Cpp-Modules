@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 14:41:44 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 14:59:58 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/25 11:35:44 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie()
 {
-    
+    std::cout<< "Zombie Created" << std::endl;
 }
 
 Zombie::Zombie(std::string name)

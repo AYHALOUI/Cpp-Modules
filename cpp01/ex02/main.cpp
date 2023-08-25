@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:38:45 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/24 16:19:40 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/25 11:36:32 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 //     *b = temp;
 // }
 
-void swap(int &a, int &b)
-{
-	int temp = a;
-	a = b;
-	b = temp;
-}
+// void swap(int &a, int &b)
+// {
+// 	int temp = a;
+// 	a = b;
+// 	b = temp;
+// }
 int main()
 {
 	std::string name = "HI THIS IS BRAIN";
@@ -42,6 +42,8 @@ int main()
 	std::cout << name << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
+
+	////////////////////////////////////////////////////////////////
 
 	return (1);
 }
