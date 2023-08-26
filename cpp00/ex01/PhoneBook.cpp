@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:19:09 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/22 13:53:43 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/22 14:56:21 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ std::string PhoneBook:: truncateString(std::string str, int maxLength)
     if (str.length() <= maxLength)
         return str;
     else{
-        return str.substr(0, maxLength - 3) + ".";
+        return str.substr(0, maxLength) + ".";
     }
 }
 

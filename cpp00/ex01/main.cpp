@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:30:11 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/22 12:53:03 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/22 14:58:35 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,15 @@ int main(int ac, char **av)
 			phonebook.displayContacts();
 			while (1)
 			{
+				int numIndex = 0;
+
+				std::cout << "you can choose contact by index: ";
 				if (std::cin.eof())
 					exit(EXIT_FAILURE);
-				int numIndex = 0;
-				getline(std::cin, index);
+				
+				std::getline(std::cin, index);
+				if (index.empty())
+					break;
 				std::stringstream(index) >> numIndex;
 				if (!isdigit(numIndex))
 					phonebook.displayContactByIndex(numIndex);
