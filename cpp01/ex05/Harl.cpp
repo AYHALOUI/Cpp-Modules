@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:03:58 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 18:25:43 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/26 10:57:35 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void Harl::error() {
 
 void Harl::complain(std::string level)
 {
-    if (level.compare("DEBUG"))
-        debug();
-    else if (level.compare("INFO"))
-        info();
-    else if(level.compare("WARNING"))
-        warning();
-    else if(level.compare("ERROR"))
-        error();
+    std::string list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    void (Harl::*ptrFunction[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    for (int i = 0; i < 4; i++)
+    {
+        if (!list[i].compare(level))
+            (Harl().*ptrFunction[i])();
+    }
+    
 }

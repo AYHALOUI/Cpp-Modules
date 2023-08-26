@@ -6,13 +6,14 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:03:31 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 18:19:40 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/08/26 10:55:54 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+
 int main()
 {
-	Harl h = Harl();
+	Harl().complain("DEBUG");
 }
