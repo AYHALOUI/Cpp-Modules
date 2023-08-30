@@ -19,6 +19,18 @@ Fixed::Fixed():integerPart(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int integerPart):integerPart(integerPart)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->integerPart = integerPart << 8;
+}
+
+
+Fixed::Fixed(const float integerPart)
+{
+	std::cout << "Float constructor called" << std::endl;
+}
+
 Fixed::Fixed(const Fixed &copy):integerPart(copy.integerPart)
 {
 	// this->integerPart = copy.integerPart;
@@ -30,7 +42,7 @@ Fixed& Fixed::operator=(const Fixed &copy)
 	if (this != &copy)
 	{
 		std::cout << "Copy assignment operator called" << std::endl;
-		this->integerPart = copy.getRawBits();
+		this->integerPart = copy.integerPart;
 	}
 	return *this;
 }
@@ -51,6 +63,7 @@ void Fixed::setRawBits( int const raw )
 {
 	this->integerPart = raw;
 }
+
 
 Fixed::~Fixed()
 {
