@@ -3,11 +3,11 @@
 
 int main()
 {
-    ClapTrap clapTrap("Clappy");
+	ClapTrap clapTrap("Clappy");
 
-    clapTrap.attack("Enemy");
-    clapTrap.takeDamage(5);
-    clapTrap.beRepaired(3);
-    clapTrap.printInfo();
-    
+	clapTrap.attack("Enemy");
+	clapTrap.takeDamage(5);
+	clapTrap.beRepaired(3);
+	clapTrap.printInfo();
+	
 }
