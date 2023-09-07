@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:13:02 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 20:39:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:51:08 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,9 @@ void HumanB::attack()
 void HumanB::setWeapon(Weapon &typePTR)
 {
 	this->typePTR = &typePTR;
+}
+
+HumanB::~HumanB()
+{
+	std::cout << "HumanB destructor called" << std::endl;
 }

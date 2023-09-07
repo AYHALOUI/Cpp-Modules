@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:08:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 20:33:07 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:52:21 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ std::string& Weapon::getType()
 void Weapon::setType(std::string type)
 {
     this->type = type;
+}
+
+Weapon::~Weapon()
+{
+    std::cout << "Weapon destructor called" << std::endl;
 }

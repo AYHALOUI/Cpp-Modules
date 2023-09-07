@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:12:12 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/06 12:20:56 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:50:49 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,9 @@ void HumanA::attack()
 {
     std::cout << this->name <<" attacks with their " 
 	<< this->weaponREF.getType() << std::endl;
+}
+
+HumanA::~HumanA()
+{
+    std::cout << "HumanA destructor called" << std::endl;
 }

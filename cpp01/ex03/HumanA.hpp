@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:12:32 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/06 10:29:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:50:22 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class HumanA
     public:
         HumanA(std::string name, Weapon &weapon);
         void attack();
+        ~HumanA();
 };
 
 #endif
