@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:23:50 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 14:59:30 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 21:12:32 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/06 10:29:36 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,13 @@
 
 class HumanA
 {
-	private:
-		Weapon& weapon;
-		std::string name;
-
-	public:
-		HumanA();
-		HumanA(std::string& name, Weapon& weapon);
-		void setName(std::string name);
-		void setWeapon(Weapon weapon);
-
-		std::string getName();
-		Weapon getWeapon();
-		void attack();
-	
+    private:
+        Weapon &weaponREF;
+        std::string name;
+        
+    public:
+        HumanA(std::string name, Weapon &weapon);
+        void attack();
 };
+
 #endif

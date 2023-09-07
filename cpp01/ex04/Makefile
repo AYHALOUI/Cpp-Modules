@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/25 14:52:31 by ahaloui           #+#    #+#              #
-#    Updated: 2023/08/25 15:14:42 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/07 11:09:20 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Template.cpp
+SRC = main.cpp Replace.cpp 	
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -26,6 +26,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp %.hpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

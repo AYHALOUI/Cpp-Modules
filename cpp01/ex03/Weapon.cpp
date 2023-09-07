@@ -5,28 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:22:46 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 14:56:03 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 21:08:21 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/06 10:27:16 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon()
-{
-	
-}
 Weapon::Weapon(std::string type)
 {
-	this->type = type;
+    this->type = type;
 }
-
-const std::string& Weapon::getType()
+std::string& Weapon::getType()
 {
-	return (this->type);
+    std::string &typeREF = this->type;
+    return typeREF;
 }
 
 void Weapon::setType(std::string type)
 {
-	this->type = type;
+    this->type = type;
 }

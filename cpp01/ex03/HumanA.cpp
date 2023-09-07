@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:23:48 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 15:00:00 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 21:12:12 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/06 12:20:56 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,13 @@
 #include "Weapon.hpp"
 
 
-HumanA::HumanA(std::string& name, Weapon& wen): weapon(wen)
+HumanA::HumanA(std::string name, Weapon& weapon):weaponREF(weapon), name(name)
 {
-	this->name = name;
-}
-
-std::string HumanA::getName()
-{
-	return (this->name);
-}
-
-
-void HumanA::setName(std::string name)
-{
-	this->name = name;
+    
 }
 
 void HumanA::attack()
 {
-	std::cout << "<" 
-		<< this->name << ">" " attacks with their <" 
-		<< this->weapon.getType() << ">" << std::endl;
+    std::cout << this->name <<" attacks with their " 
+	<< this->weaponREF.getType() << std::endl;
 }
-
-
-

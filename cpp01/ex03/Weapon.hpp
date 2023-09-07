@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:24:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 12:20:39 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 21:08:23 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/06 10:34:34 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 #include <iostream>
 #include <string>
 
+
 class Weapon
 {
     private:
         std::string type;
-        
+    
     public:
-        Weapon();
         Weapon(std::string type);
-        const std::string& getType();
+        std::string& getType();
         void setType(std::string type);
 };
 

@@ -5,18 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 10:31:40 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 09:59:01 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 19:44:40 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/05 19:58:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie *newZombie(std::string name)
+Zombie* newZombie( std::string name )
 {
     Zombie *newZombie = new Zombie(name);
     return (newZombie);
 }
-
-
-

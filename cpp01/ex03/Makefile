@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/24 16:22:18 by ahaloui           #+#    #+#              #
-#    Updated: 2023/08/25 13:40:24 by ahaloui          ###   ########.fr        #
+#    Created: 2023/09/05 21:08:26 by ahaloui           #+#    #+#              #
+#    Updated: 2023/09/06 16:21:42 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp 
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -26,6 +26,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp %.hpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

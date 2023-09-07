@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 18:03:58 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/26 10:59:53 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/06 17:38:19 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/07 17:14:55 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,39 @@ void Harl::error() {
     std::cout << "ERROR: This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+int Harl::convetToInteger(std::string level)
+{
+    int a = 0;
+    for(size_t i = 0; i < level.length(); i++)
+        a = 10 * a + (level[i] - '0');
+    return a;
+}
+
 void Harl::complain(std::string level)
 {
-    std::string list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*ptrFunction[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    for (int i = 0; i < 4; i++)
+	void (Harl::*ptrFunctions[])(void) = 
     {
-        if (!list[i].compare(level))
-            (Harl().*ptrFunction[i])();
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+
+    switch (this->convetToInteger(level))
+    {
+        case 223193: // DEBUG
+            (this->*ptrFunctions[0])();
+            break;
+        case 28251: // info
+            (this->*ptrFunctions[1])();
+            break;
+        case 41072823: // WARNING
+            (this->*ptrFunctions[2])();
+            break;
+        case 247744: // ERROR
+            (this->*ptrFunctions[3])();
+            break;
+        default:
+            std::cout << "Probably complaining about insignificant problems" << std::endl;
     }
-    
 }

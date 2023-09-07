@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Template.hpp                                       :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 14:53:28 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 15:14:48 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 19:44:40 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/05 19:58:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATE_H
-#define TEMPLATE_H
+#include "Zombie.hpp"
 
-#include "iostream"
-#include <string>
-
-class Template
+Zombie* newZombie( std::string name )
 {
-	private:
-		std::string fileName;
-		std::string s1;
-		std::string s2;
-
-	public:
-	
-};
-
-#endif
+    Zombie *newZombie = new Zombie(name);
+    return (newZombie);
+}

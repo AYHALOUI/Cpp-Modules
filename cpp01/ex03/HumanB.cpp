@@ -5,36 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:23:44 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 14:36:42 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 21:13:02 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/06 13:32:36 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) 
 {
 	this->name = name;
 }
-
-
-Weapon HumanB::getWeapon()
-{
-	return (this->weapon);
-}
-
-void HumanB::setWeapon(Weapon weapon)
-{
-	this->weapon = weapon;
-}
-
 void HumanB::attack()
 {
-	std::cout << "<" 
-		<< this->name << ">" " attacks with their <" 
-		<< this->weapon.getType() << ">" << std::endl;
+    std::cout << this->name << " attacks with their " 
+	<< ((this->typePTR)? this->typePTR->getType(): "") << std::endl;
 }
 
-
-
+void HumanB::setWeapon(Weapon *typePTR)
+{
+	this->typePTR = typePTR;
+}

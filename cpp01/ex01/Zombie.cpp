@@ -5,27 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 14:41:44 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 11:35:44 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 19:44:32 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/05 20:40:35 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+
 Zombie::Zombie()
 {
-    std::cout<< "Zombie Created" << std::endl;
+    std::cout << " Created" << std::endl;
 }
-
 Zombie::Zombie(std::string name)
 {
     this->name = name;
     std::cout<< this->name << " Created" << std::endl;
 }
 
-Zombie::~Zombie()
+void Zombie::announce(void)
 {
-    std::cout << this->name << " Destroyed" << std::endl;
+    if (this->name == "Foo")
+        std::cout << this->name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
+    else
+         std::cout << "<" << this->name << ">:" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)
@@ -33,16 +36,8 @@ void Zombie::setName(std::string name)
     this->name = name;
 }
 
-std::string Zombie::getName()
+Zombie::~Zombie()
 {
-    return (this->name);
+    std::cout << this->name << " Destroyed" << std::endl;
 }
 
-void Zombie::announce()
-{
-    if (!this->name.compare("Foo"))
-        std::cout << this->name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
-    else
-        std::cout 
-        << "<" << this->name << ">:" << " BraiiiiiiinnnzzzZ..." << std::endl;
-}

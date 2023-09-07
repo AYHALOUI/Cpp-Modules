@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 14:42:08 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/25 10:15:42 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/05 19:49:16 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/05 20:41:05 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 
+
 class Zombie
 {
 	private:
@@ -24,14 +25,12 @@ class Zombie
 	public:
 		Zombie();
 		Zombie(std::string name);
-		~Zombie();
-		
+        ~Zombie();
+		void announce( void );
 		void setName(std::string name);
-		std::string getName();
-		
-		void announce(void);
-
 };
-Zombie* zombieHorde(int N, std::string name);
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

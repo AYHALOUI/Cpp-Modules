@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/25 18:04:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/08/26 10:59:51 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/06 17:38:52 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/07 17:02:32 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-#define HARL_H
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <string>
 #include <iostream>
 
 class Harl
 {
-	public:
+    public:
 		void complain( std::string level );
 		
 	private:
@@ -26,6 +26,7 @@ class Harl
 		void info( void );
 		void warning( void );
 		void error( void );
+		int convetToInteger(std::string level); 
 };
 
 #endif
