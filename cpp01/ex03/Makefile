@@ -6,15 +6,15 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 21:08:26 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/06 16:21:42 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/07 18:48:16 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = weapon
 
-CC = c++
+CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
@@ -25,10 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp %.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

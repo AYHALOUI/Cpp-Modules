@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/05 20:17:03 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 18:11:38 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
-
-// void ff()
-// {
-// 	system("leaks zombie");
-// }
 
 int main()
 {

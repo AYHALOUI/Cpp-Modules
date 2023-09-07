@@ -6,15 +6,15 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 19:44:10 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/05 20:56:03 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/07 18:46:19 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = thisisbrain
 
-CC = c++
+CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp
 
@@ -25,7 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp %.hpp
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
@@ -34,3 +37,4 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
+

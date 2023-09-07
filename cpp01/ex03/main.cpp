@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:08:28 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/06 13:42:19 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 18:34:10 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-    return (0);
-
-    
+    return (0);    
 }
 

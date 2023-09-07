@@ -6,17 +6,17 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 17:38:56 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 14:19:45 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/07 18:51:57 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harl
 
-CC = c++
+CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Harl.cpp 	
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -25,10 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp %.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

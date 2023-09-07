@@ -6,15 +6,15 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/25 14:52:31 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 11:09:20 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/07 18:50:07 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 
-CC = c++
+CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Replace.cpp 	
 
@@ -25,10 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp %.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
