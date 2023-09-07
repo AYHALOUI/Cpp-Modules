@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:45:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 14:01:06 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 21:32:33 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Replace
 	public:
 		Replace(std::string fileName, std::string s1, std::string s2);
 		void myReplace(std::string &line);
-
 		std::string getFileName();
+		~Replace();
 };
 
 

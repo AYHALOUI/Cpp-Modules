@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:38:19 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 17:20:55 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 21:34:27 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,9 @@ void Harl::complain(std::string level)
         default:
             this->someThingElse();
     }
+}
+
+Harl::~Harl()
+{
+    std::cout << "Harl destructor called" << std::endl;
 }

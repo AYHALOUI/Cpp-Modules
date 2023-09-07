@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:38:52 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 17:02:32 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 21:33:12 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Harl
 		void info( void );
 		void warning( void );
 		void error( void );
-		int convetToInteger(std::string level); 
+		int convetToInteger(std::string level);
+		~Harl();
 };
 
 #endif

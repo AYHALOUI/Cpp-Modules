@@ -6,34 +6,11 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:45:39 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 13:50:22 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:56:43 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Replace.hpp"
-
-
-// void replace_all( std::string &line, std::string s1, std::string s2) 
-// {
-//     std::string buf;
-//     std::size_t pos = 0;
-//     std::size_t prevPos;
-
-//     while (true) 
-// 	{
-//         prevPos = pos;
-//         pos = line.find(s1, pos);
-//         if (pos == std::string::npos)
-//             break;
-//         buf.append(line, prevPos, pos - prevPos);
-//         buf += s2;
-//         pos += s1.length();
-//     }
-
-//     buf.append(line, prevPos, line.length() - prevPos);
-// 	line = buf;
-// }
 
 int main(int ac, char **av)
 {
