@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:13:02 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/06 13:32:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/07 20:39:30 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void HumanB::attack()
 	<< ((this->typePTR)? this->typePTR->getType(): "") << std::endl;
 }
 
-void HumanB::setWeapon(Weapon *typePTR)
+void HumanB::setWeapon(Weapon &typePTR)
 {
-	this->typePTR = typePTR;
+	this->typePTR = &typePTR;
 }
