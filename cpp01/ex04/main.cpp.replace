@@ -14,26 +14,26 @@
 
 int main(int ac, char **av)
 {
-	std::string line;
+	string line;line;
 	if (ac == 4)
 	{
 		Replace replace = Replace(av[1], av[2], av[3]);
-		std::ifstream inFile(replace.getFileName());
+		ifstream inFile(replace.getFileName());e());
 		if (inFile.is_open())
 		{
-			std::ofstream outFile(replace.getFileName()+".replace");
-			std::cout << "File Opened Successfully" << std::endl;
-			while (std::getline(inFile, line))
+			ofstream outFile(replace.getFileName()+".replace");ce");
+			cout << "File Opened Successfully" << endl;std::endl;
+			while (getline(inFile, line))ine))
 			{
 				replace.myReplace(line);
-				outFile << line << std::endl;
+				outFile << line << endl;endl;
 			}
 			inFile.close ();
 		}
 		else
-			std::cout << "Failed to Open File" << std::endl;
+			cout << "Failed to Open File" << endl;std::endl;
 	}
 	else
-		std::cout << "Invalid Args" << std::endl;
+		cout << "Invalid Args" << endl;std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:44:32 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/05 20:40:35 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/08 14:37:06 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ Zombie::Zombie(std::string name)
 
 void Zombie::announce(void)
 {
-    if (this->name == "Foo")
-        std::cout << this->name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
-    else
-         std::cout << "<" << this->name << ">:" << " BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)

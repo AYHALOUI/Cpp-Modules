@@ -6,11 +6,11 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 19:44:10 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 18:46:19 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/08 14:09:19 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = thisisbrain
+NAME = thisIsBrain
 
 CPP = c++
 
