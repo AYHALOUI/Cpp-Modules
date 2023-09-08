@@ -6,15 +6,12 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 18:11:38 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/08 11:45:28 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
 
 int main()
 {
