@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 21:08:26 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 18:48:16 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/10 16:57:57 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
@@ -37,3 +37,4 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
+

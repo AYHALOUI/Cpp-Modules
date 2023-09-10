@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 19:44:10 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 19:14:36 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/10 15:39:17 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp Zombie.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

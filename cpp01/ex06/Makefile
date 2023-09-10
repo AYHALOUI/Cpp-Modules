@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 17:38:56 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 18:54:16 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/10 15:37:28 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp Harl.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

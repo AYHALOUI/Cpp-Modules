@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:45:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/08 14:52:02 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/10 15:48:39 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,5 @@ void Replace::myReplace(std::string &line)
             break;
     }
     newStr.append(line, posOfPrev, line.length() - posOfPrev);
-    std::copy(newStr.begin(), newStr.end(), line.begin());
-}
-// s1= successflully s2=ayemen
-// We check if the file is successfully opened using the is_open() member function of std::ifstream. If the file is open, we proceed to read its contents.
-
-Replace::~Replace()
-{
-    std::cout << "Replace destructor called" << std::endl;
+    line = newStr;
 }

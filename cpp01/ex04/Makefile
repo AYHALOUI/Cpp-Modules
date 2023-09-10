@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/25 14:52:31 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/07 18:50:07 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/10 15:24:15 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp Replace.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

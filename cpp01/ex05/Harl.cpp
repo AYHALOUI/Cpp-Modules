@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:38:19 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/07 21:33:33 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/10 16:08:32 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,4 @@ void Harl::complain(std::string level)
         default:
             std::cout << "Probably complaining about insignificant problems" << std::endl;
     }
-}
-
-Harl::~Harl()
-{
-    std::cout << "Harl destructor called" << std::endl;
 }
