@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/26 14:28:49 by ahaloui           #+#    #+#              #
-#    Updated: 2023/08/26 14:28:50 by ahaloui          ###   ########.fr        #
+#    Created: 2023/09/14 10:44:52 by ahaloui           #+#    #+#              #
+#    Updated: 2023/09/14 10:52:06 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = fixedpoint
 
-CC = c++
+CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Fixed.cpp
 
@@ -26,7 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp Fixed.hpp
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
