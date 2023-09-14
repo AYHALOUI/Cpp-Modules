@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:44:49 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/14 16:30:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/14 17:37:30 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Fixed
 		
 	public:
 		Fixed();
-		Fixed(int fixedPoint);
 		Fixed(const Fixed &copy);
 		Fixed &operator = (const Fixed &copy);
 		~Fixed();
