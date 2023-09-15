@@ -6,20 +6,23 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/15 11:26:47 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/15 20:14:30 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
+
 const int Fixed::_fractionalBits = 8;
+
+
 
 Fixed::Fixed():fixedPoint(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint << 8)
+Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits))
 {
     std::cout << "Int constructor called" << std::endl;
 }
@@ -51,19 +54,17 @@ void Fixed::setRawBits( int const raw )
 
 int Fixed::getRawBits(void) const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return (this->fixedPoint);
 }
 
 float Fixed::toFloat( void ) const
 {
-    float frac = (1 << _fractionalBits);
-    return (fixedPoint / frac);
+    return (fixedPoint / float((1 << _fractionalBits)));
 }
 
 int Fixed::toInt( void ) const
 {
-    return (fixedPoint >> 8);
+    return (fixedPoint / (1 << _fractionalBits));
 }
 
 std::ostream &operator << (std::ostream &out, const Fixed &fixed)

@@ -6,31 +6,32 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:18 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/15 19:40:29 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/15 21:37:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
+#include "Point.hpp"
 
 int main()
 {
-	std::cout << "****************\n";
+	std::cout << "**************************\n";
+	std::cout << "**********EX03***********\n";
+	std::cout << "**************************\n";
+	// check if the point is inside the triangle
+	Point a(0.0f, 0.0f);
+	Point b(10.0f, 0.0f);
+	Point c(0.0f, 30.0f);
+	Point point(100.f, 100.0f);
+	std::cout << "Point a: " << a << std::endl;
+	std::cout << "Point b: " << b << std::endl;
+	std::cout << "Point c: " << c << std::endl;
+
+	std::cout << "Point to check: " << point << std::endl;
+	if (a.bsp(a, b, c, point))
+		std::cout << "Point is inside the triangle\n";
+	else
+		std::cout << "Point is outside the triangle\n";
 	
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	
-	std::cout << "****************\n";
 	return (0);
 }
