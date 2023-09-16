@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:18 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 19:15:48 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/16 20:12:03 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,5 @@ int main()
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-
-	std::cout << "****************\n";
 	return (0);
 }
