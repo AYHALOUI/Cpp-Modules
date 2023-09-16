@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:44:49 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 19:12:34 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/16 20:13:51 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ class Fixed
 		const static int _fractionalBits;
 		
 	public:
-		Fixed();
 		//
 		Fixed(const int fixedPoint);
 		Fixed(const float floatingPoint);
-		//
+		
+		// Orthodox Canonical Form
+		Fixed();
 		Fixed(const Fixed &copy);
 		Fixed &operator = (const Fixed &copy);
 		~Fixed();
