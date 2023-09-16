@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 16:30:01 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/16 16:37:02 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits))
+Fixed::Fixed(const float fixedPoint):fixedPoint(roundf(fixedPoint * (1 << _fractionalBits)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
