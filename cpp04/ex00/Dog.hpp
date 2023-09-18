@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:37 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 20:31:59 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 21:33:37 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Dog : public Animal
         Dog();
         Dog(const Dog &copy);
         Dog &operator=(const Dog &copy);
-        virtual ~Dog();
-        virtual void makeSound() const;
+        ~Dog();
+        void makeSound() const;
 };
 
 
