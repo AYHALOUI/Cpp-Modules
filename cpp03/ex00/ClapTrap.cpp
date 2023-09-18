@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:03 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 15:31:50 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 16:54:34 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 // Orthodox Canonical Form
 ClapTrap::ClapTrap():name(""), hitPoints(0), energyPoints(0), attackDamage(0)
 {
-	std::cout << "Default constructor Called" << std::endl;   
+	std::cout << "Default constructor Called from ClapTrap" << std::endl;   
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "Copy Constructor called from ClapTrap" << std::endl;
 	(*this) = copy;
 }
 
@@ -37,13 +37,13 @@ ClapTrap& ClapTrap::operator = (const ClapTrap &copy)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called from ClapTrap" << std::endl;
 }
 /*******************************************************************************/
 
 ClapTrap::ClapTrap(std::string name):name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Constructor Parameterized called" << std::endl;
+	std::cout << "Constructor Parameterized called from ClapTrap" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
