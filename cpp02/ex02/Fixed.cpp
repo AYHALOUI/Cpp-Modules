@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 20:10:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 13:09:13 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits
 	
 }
 
-Fixed::Fixed(const float floatingPoint):fixedPoint(roundf(floatingPoint * (1 << _fractionalBits)))
+Fixed::Fixed(const float floatingPoint):fixedPoint(int(roundf(floatingPoint * (1 << _fractionalBits))))
 {
 	
 }

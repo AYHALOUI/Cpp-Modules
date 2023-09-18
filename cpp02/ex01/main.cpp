@@ -6,34 +6,12 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:18 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 16:31:18 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 17:52:41 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-class MyClass
-{
-	
-	
-	public:
-		int value;
-		MyClass ()
-		{
-			value = 10;	
-		}
-		MyClass (int val):value(val)
-		{
-			
-		}
-
-};
-
-std::ostream& operator << (std::ostream& os, const MyClass& myclass)
-{
-	os << myclass.value;
-	return os;
-}
 
 int main()
 {	
