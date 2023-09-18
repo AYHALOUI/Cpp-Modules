@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:40:16 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 15:30:23 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 16:56:59 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Orthodox Canonical Form
 ScavTrap::ScavTrap():ClapTrap()
 {
-	
+	std::cout << "Default constructor called from ScavTrap" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator = (const ScavTrap &copy)
@@ -29,7 +29,7 @@ ScavTrap& ScavTrap::operator = (const ScavTrap &copy)
 
 ScavTrap::ScavTrap(const ScavTrap &copy):ClapTrap(copy)
 {
-	
+	std::cout << "Copy Constructor called from ScavTrap" << std::endl;	
 }
 
 ScavTrap::~ScavTrap()
@@ -40,7 +40,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
-	
+	std::cout << "Constructor Parameterized called from ScavTarp" << std::endl;
 }
 
 void ScavTrap::guardGate()

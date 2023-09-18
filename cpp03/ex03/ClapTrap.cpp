@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:03 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 15:31:35 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 16:09:44 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ClapTrap::~ClapTrap()
 }
 /*******************************************************************************/
 
-ClapTrap::ClapTrap(std::string name):name(name), hitPoints(100), energyPoints(50), attackDamage(20)
+ClapTrap::ClapTrap(std::string name):name(name), hitPoints(100), energyPoints(100), attackDamage(30)
 {
 	std::cout << "Constructor Parameterized called" << std::endl;
 }

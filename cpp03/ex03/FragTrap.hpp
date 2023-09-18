@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:06:56 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 16:07:52 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 16:50:34 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap
+class FragTrap : public ClapTrap
 {
 	public:
 		FragTrap();

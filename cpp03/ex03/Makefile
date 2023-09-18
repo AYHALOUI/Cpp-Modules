@@ -6,11 +6,11 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 13:11:46 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/18 16:08:15 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/18 16:51:00 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scavTrap
+NAME = fragtrap
 
 CPP = c++
 
