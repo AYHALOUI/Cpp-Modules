@@ -1,8 +1,20 @@
-NAME = scavtrap
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/18 13:11:46 by ahaloui           #+#    #+#              #
+#    Updated: 2023/09/18 15:18:27 by ahaloui          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-CC = c++
+NAME = scavTrap
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPP = c++
+
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
@@ -13,7 +25,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp ClapTrap.hpp ScavTrap.hpp
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

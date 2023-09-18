@@ -1,53 +1,29 @@
-#include "ClapTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/18 13:12:06 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/18 15:30:42 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
-
-
-class Base{
-	public:
-	Base()
-	{
-		std::cout << "Base constructor" << std::endl;
-	}
-	virtual void print()
-	{
-		std::cout << "hello base class" << std::endl;
-	}
-	void show()
-	{
-		std::cout << "show base class" << std::endl;
-	}
-};
-
-class Derived : public Base 
-{
-	public:
-		Derived()
-		{
-			std::cout << "derived constructor" << std::endl;
-		}
-		void print()
-		{
-			std::cout << "hello derived class" << std::endl;
-		}
-		void show()
-		{
-			std::cout << "show derived class" << std::endl;
-		}
-
-};
-
-
-
 
 int main()
 {
-	// ClapTrap clapTrap("Clappy");
+	ScavTrap a("ahaloui");
+	ScavTrap b("bhaloui");
+	ScavTrap c(a);
 
-	// clapTrap.attack("Enemy");
-	// clapTrap.takeDamage(5);
-	// clapTrap.beRepaired(3);
-	// clapTrap.printInfo();
-
-	ScavTrap scvatrap;
-	scvatrap.printInfo();
+	a.attack("bhaloui");
+	b.takeDamage(20);
+	b.attack("ahaloui");
+	a.takeDamage(20);
+	a.guardGate();
+	b.guardGate();
+	c.guardGate();
+	return (0);
 }
