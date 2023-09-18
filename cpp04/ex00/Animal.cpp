@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:12:10 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 18:17:49 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/18 20:30:52 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ Animal &Animal::operator=(const Animal &copy)
 Animal::~Animal()
 {
     std::cout << "Animal Destructor called" << std::endl;
+}
+
+void Animal::makeSound() const
+{
+    std::cout << "Animal makeSound called" << std::endl;
 }
