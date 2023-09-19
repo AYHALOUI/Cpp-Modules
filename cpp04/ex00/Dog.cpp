@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:40 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 21:10:58 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 16:14:42 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,26 @@ Dog::Dog()
     this->type = "Dog";
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy): Animal(copy)
 {
     std::cout << "Dog Copy constructor called" << std::endl;
-    *this = copy;
 }
 
 Dog &Dog::operator=(const Dog &copy)
 {
     std::cout << "Dog Assignation operator called" << std::endl;
-    if (this == &copy)
-        return (*this);
-    this->type = copy.type;
+    Animal::operator = (copy);
     return (*this);
 }
 
 Dog::~Dog()
 {
     std::cout << "Dog Destructor called" << std::endl;
+}
+
+std::string Dog::getType() const
+{
+    return (this->type);
 }
 
 void Dog::makeSound() const

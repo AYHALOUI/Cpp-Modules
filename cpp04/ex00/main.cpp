@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 12:48:59 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 16:19:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,26 @@
 #include "Cat.hpp"
 
 
-class Base
-{
-public:
-    std::string_view getName() const { return "Base"; } // note addition of virtual keyword
-};
-
-class Derived: public Base
-{
-public:
-    virtual std::string_view getName() const { return "Derived"; }
-};
-
 int main()
 {
-
-    // Derived derived;
-    Base* rBase = new Derived;
-    std::cout << "rBase is a " << rBase->getName() << '\n';
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	Cat *cat = new Cat();
+	Dog *dog = new Dog();
+	Animal *animal = new Animal();
 	
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	
-	// i->makeSound();
-	// j->makeSound();
-	// meta->makeSound();
+	std::cout << std::endl;
 
-    // delete meta;
-    // delete j;
-    // delete i;
+	std::cout << cat->getType() << std::endl;
+	std::cout << dog->getType() << std::endl;
+	
+	std::cout << std::endl;
+	cat->makeSound();
+	dog->makeSound();
+	animal->makeSound();
+	
+	std::cout << std::endl;
+
+	delete cat;
+	delete dog;
+	delete animal;
 	return (0);
 }

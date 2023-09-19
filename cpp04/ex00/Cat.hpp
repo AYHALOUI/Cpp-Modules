@@ -6,12 +6,13 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 21:33:33 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 16:13:30 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
+
 # include "Animal.hpp"
 
 class Cat : public Animal
@@ -20,7 +21,9 @@ class Cat : public Animal
         Cat();
         Cat(const Cat &copy);
         Cat &operator = (const Cat &copy);
-        ~Cat();
+        virtual ~Cat();
+        
+        std::string getType() const;
         void makeSound() const;
 };
 
