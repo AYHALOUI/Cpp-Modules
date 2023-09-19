@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 16:22:06 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:44:29 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,14 @@ WrongAnimal &WrongAnimal::operator =(const WrongAnimal &copy)
 WrongAnimal::~WrongAnimal()
 {
     std::cout << "WrongAnimal Destructor called" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+    return (this->type);
+}
+
+void WrongAnimal::makeSound() const
+{
+    std::cout << "WrongAnimal makeSound called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 16:13:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:06:45 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
+    private:
+        Brain *brain;
+    
     public:
         Cat();
         Cat(const Cat &copy);

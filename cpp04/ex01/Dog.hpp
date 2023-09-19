@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:37 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 16:14:14 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:07:36 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
+    private:
+        Brain *brain;
+    
     public:
         Dog();
         Dog(const Dog &copy);
