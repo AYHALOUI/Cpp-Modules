@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:44:49 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 16:08:31 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 09:40:25 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,18 @@ class Fixed
 		
 	public:
 		Fixed();
-		//
-		Fixed(const int fixedPoint);
-		Fixed(const float fixedPoint);
-		//
 		Fixed(const Fixed &copy);
 		Fixed &operator = (const Fixed &copy);
 		~Fixed();
 
+		Fixed(const int fixedPoint);
+		Fixed(const float fixedPoint);
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 
-		//
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		//
-		// std::ostream &operator << (std::ostream &out, const Fixed &fixed);
 };
 std::ostream &operator << (std::ostream &out, const Fixed &fixed);
 #endif
