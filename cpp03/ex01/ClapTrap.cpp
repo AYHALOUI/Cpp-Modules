@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:03 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 16:54:08 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 16:07:45 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 
 ClapTrap& ClapTrap::operator = (const ClapTrap &copy)
 {
+	std::cout << "Assigmnet operator called from ClapTrap" << std::endl;
 	if (this == &copy)
 		return (*this);
 	this->name = copy.name;
