@@ -6,35 +6,31 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 16:19:00 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:50:22 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 
 int main()
 {
-	Cat *cat = new Cat();
-	Dog *dog = new Dog();
-	Animal *animal = new Animal();
-	
-	std::cout << std::endl;
-
-	std::cout << cat->getType() << std::endl;
-	std::cout << dog->getType() << std::endl;
-	
-	std::cout << std::endl;
-	cat->makeSound();
-	dog->makeSound();
-	animal->makeSound();
-	
-	std::cout << std::endl;
-
-	delete cat;
-	delete dog;
-	delete animal;
+	Animal *animals = new Animal[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = Dog();
+		else
+			animals[i] = Cat();
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		animals[i].makeSound();
+	}
+	delete [] animals;
 	return (0);
 }

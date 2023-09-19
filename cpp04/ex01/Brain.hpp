@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:35:26 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:05:28 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:33:33 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Brain
         Brain &operator = (const Brain &copy);
         ~Brain();
 
+        // Brain(std::string ideas[100]);
         
 };  
 

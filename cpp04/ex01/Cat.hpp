@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:06:45 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:30:39 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ class Cat : public Animal
 {
     private:
         Brain *brain;
-    
+        
     public:
         Cat();
         Cat(const Cat &copy);
         Cat &operator = (const Cat &copy);
-        virtual ~Cat();
+        ~Cat();
         
-        std::string getType() const;
         void makeSound() const;
+
+        Cat(std::string ideas[100]);
 };
 
 

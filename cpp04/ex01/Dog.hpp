@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:37 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:07:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:26:56 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ class Dog : public Animal
 {
     private:
         Brain *brain;
-    
+        
     public:
         Dog();
         Dog(const Dog &copy);
         Dog &operator=(const Dog &copy);
         ~Dog();
-        
-        std::string getType() const;
+
         void makeSound() const;
 };
 

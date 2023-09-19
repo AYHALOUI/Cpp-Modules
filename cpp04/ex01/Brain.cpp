@@ -6,13 +6,13 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:35:23 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:05:47 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:33:38 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain()
+Brain::Brain(): ides()
 {
 	std::cout << "Default constructor called from Brain" << std::endl;
 }
@@ -37,3 +37,10 @@ Brain::~Brain()
 {
 	std::cout << "Destructor called from Brain" << std::endl;
 }
+
+// Brain::Brain(std::string ideas[100])
+// {
+// 	std::cout << "Parametric constructor called from Brain" << std::endl;
+// 	for (size_t i = 0; i < 100; i++)
+// 		this->ides[i] = ideas[i];
+// }
