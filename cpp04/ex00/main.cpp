@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:50:32 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/19 18:09:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,43 +19,32 @@
 
 int main()
 {
-	Animal *cat = new Cat();
-	Animal *dog = new Dog();
-	Animal *animal = new Animal();
-	
-	std::cout << std::endl;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-	std::cout << cat->getType() << std::endl;
-	std::cout << dog->getType() << std::endl;
-	
-	std::cout << std::endl;
-	cat->makeSound();
-	dog->makeSound();
-	animal->makeSound();
-	
-	std::cout << std::endl;
+	delete i;
+	delete j;
+	delete meta;
 
-	delete cat;
-	delete dog;
-	delete animal;
-
-	std::cout << std::endl;
+	std::cout << "******************************************"<< std::endl;
 	
-	WrongAnimal *Rcat = new WrongCat();
+	WrongAnimal *wrongCat = new WrongCat();
 	WrongAnimal *wrongAnimal = new WrongAnimal();
-	WrongCat cats = WrongCat();
-	
-	std::cout << std::endl;
 
-	std::cout << Rcat->getType() << std::endl;
+	std::cout << wrongCat->getType() << std::endl;
 	
-	std::cout << std::endl;
-	Rcat->makeSound();
+	wrongCat->makeSound();
 	wrongAnimal->makeSound();
-	
-	std::cout << std::endl;
 
-	delete Rcat;
+
+	delete wrongCat;
 	delete wrongAnimal;
+
 	return (0);
 }

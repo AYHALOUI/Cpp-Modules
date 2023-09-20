@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 18:18:37 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 12:10:52 by ahaloui          ###   ########.fr       */
+/*   Created: 2023/09/19 19:56:47 by ahaloui           #+#    #+#             */
+/*   Updated: 2023/09/20 09:15:18 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Dog : public Animal
+int main(void)
 {
-    private:
-        Brain *brain;
-        
-    public:
-        Dog();
-        Dog(const Dog &copy);
-        Dog &operator=(const Dog &copy);
-        ~Dog();
-
-        void makeSound() const;
-};
-
-
-# endif
+    return (0);
+}

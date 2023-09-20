@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:33 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 18:35:01 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/20 13:29:23 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ Cat::Cat(): Animal()
 Cat::Cat(const Cat &copy): Animal(copy)
 {
     std::cout << "Cat Copy constructor called" << std::endl;
+    (*this) = copy;
 }
 
 Cat &Cat::operator = (const Cat &copy)
 {
     std::cout << "Cat Assigment operator called" << std::endl;
     Animal::operator = (copy);
+    if (this != &copy)
+    {
+        delete brain;
+        this->brain = new Brain();
+    }
     return (*this);
 }
 
