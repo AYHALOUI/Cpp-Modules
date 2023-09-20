@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 13:47:50 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/20 14:47:52 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,16 @@ void ff()
 
 int main()
 {
+	atexit(ff);
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	std::cout << "-------------------------------------" << std::endl;
 	delete j;
 	delete i;
 	
+	// Animal * c = new Cat();
+	// Cat b = (Cat &)*c;
+	// delete c;
 	Animal *animals[4];
 	std::cout << "-------------------------------------" << std::endl;
 	for (int i = 0; i < 2; i++)
@@ -79,6 +83,5 @@ int main()
 		delete animals[i];
 	}
 	std::cout << "-------------------------------------" << std::endl;
-	atexit(ff);
 	return (0);
 }
