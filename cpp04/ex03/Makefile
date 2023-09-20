@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 18:06:01 by ahaloui           #+#    #+#              #
-#    Updated: 2023/09/20 20:46:26 by ahaloui          ###   ########.fr        #
+#    Updated: 2023/09/20 21:23:38 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp
+SRC = main.cpp Cure.cpp Ice.cpp Character.cpp AMateria.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp AMateria.hpp Cure.hpp Ice.hpp Character.hpp ICharacter.cpp
+%.o: %.cpp AMateria.hpp Cure.hpp Ice.hpp Character.hpp ICharacter.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

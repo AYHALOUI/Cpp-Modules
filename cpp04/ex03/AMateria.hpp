@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:06:43 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 20:57:11 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/20 21:22:52 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 
+#include "ICharacter.hpp"
 
 class AMateria
 {
@@ -36,15 +37,3 @@ class AMateria
 };
 
 #endif  
-
-// class AMateria
-// {
-// protected:
-// [...]
-// public:
-// AMateria(std::string const & type);
-// [...]
-// std::string const & getType() const; //Returns the materia type
-// virtual AMateria* clone() const = 0;
-// virtual void use(ICharacter& target);
-// };
