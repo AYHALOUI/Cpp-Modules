@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:33 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 14:44:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/20 15:00:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,3 @@ void Cat::makeSound() const
     std::cout << "Cat makeSound called" << std::endl;
 }
 
-// Cat::Cat(std::string ideas[100])
-// {
-//     std::cout << "Parametric constructor called from Cat" << std::endl;
-//     this->brain = new Brain(ideas);
-// }
