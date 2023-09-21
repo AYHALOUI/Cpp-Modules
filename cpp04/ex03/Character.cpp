@@ -48,13 +48,12 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if (this->_equippedMateria[i] == NULL)
-        {
-            this->_equippedMateria[i] = m;
-            break;
-        }
+    for (int i = 0; i < 4; ++i) {
+        if (!_equippedMateria[i]) 
+            {
+                _equippedMateria[i] = m;
+                return;
+            }
     }
     
 }
