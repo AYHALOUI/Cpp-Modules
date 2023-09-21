@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ice.hpp"
+
 int main()
 {
+    AMateria *ice = new Ice();
+    std::cout << ice->clone()->getType() << std::endl;
     return (0);
 }

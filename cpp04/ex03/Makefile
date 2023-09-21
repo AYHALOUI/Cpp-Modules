@@ -16,7 +16,7 @@ CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Cure.cpp Ice.cpp Character.cpp AMateria.cpp
+SRC = main.cpp Ice.cpp AMateria.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp AMateria.hpp Cure.hpp Ice.hpp Character.hpp ICharacter.hpp
+%.o: %.cpp AMateria.hpp Ice.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
