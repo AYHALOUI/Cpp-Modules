@@ -25,7 +25,7 @@ Ice::Ice(const Ice &copy): AMateria(copy)
 
 Ice &Ice::operator = (const Ice &copy)
 {
-	std::cout << "Ice Assignation operator called" << std::endl;
+	// std::cout << "Ice Assignation operator called" << std::endl;
 	if (this == &copy)
 		return (*this);
 	AMateria::operator = (copy);
@@ -34,7 +34,7 @@ Ice &Ice::operator = (const Ice &copy)
 
 Ice::~Ice()
 {
-	std::cout << "Ice Destructor called" << std::endl;
+	// std::cout << "Ice Destructor called" << std::endl;
 }
 
 AMateria* Ice::clone() const
