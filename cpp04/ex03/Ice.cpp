@@ -15,12 +15,12 @@
 
 Ice::Ice(): AMateria("ice")
 {
-	std::cout << "Ice Default constructor called" << std::endl;
+	// std::cout << "Ice Default constructor called" << std::endl;
 } 
 
 Ice::Ice(const Ice &copy): AMateria(copy)
 {
-	std::cout << "Ice Copy constructor called" << std::endl;
+	// std::cout << "Ice Copy constructor called" << std::endl;
 }
 
 Ice &Ice::operator = (const Ice &copy)

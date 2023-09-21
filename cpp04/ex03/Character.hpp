@@ -14,10 +14,13 @@
 # define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class Character : public ICharacter
 {
 	private:
+		AMateria *_equippedMateria[4];
 		std::string name;
 
 	public:

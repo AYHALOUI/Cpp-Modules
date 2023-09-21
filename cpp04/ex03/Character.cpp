@@ -14,18 +14,18 @@
 
 Character::Character(): name("")
 {
-    std::cout << "Character Default constructor called" << std::endl;
+    // std::cout << "Character Default constructor called" << std::endl;
 }
 
 Character::Character(const Character &copy)
 {
-    std::cout << "Character Copy constructor called" << std::endl;
+    // std::cout << "Character Copy constructor called" << std::endl;
     (*this) = copy;
 }
 
 Character& Character::operator = (const Character &copy)
 {
-    std::cout << "Character Assigment operator called" << std::endl;
+    // std::cout << "Character Assigment operator called" << std::endl;
     if (this == &copy)
         return (*this);
     this->name = copy.name;
@@ -34,34 +34,39 @@ Character& Character::operator = (const Character &copy)
 
 Character::~Character()
 {
-    std::cout << "Character Destructor called" << std::endl;
+    // std::cout << "Character Destructor called" << std::endl;
 }
 
 Character::Character(std::string const & name): name(name)
 {
-    std::cout << "Character Parametric constructor called" << std::endl;
+    // std::cout << "Character Parametric constructor called" << std::endl;
 }
 std::string const & Character::getName() const
 {
-    std::cout << "Character getName called" << std::endl;
     return (this->name);
 }
 
 void Character::equip(AMateria* m)
 {
-    std::cout << "Character equip called" << std::endl;
-    (void)m;
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->_equippedMateria[i] == NULL)
+        {
+            this->_equippedMateria[i] = m;
+            break;
+        }
+    }
+    
 }
 
 void Character::unequip(int idx)
 {
-    std::cout << "Character unequip called" << std::endl;
-    (void)idx;
+    if (idx >= 0 && idx < 4)
+        this->_equippedMateria[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-    std::cout << "Character use called" << std::endl;
-    (void)idx;
-    (void)target;
+    if (idx >= 0 && idx < 4 && this->_equippedMateria[idx] != NULL)
+        this->_equippedMateria[idx]->use(target);    
 }
