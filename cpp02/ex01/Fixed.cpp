@@ -32,7 +32,7 @@ Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float fixedPoint):fixedPoint(roundf(fixedPoint * (1 << _fractionalBits)))
+Fixed::Fixed(const float fixedPoint):fixedPoint(int(roundf(fixedPoint * (1 << _fractionalBits))))
 {
 	std::cout << "Float constructor called" << std::endl;
 }

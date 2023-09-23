@@ -16,9 +16,9 @@
 int main()
 {	
 	Fixed		a;
-	Fixed const b( 10 );
+	Fixed const b( 22.625f );
 	Fixed const c( 263.2f );
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
 	// Fixed const d( b );
 	// std::cout << roundf(67404) << std::endl;
 	// a = Fixed( 1234.4321f );
