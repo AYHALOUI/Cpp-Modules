@@ -19,17 +19,18 @@ ScavTrap::ScavTrap():ClapTrap()
 	std::cout << "Default constructor called from ScavTrap" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &copy):ClapTrap(copy)
+{
+	std::cout << "Copy Constructor called from ScavTrap" << std::endl;	
+}
+
 ScavTrap& ScavTrap::operator = (const ScavTrap &copy)
 {
+	std::cout << "Assigment operator called from ScavTrap" << std::endl;
 	if (this == &copy)
 		return (*this);
 	ClapTrap::operator=(copy);
 	return (*this);
-}
-
-ScavTrap::ScavTrap(const ScavTrap &copy):ClapTrap(copy)
-{
-	std::cout << "Copy Constructor called from ScavTrap" << std::endl;	
 }
 
 ScavTrap::~ScavTrap()
@@ -40,10 +41,10 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
-	
+	std::cout << "Constructor Parameterized called from ScavTrap" << std::endl;	
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->name << " is now in Gatekeeper mode." << std::endl;
+	std::cout << "ScavTrap " << this->clap_Name << " is now in Gate keeper mode." << std::endl;
 }

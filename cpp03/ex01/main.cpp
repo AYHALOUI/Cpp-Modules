@@ -14,23 +14,15 @@
 
 int main()
 {
-	// ScavTrap a("ahaloui");
-	// ScavTrap b("bhaloui");
-	// ScavTrap c(a);
+	ClapTrap claptrap("Clappy");
+    claptrap.attack("Enemy");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(3);
 
-	// a.attack("bhaloui");
-	// b.takeDamage(20);
-	// b.attack("ahaloui");
-	// a.takeDamage(20);
-	// a.guardGate();
-	// b.guardGate();
-	// c.guardGate();
-
-	// ScavTrap a("ahaloui");
-	ClapTrap *ptr = new ScavTrap("ayemen");
-
-	ptr->attack("hallui");
-
-	delete ptr;
+    ScavTrap scavtrap("Scavy");
+    scavtrap.attack("Enemy");
+    scavtrap.takeDamage(20);
+    scavtrap.guardGate();
+	
 	return (0);
 }

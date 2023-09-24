@@ -45,5 +45,5 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->name << " is now in Gatekeeper mode." << std::endl;
+	std::cout << "ScavTrap " << this->clap_Name << " is now in Gatekeeper mode." << std::endl;
 }

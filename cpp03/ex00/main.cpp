@@ -14,10 +14,11 @@
 
 int main()
 {
-	ClapTrap clapTrap("Clappy");
-
-	clapTrap.attack("Enemy");
-	clapTrap.takeDamage(5);
-	clapTrap.beRepaired(3);
-	clapTrap.printInfo();
+	ClapTrap claptrap("Clappy");
+    claptrap.attack("Enemy");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(3);
+    claptrap.attack("Enemy");
+    claptrap.takeDamage(20);
+    claptrap.beRepaired(10);
 }

@@ -27,10 +27,10 @@ FragTrap& FragTrap::operator = (const FragTrap &copy)
 {
     if (this == &copy)
         return (*this);
-    this->name = copy.name;
-    this->hitPoints = copy.hitPoints;
-    this->energyPoints = copy.energyPoints;
-    this->attackDamage = copy.attackDamage;
+    this->clap_Name = copy.clap_Name;
+    this->clap_hitPoints = copy.clap_hitPoints;
+    this->clap_energyPoints = copy.clap_energyPoints;
+    this->clap_attackDamage = copy.clap_attackDamage;
     return (*this);
 }
 
@@ -46,5 +46,5 @@ FragTrap::FragTrap(std::string name):ClapTrap(name)
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << this->name << " wants to high fives guys!" << std::endl;
+    std::cout << "FragTrap " << this->clap_Name << " wants to high fives guys!" << std::endl;
 }
