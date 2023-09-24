@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 11:26:59 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 12:06:07 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int Fixed::toInt( void ) const
 	return (myFixedPoint / (1 << _fractionalBits));
 }
 
-std::ostream &operator << (std::ostream &out, const Fixed &fixed)
+std::ostream &operator << (std::ostream &cout, const Fixed &fixed)
 {
-	out << fixed.toFloat();
-	return (out);
+	cout << fixed.toFloat();
+	return (cout);
 }
 
 /******************************************************************/
@@ -149,14 +149,7 @@ Fixed Fixed::operator / (const Fixed &fixed) const
 
 //The 4 increment/decrement
 
-// Pre-increment operator (++fixed)
-Fixed& Fixed::operator ++ (void)
-{
-	this->myFixedPoint++;
-	return (*this);
-}
-
-// Post-decrement operator (fixed++)
+// Post-increment operator (fixed++)
 Fixed Fixed::operator ++ (int)
 {
 	Fixed copy(*this);
@@ -164,10 +157,10 @@ Fixed Fixed::operator ++ (int)
 	return copy;
 }
 
-// Pre-decrement operator (--fixed)
-Fixed& Fixed::operator -- (void)
+// Pre-increment operator (++fixed)
+Fixed& Fixed::operator ++ (void)
 {
-	this->myFixedPoint--;
+	this->myFixedPoint++;
 	return (*this);
 }
 
@@ -178,7 +171,15 @@ Fixed Fixed::operator -- (int)
 	--(*this); // Call pre-increment
 	return copy;
 }
-/******************************************************
+
+// Pre-decrement operator (--fixed)
+Fixed& Fixed::operator -- (void)
+{
+	this->myFixedPoint--;
+	return (*this);
+}
+
+/******************************************************/
 
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
