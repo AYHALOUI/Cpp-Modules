@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:03 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 16:54:34 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 21:16:54 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /********************************************************************************/
 // Orthodox Canonical Form
-ClapTrap::ClapTrap():clap_Name(""), clap_hitPoints(0), clap_energyPoints(0), clap_attackDamage(0)
+ClapTrap::ClapTrap():clap_Name(""), clap_hitPoints(10), clap_energyPoints(10), clap_attackDamage(0)
 {
 	std::cout << "Default constructor Called from ClapTrap" << std::endl;   
 }

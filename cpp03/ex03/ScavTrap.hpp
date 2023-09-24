@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:40:30 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 15:28:41 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 21:01:54 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		ScavTrap(std::string name);
+		void attack(const std::string& target);
 		void guardGate();
 };
 
