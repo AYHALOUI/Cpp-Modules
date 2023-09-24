@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 12:06:07 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 12:21:02 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,30 +119,30 @@ bool Fixed::operator != (const Fixed &fixed) const
 /*****************************************************************/
 
 //The 4 arithmetic operators: +, -, *, and /.
-Fixed Fixed::operator + (const Fixed &fixed) const
+Fixed Fixed::operator + (const Fixed &fixed)
 {
 	Fixed result;
-	result.myFixedPoint = this->myFixedPoint + fixed.getRawBits();
+	result.myFixedPoint = this->myFixedPoint + fixed.myFixedPoint;
 	return result;
 }
 
-Fixed Fixed::operator - (const Fixed &fixed) const
+Fixed Fixed::operator - (const Fixed &fixed)
 {
 	Fixed result;
-	result.myFixedPoint = this->myFixedPoint - fixed.getRawBits();
+	result.myFixedPoint = this->myFixedPoint - fixed.myFixedPoint;
 	return result;
 }
 
-Fixed Fixed::operator * (const Fixed &fixed) const
+Fixed Fixed::operator * (const Fixed &fixed) 
 {
 	return Fixed(this->toFloat() * fixed.toFloat());
 }
 
-Fixed Fixed::operator / (const Fixed &fixed) const
+Fixed Fixed::operator / (const Fixed &fixed)
 {
 	Fixed result;
 	if (fixed.getRawBits() != 0)
-		result.myFixedPoint = this->myFixedPoint / fixed.getRawBits();
+		result.myFixedPoint = this->myFixedPoint / fixed.myFixedPoint;
 	return result;
 }
 /*****************************************************************/
