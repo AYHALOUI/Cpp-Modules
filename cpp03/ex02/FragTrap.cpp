@@ -44,16 +44,6 @@ FragTrap::FragTrap(std::string name):ClapTrap(name)
     std::cout << "Constructor Parameterized called from FragTrap" << std::endl;
 }
 
-void FragTrap::attack(const std::string& target)
-{
-    if (this->clap_hitPoints > 0 && this->clap_energyPoints > 0)
-    {
-        std::cout << "FragTrap " << this->clap_Name << " attack " << target << ", causing " << this->clap_attackDamage << " points of damage!" << std::endl;
-        this->clap_energyPoints --;
-    }
-    else
-        std::cout << "FragTrap " << this->clap_Name << " can't attack. Not enough energy or hit points." << std::endl;
-}
 
 void FragTrap::highFivesGuys(void)
 {
