@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:18 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 11:59:55 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 11:20:16 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 int main()
 {	
 	Fixed		a;
-	Fixed const b( 10 );
-	Fixed const c( 263.2f );
-	std::cout << c.getRawBits() << std::endl;
+	Fixed const b( 2.2f );
+	Fixed const c( 8.75f );
+
 	// Fixed const d( b );
 	// std::cout << roundf(67404) << std::endl;
 	// a = Fixed( 1234.4321f );
@@ -35,3 +35,5 @@ int main()
 	// std::cout << "b is " << b.toFloat() << " as integer" << std::endl;
 	return (0);
 }
+
+// 111.011

@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:44:49 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/16 20:45:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 11:20:49 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
 	private:
-		int fixedPoint;
+		int myFixedPoint;
 		const static int _fractionalBits;
 		
 	public:

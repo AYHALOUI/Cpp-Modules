@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 13:09:13 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 11:26:59 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 const int Fixed::_fractionalBits = 8;
 
-Fixed::Fixed():fixedPoint(0)
+Fixed::Fixed():myFixedPoint(0)
 {
 	
 }
 
-Fixed::Fixed(const int fixedPoint):fixedPoint(fixedPoint * (1 << _fractionalBits))
+Fixed::Fixed(const int fixedPoint):myFixedPoint(fixedPoint * (1 << _fractionalBits))
 {
 	
 }
 
-Fixed::Fixed(const float floatingPoint):fixedPoint(int(roundf(floatingPoint * (1 << _fractionalBits))))
+Fixed::Fixed(const float floatingPoint):myFixedPoint(int(roundf(floatingPoint * (1 << _fractionalBits))))
 {
 	
 }
@@ -41,28 +41,28 @@ Fixed &Fixed::operator = (const Fixed &copy)
 {
 	if (this == &copy)
 		return *this;
-	this->fixedPoint = copy.getRawBits();
+	this->myFixedPoint = copy.getRawBits();
 	return (*this);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->fixedPoint = raw;
+	this->myFixedPoint = raw;
 }
 
 int Fixed::getRawBits(void) const
 {
-	return (this->fixedPoint);
+	return (this->myFixedPoint);
 }
 
 float Fixed::toFloat( void ) const
 {
-	return (fixedPoint / float((1 << _fractionalBits)));
+	return (myFixedPoint / float((1 << _fractionalBits)));
 }
 
 int Fixed::toInt( void ) const
 {
-	return (fixedPoint / (1 << _fractionalBits));
+	return (myFixedPoint / (1 << _fractionalBits));
 }
 
 std::ostream &operator << (std::ostream &out, const Fixed &fixed)
@@ -77,42 +77,42 @@ std::ostream &operator << (std::ostream &out, const Fixed &fixed)
 /******************************************************************/
 bool Fixed::operator > (const Fixed &fixed) const
 {
-	if (this->fixedPoint > fixed.getRawBits())
+	if (this->myFixedPoint > fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator < (const Fixed &fixed) const
 {
-	if (this->fixedPoint < fixed.getRawBits())
+	if (this->myFixedPoint < fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator >= (const Fixed &fixed) const
 {
-	if (this->fixedPoint >= fixed.getRawBits())
+	if (this->myFixedPoint >= fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator <= (const Fixed &fixed) const
 {
-	if (this->fixedPoint <= fixed.getRawBits())
+	if (this->myFixedPoint <= fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator == (const Fixed &fixed) const
 {
-	if (this->fixedPoint == fixed.getRawBits())
+	if (this->myFixedPoint == fixed.getRawBits())
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator != (const Fixed &fixed) const
 {
-	if (this->fixedPoint != fixed.getRawBits())
+	if (this->myFixedPoint != fixed.getRawBits())
 		return (true);
 	return (false);
 }
@@ -122,14 +122,14 @@ bool Fixed::operator != (const Fixed &fixed) const
 Fixed Fixed::operator + (const Fixed &fixed) const
 {
 	Fixed result;
-	result.fixedPoint = this->fixedPoint + fixed.getRawBits();
+	result.myFixedPoint = this->myFixedPoint + fixed.getRawBits();
 	return result;
 }
 
 Fixed Fixed::operator - (const Fixed &fixed) const
 {
 	Fixed result;
-	result.fixedPoint = this->fixedPoint - fixed.getRawBits();
+	result.myFixedPoint = this->myFixedPoint - fixed.getRawBits();
 	return result;
 }
 
@@ -142,7 +142,7 @@ Fixed Fixed::operator / (const Fixed &fixed) const
 {
 	Fixed result;
 	if (fixed.getRawBits() != 0)
-		result.fixedPoint = this->fixedPoint / fixed.getRawBits();
+		result.myFixedPoint = this->myFixedPoint / fixed.getRawBits();
 	return result;
 }
 /*****************************************************************/
@@ -152,33 +152,33 @@ Fixed Fixed::operator / (const Fixed &fixed) const
 // Pre-increment operator (++fixed)
 Fixed& Fixed::operator ++ (void)
 {
-	this->fixedPoint++;
+	this->myFixedPoint++;
 	return (*this);
 }
 
 // Post-decrement operator (fixed++)
 Fixed Fixed::operator ++ (int)
 {
-	Fixed original(*this);
+	Fixed copy(*this);
 	++(*this); // Call pre-decrement
-	return original;
+	return copy;
 }
 
 // Pre-decrement operator (--fixed)
 Fixed& Fixed::operator -- (void)
 {
-	this->fixedPoint--;
+	this->myFixedPoint--;
 	return (*this);
 }
 
 // Post-decrement operator (fixed--)
 Fixed Fixed::operator -- (int)
 {
-	Fixed original(*this);
+	Fixed copy(*this);
 	--(*this); // Call pre-increment
-	return original;
+	return copy;
 }
-/******************************************************/
+/******************************************************
 
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
