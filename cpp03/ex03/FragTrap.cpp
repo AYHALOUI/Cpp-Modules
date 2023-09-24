@@ -12,25 +12,21 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap():ClapTrap()
 {
     std::cout << "Default constructor called from FragTrap" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy)
+FragTrap::FragTrap(const FragTrap &copy):ClapTrap(copy)
 {
     std::cout << "Copy Constructor called from FragTrap" << std::endl;
-    (*this) = copy;
 }
 
 FragTrap& FragTrap::operator = (const FragTrap &copy)
 {
     if (this == &copy)
         return (*this);
-    this->clap_Name = copy.clap_Name;
-    this->clap_hitPoints = copy.clap_hitPoints;
-    this->clap_energyPoints = copy.clap_energyPoints;
-    this->clap_attackDamage = copy.clap_attackDamage;
+    ClapTrap::operator=(copy);
     return (*this);
 }
 

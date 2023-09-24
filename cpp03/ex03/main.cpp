@@ -11,19 +11,24 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	FragTrap a("ahaloui");
-	FragTrap b("bhaloui");
+	ClapTrap claptrap("Clappy");
+    claptrap.attack("Enemy");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(3);
 
-	
-	a.attack("bhaloui");
-	b.takeDamage(20);
-	b.attack("ahaloui");
-	a.takeDamage(20);
-	a.highFivesGuys();
-	b.highFivesGuys();
+    ScavTrap scavtrap("Scavy");
+    scavtrap.attack("Enemy");
+    scavtrap.takeDamage(20);
+    scavtrap.guardGate();
+
+    // FragTrap fragtrap("Fraggy");
+    // fragtrap.attack("Enemy");
+    // fragtrap.takeDamage(30);
+    // fragtrap.highFivesGuys();
 	
 	return (0);
 }
