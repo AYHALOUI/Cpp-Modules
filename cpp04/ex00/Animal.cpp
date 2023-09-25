@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:12:10 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 16:06:42 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:04:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Animal::Animal():type("Unkonwn")
 {
-    std::cout << "Animal Default constructor called" << std::endl;
+    std::cout << "Default constructor called from Animal" << std::endl;
 }
 
 Animal::Animal(const Animal &copy)
 {
-    std::cout << "Animal Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called from Animal" << std::endl;
     (*this) = copy;
 }
 
-Animal &Animal::operator =(const Animal &copy)
+Animal &Animal::operator = (const Animal &copy)
 {
-    std::cout << "Animal assigment operator called" << std::endl;
+    std::cout << "Assigment operator called from Animal" << std::endl;
     if (this == &copy)
         return (*this);
     this->type = copy.type;
@@ -34,7 +34,7 @@ Animal &Animal::operator =(const Animal &copy)
 
 Animal::~Animal()
 {
-    std::cout << "Animal Destructor called" << std::endl;
+    std::cout << "Destructor called from Animal" << std::endl;
 }
 
 std::string Animal::getType() const
