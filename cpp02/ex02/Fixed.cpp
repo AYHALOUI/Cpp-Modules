@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:45:01 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 12:25:58 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/24 12:34:15 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ Fixed::Fixed(const float floatingPoint):myFixedPoint(int(roundf(floatingPoint * 
 
 Fixed::Fixed(const Fixed &copy)
 {
-	*this = copy;
+	(*this) = copy;
 }
 
 Fixed &Fixed::operator = (const Fixed &copy)
 {
 	if (this == &copy)
 		return *this;
-	this->myFixedPoint = copy.getRawBits();
+	this->myFixedPoint = copy.myFixedPoint;
 	return (*this);
 }
 
@@ -77,42 +77,42 @@ std::ostream &operator << (std::ostream &cout, const Fixed &fixed)
 /******************************************************************/
 bool Fixed::operator > (const Fixed &fixed) const
 {
-	if (this->myFixedPoint > fixed.getRawBits())
+	if (this->myFixedPoint > fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator < (const Fixed &fixed) const
 {
-	if (this->myFixedPoint < fixed.getRawBits())
+	if (this->myFixedPoint < fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator >= (const Fixed &fixed) const
 {
-	if (this->myFixedPoint >= fixed.getRawBits())
+	if (this->myFixedPoint >= fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator <= (const Fixed &fixed) const
 {
-	if (this->myFixedPoint <= fixed.getRawBits())
+	if (this->myFixedPoint <= fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator == (const Fixed &fixed) const
 {
-	if (this->myFixedPoint == fixed.getRawBits())
+	if (this->myFixedPoint == fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator != (const Fixed &fixed) const
 {
-	if (this->myFixedPoint != fixed.getRawBits())
+	if (this->myFixedPoint != fixed.myFixedPoint)
 		return (true);
 	return (false);
 }
@@ -141,7 +141,7 @@ Fixed Fixed::operator * (const Fixed &fixed)
 Fixed Fixed::operator / (const Fixed &fixed)
 {
 	Fixed result;
-	if (fixed.getRawBits() != 0)
+	if (fixed.myFixedPoint != 0)
 		result.myFixedPoint = this->myFixedPoint / fixed.myFixedPoint;
 	return result;
 }

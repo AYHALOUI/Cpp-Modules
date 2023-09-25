@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:06:56 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 21:11:32 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:54:06 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 
 		FragTrap(std::string name);
+		void attack(const std::string& target);
 		void highFivesGuys(void);
 };
 

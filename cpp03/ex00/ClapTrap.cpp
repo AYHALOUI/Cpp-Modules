@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:03 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 21:16:54 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 12:25:33 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,17 @@ void ClapTrap:: takeDamage(unsigned int amount)
 
 }
 
+
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->clap_hitPoints > 0)
 	{
 		this->clap_hitPoints += amount;
+		this->clap_energyPoints --;
 		std::cout << "ClapTrap " << this->clap_Name << " is repaired for " << amount << " hit points!" << std::endl;
 		if (this->clap_hitPoints > 10)
 			this->clap_hitPoints = 10;
-		this->clap_energyPoints --;
 	}
 	else
 		std::cout << "ClapTrap can't be repaired," << this->clap_Name << " is already destroyed!" << std::endl;
@@ -92,12 +94,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 /*******************************************************************************/
 
-void ClapTrap::printInfo()
-{
-	std::cout << "\n******************************" << std::endl;
-	std::cout <<"name: " <<this->clap_Name << std::endl;
-	std::cout <<"hitPoints: " << this->clap_hitPoints << std::endl;
-	std::cout << "energyPoints: " << this->clap_energyPoints << std::endl;
-	std::cout << "attackDamage:" << this->clap_attackDamage << std::endl;
-	std::cout << "******************************" << std::endl;
-}
+// void ClapTrap::printInfo()
+// {
+// 	std::cout << "\n******************************" << std::endl;
+// 	std::cout <<"name: " <<this->clap_Name << std::endl;
+// 	std::cout <<"hitPoints: " << this->clap_hitPoints << std::endl;
+// 	std::cout << "energyPoints: " << this->clap_energyPoints << std::endl;
+// 	std::cout << "attackDamage:" << this->clap_attackDamage << std::endl;
+// 	std::cout << "******************************" << std::endl;
+// }

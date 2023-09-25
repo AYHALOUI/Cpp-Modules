@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:12:13 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/18 14:20:40 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 12:02:52 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		/*************************************/
-		void printInfo();	
+		// void printInfo();	
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:40:18 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 21:27:11 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 12:07:39 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ FragTrap::FragTrap(std::string name):ClapTrap(name)
     std::cout << "Constructor Parameterized called from FragTrap" << std::endl;
 }
 
+
+void FragTrap::attack(const std::string& target)
+{
+    if (this->clap_hitPoints > 0 && this->clap_energyPoints > 0)
+	{
+		std::cout << "FragTrap " << this->clap_Name << " attack " << target << ", causing " << this->clap_attackDamage << " points of damage!" << std::endl;
+		this->clap_energyPoints --;
+	}
+	else
+		std::cout << "FragTrap " << this->clap_Name << " can't attack. Not enough energy or hit points." << std::endl;
+}
 
 void FragTrap::highFivesGuys(void)
 {
