@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/25 15:44:41 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 17:38:45 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,42 @@
 
 int main()
 {
+	Dog dog;
 	Cat cat;
-	std::cout << "************" << std::endl;
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
+	Animal animal;
+	std::cout << "*****************" << std::endl;
+	dog.makeSound();
+	std::cout << "*****************" << std::endl;
+	cat.makeSound();
+	std::cout << "*****************" << std::endl;
+	animal.makeSound();
+	std::cout << "*****************" << std::endl;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-	// delete i;
-	// delete j;
-	// delete meta;
+	delete i;
+	delete j;
+	delete meta;
 
-	// std::cout << "******************************************"<< std::endl;
+	std::cout << "-------------- More tests ----------------"<< std::endl;
+	std::cout << "******************************************"<< std::endl;
 	
-	// WrongAnimal *wrongCat = new WrongCat();
-	// WrongAnimal *wrongAnimal = new WrongAnimal();
+	WrongAnimal *wrongCat = new WrongCat();
+	WrongAnimal *wrongAnimal = new WrongAnimal();
 
-	// std::cout << wrongCat->getType() << std::endl;
+	std::cout << wrongCat->getType() << std::endl;
 	
-	// wrongCat->makeSound();
-	// wrongAnimal->makeSound();
+	wrongCat->makeSound();
+	wrongAnimal->makeSound();
 
-
-	// delete wrongCat;
-	// delete wrongAnimal;
+	delete wrongCat;
+	delete wrongAnimal;
 
 	return (0);
 }

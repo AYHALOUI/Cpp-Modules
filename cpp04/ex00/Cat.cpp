@@ -6,16 +6,16 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:33 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:38:02 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 17:37:38 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 
-Cat::Cat(): Animal()
+Cat::Cat():Animal()
 {
-    std::cout << "Cat Default constructor called" << std::endl;
+    std::cout << "Default constructor called from Cat" << std::endl;
     this->type = "Cat";
 }
 
@@ -27,17 +27,19 @@ Cat::Cat(const Cat &copy): Animal(copy)
 Cat &Cat::operator = (const Cat &copy)
 {
     std::cout << "Cat Assigment operator called" << std::endl;
-    Animal::operator = (copy);
+    if (this == &copy)
+        return (*this);
+    this->type = copy.type;
     return (*this);
 }
 
 Cat::~Cat()
 {
-    std::cout << "Cat Destructor called" << std::endl;
+    std::cout << "Destructor called from Cat" << std::endl;
 }
 
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat makeSound called" << std::endl;
+    std::cout << "\033[32m" << "Cat Meows" << "\033[0m" << std::endl;
 }

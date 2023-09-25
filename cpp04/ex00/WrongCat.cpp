@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 18:09:42 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 16:41:49 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ WrongCat &WrongCat::operator = (const WrongCat &copy)
 
 WrongCat::~WrongCat()
 {
-    std::cout << "WrongCat Destructor called" << std::endl;
+    std::cout << "Destructor called from WrongCat" << std::endl;
 }
 
 void WrongCat::makeSound() const

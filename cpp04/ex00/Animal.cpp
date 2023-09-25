@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:12:10 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/25 15:04:00 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 16:38:34 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-    std::cout << "Animal makeSound called" << std::endl;
+    std::cout << "\033[34m" << "Animal makes a generic sound"<< "\033[0m" << std::endl;
 }

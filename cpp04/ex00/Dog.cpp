@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:40 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:27:35 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 17:18:59 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,31 @@
 
 Dog::Dog(): Animal()
 {
-    std::cout << "Dog Default constructor called" << std::endl;
+    std::cout << "Default constructor called from Dog" << std::endl;
     this->type = "Dog";
 }
 
 Dog::Dog(const Dog &copy): Animal(copy)
 {
-    std::cout << "Dog Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called from Dog" << std::endl;
 }
 
 Dog &Dog::operator = (const Dog &copy)
 {
-    std::cout << "Dog Assignation operator called" << std::endl;
-    Animal::operator = (copy);
+    std::cout << "Assigment operator called from Dog" << std::endl;
+    if (this == &copy)
+        return (*this);
+    this->type = copy.type;
     return (*this);
 }
 
 Dog::~Dog()
 {
-    std::cout << "Dog Destructor called" << std::endl;
+    std::cout << "Destructor called from Dog" << std::endl;
 }
 
 
 void Dog::makeSound() const
 {
-    std::cout << "Dog makeSound called" << std::endl;
+    std::cout << "\033[31m" << "Dog Barks" << "\033[0m" << std::endl;
 }

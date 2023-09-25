@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:38:05 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 16:37:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Cat : public Animal
         Cat(const Cat &copy);
         Cat &operator = (const Cat &copy);
         ~Cat();
+
         void makeSound() const;
 };
 
