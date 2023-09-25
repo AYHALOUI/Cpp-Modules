@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:44:29 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:15:46 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "WrongAnimal Default constructor called" << std::endl;
+    std::cout << "Default constructor called from WrongAnimal" << std::endl;
     this->type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-    std::cout << "WrongAnimal Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called from WrongAnimal" << std::endl;
     (*this) = copy;
 }
 
 WrongAnimal &WrongAnimal::operator =(const WrongAnimal &copy)
 {
-    std::cout << "WrongAnimal Assigment operator called" << std::endl;
+    std::cout << "Assigment operator called from WrongAnimal" << std::endl;
     if (this == &copy)
         return (*this);
     this->type = copy.type;
@@ -35,7 +35,7 @@ WrongAnimal &WrongAnimal::operator =(const WrongAnimal &copy)
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal Destructor called" << std::endl;
+    std::cout << "Destructor called from WrongAnimal" << std::endl;
 }
 
 std::string WrongAnimal::getType() const
