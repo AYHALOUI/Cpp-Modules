@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/19 17:44:29 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 14:15:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "WrongAnimal Default constructor called" << std::endl;
+    std::cout << "Default constructor called from WrongAnimal" << std::endl;
     this->type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-    std::cout << "WrongAnimal Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called from WrongAnimal" << std::endl;
     (*this) = copy;
 }
 

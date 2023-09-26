@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/25 17:38:45 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 14:14:26 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,23 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << "--------- Destruction ---------------" << std::endl;
 	delete i;
 	delete j;
 	delete meta;
+	std::cout << "--------- Destruction1 ---------------" << std::endl;
 
 	std::cout << "-------------- More tests ----------------"<< std::endl;
 	std::cout << "******************************************"<< std::endl;
 	
+	WrongAnimal *wrongAnimal  = new WrongAnimal();
 	WrongAnimal *wrongCat = new WrongCat();
-	WrongAnimal *wrongAnimal = new WrongAnimal();
 
-	std::cout << wrongCat->getType() << std::endl;
-	
-	wrongCat->makeSound();
 	wrongAnimal->makeSound();
+	wrongCat->makeSound();
 
-	delete wrongCat;
 	delete wrongAnimal;
-
+	delete wrongCat;
+	
 	return (0);
 }
