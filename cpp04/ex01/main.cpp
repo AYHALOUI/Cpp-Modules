@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/26 16:26:32 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 17:22:55 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,29 +57,33 @@ void ff()
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+	Dog basic;
+{
+Dog tmp = basic;
+}
+	// const Animal* j = new Dog();
+	// const Animal* i = new Cat();
+	// delete j;//should not create a leak
+	// delete i;
 
-	std::cout << "-------- My Test ---------" << std::endl;
-	int size = 4;
-	Animal *arraysOfAnimals[size];
+	// std::cout << "-------- My Test ---------" << std::endl;
+	// int size = 4;
+	// Animal *arraysOfAnimals[size];
 
-	std::cout << "------ Dog Creation ------" << std::endl;
-	for (int i = 0; i < size/2; i++)
-		arraysOfAnimals[i] = new Cat();
+	// std::cout << "------ Dog Creation ------" << std::endl;
+	// for (int i = 0; i < size/2; i++)
+	// 	arraysOfAnimals[i] = new Cat();
 	
-	std::cout << "------ Cat Creation ------" << std::endl;
-	for (int i = 2; i < size; i++)
-		arraysOfAnimals[i] = new Dog();
+	// std::cout << "------ Cat Creation ------" << std::endl;
+	// for (int i = 2; i < size; i++)
+	// 	arraysOfAnimals[i] = new Dog();
 	
-	std::cout << "------ Make sound ------" << std::endl;
-	for (int i = 0; i < size; i++)
-		arraysOfAnimals[i]->makeSound();
+	// std::cout << "------ Make sound ------" << std::endl;
+	// for (int i = 0; i < size; i++)
+	// 	arraysOfAnimals[i]->makeSound();
 		
-	std::cout << "------ destructions ------" << std::endl;
-	for (int i = 0; i < size; i++)
-		delete arraysOfAnimals[i];
+	// std::cout << "------ destructions ------" << std::endl;
+	// for (int i = 0; i < size; i++)
+	// 	delete arraysOfAnimals[i];
 	return (0);
 }
