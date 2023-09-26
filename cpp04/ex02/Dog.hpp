@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:37 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 12:10:52 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 14:37:09 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal
 {
     private:
-        Brain *brain;
+        Brain *ptrBrain;
         
     public:
         Dog();

@@ -6,51 +6,43 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:18:33 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/25 15:12:57 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 16:07:48 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Brain.hpp"
 
-
-Cat::Cat(): Animal()
+Cat::Cat():Animal()
 {
-   std::cout << "Default constructor called from Cat" << std::endl;
+    std::cout << "Default constructor called from Cat" << std::endl;
     this->type = "Cat";
-    this->brain = new Brain();
+    this->ptrBrain = new Brain();
 }
 
 Cat::Cat(const Cat &copy): Animal(copy)
 {
     std::cout << "Copy constructor called from Cat" << std::endl;
-    brain = new Brain();
+    this->ptrBrain = new Brain();
     (*this) = copy;
 }
 
 Cat &Cat::operator = (const Cat &copy)
 {
     std::cout << "Assigment operator called from Cat" << std::endl;
-    Animal::operator = (copy);
-    if (this != &copy)
-        *(this->brain) = *(copy.brain);
+    if (this == &copy)
+        return (*this);
+    *(this->ptrBrain) = *(copy.ptrBrain);
     return (*this);
 }
 
 Cat::~Cat()
 {
     std::cout << "Destructor called from Cat" << std::endl;
-    delete this->brain;
+    delete (this->ptrBrain);
 }
 
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat makeSound called" << std::endl;
+    std::cout << "\033[32m" << "Cat Meows" << "\033[0m" << std::endl;
 }
-
-// Cat::Cat(std::string ideas[100])
-// {
-//     std::cout << "Parametric constructor called from Cat" << std::endl;
-//     this->brain = new Brain(ideas);
-// }
