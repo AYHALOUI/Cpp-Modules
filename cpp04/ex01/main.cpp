@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/20 14:47:52 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 16:23:16 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+#include "Brain.hpp"
 
 // class Test
 // {
@@ -30,16 +31,13 @@
 	
 // 		Test(const Test &copy)
 // 		{
-// 			this->ptr = new int (*(copy.ptr));
+// 			(*this) = copy;
 // 		}
 		
 // 		Test& operator = (const Test& copy)
 // 		{
 // 			if (this != &copy)
-// 			{
-// 				delete ptr;
 // 				this->ptr = new int (*(copy.ptr));
-// 			}
 // 			return (*this);
 // 		}
 // 		int getValue()
@@ -59,29 +57,23 @@ void ff()
 
 int main()
 {
-	atexit(ff);
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << "-------------------------------------" << std::endl;
-	delete j;
-	delete i;
+	int size = 4;
+	Animal *arraysOfAnimals[size];
+
+	std::cout << "------ Dog Creation ------" << std::endl;
+	for (int i = 0; i < size/2; i++)
+		arraysOfAnimals[i] = new Cat();
 	
-	// Animal * c = new Cat();
-	// Cat b = (Cat &)*c;
-	// delete c;
-	Animal *animals[4];
-	std::cout << "-------------------------------------" << std::endl;
-	for (int i = 0; i < 2; i++)
-		animals[i] = new Dog();
-	std::cout << "-------------------------------------" << std::endl;
-	for (int i = 2; i < 4; i++)
-		animals[i] = new Cat();
-	std::cout << "-------------------------------------" << std::endl;
-	for (size_t i = 0; i < 4; i++)
-	{
-		animals[i]->makeSound();
-		delete animals[i];
-	}
-	std::cout << "-------------------------------------" << std::endl;
+	std::cout << "------ Cat Creation ------" << std::endl;
+	for (int i = 2; i < size; i++)
+		arraysOfAnimals[i] = new Dog();
+	
+	std::cout << "------ Make sound ------" << std::endl;
+	for (int i = 0; i < size; i++)
+		arraysOfAnimals[i]->makeSound();
+		
+	std::cout << "------ destructions ------" << std::endl;
+	for (int i = 0; i < size; i++)
+		delete arraysOfAnimals[i];
 	return (0);
 }

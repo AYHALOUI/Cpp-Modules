@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/25 15:09:40 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 14:18:33 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat(): WrongAnimal()
 {
-    std::cout << "Default constructor called from WrongCat" << std::endl;
+    std::cout << "WrongCat Default constructor called" << std::endl;
     this->type = "WrongCat";
 }
 

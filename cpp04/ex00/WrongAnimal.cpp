@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:40:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/26 14:15:11 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 14:18:04 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 
 WrongAnimal &WrongAnimal::operator =(const WrongAnimal &copy)
 {
-    std::cout << "WrongAnimal Assigment operator called" << std::endl;
+    std::cout << "Assigment operator called from WrongAnimal" << std::endl;
     if (this == &copy)
         return (*this);
     this->type = copy.type;
@@ -35,7 +35,7 @@ WrongAnimal &WrongAnimal::operator =(const WrongAnimal &copy)
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal Destructor called" << std::endl;
+    std::cout << "Destructor called from WrongAnimal" << std::endl;
 }
 
 std::string WrongAnimal::getType() const
