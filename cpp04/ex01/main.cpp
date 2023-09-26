@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:11:25 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/26 16:23:16 by ahaloui          ###   ########.fr       */
+/*   Updated: 2023/09/26 16:26:32 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,12 @@ void ff()
 
 int main()
 {
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
+
+	std::cout << "-------- My Test ---------" << std::endl;
 	int size = 4;
 	Animal *arraysOfAnimals[size];
 
