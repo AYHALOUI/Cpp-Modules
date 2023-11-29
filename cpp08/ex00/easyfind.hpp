@@ -1,0 +1,17 @@
+#ifndef EASTFIND_HPP
+# define EASTFIND_HPP
+
+# include <iostream>
+# include <algorithm>
+# include <vector>
+
+template <typename T>
+int	easyfind(T &container, int n)
+{
+    typename T::iterator it = std::find(container.begin(), container.end(), n);
+    if (it == container.end())
+        throw std::exception();
+    return (*it);
+}
+
+#endif
