@@ -11,29 +11,20 @@
 /* ************************************************************************** */
 
 #include "BureauCrat.hpp"
-#include "Form.hpp"
 
 int main()
 {
     try
     {
-    //     BureauCrat b("BureauCrat aymene", 150);
-    //     std::cout << "*****************" << std::endl;
-    //     std::cout << b << std::endl;
-    //     b.incrementGrade();
-    //     std::cout << b << std::endl;
-    //     b.decrementGrade();
-    //     std::cout << b << std::endl;
-    //     b.decrementGrade();
-    //     std::cout << b << std::endl;
-    //     Form f("Form1", 150, 150);
-    //     std::cout << f << std::endl;
-    //     b.signForm(f);
-    //     std::cout << f << std::endl;
-    //     b.incrementGrade();
-    //     std::cout << b << std::endl;
-    //     b.signForm(f);
-    //     std::cout << f << std::endl;
+        BureauCrat b("BureauCrat aymene", 150);
+        std::cout << "*****************" << std::endl;
+        std::cout << b << std::endl;
+        b.incrementGrade();
+        std::cout << b << std::endl;
+        b.decrementGrade();
+        std::cout << b << std::endl;
+        b.decrementGrade();
+        std::cout << b << std::endl;
     }
     catch(const std::exception& e)
     {
