@@ -66,7 +66,14 @@
     "stack": "cpp",
     "__functional_03": "cpp",
     "memory_resource": "cpp",
-    "filesystem": "cpp"
+    "filesystem": "cpp",
+    "*.tcc": "cpp",
+    "clocale": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "numbers": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

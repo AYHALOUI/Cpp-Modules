@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = serialize
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++11
 
-SRC = ScalarConverter.cpp main.cpp
+SRC = main.cpp Serializer.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -37,3 +37,4 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
+
