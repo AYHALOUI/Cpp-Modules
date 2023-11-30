@@ -11,12 +11,37 @@
 /* ************************************************************************** */
 
 #include "BureauCrat.hpp"
-#include "Form.hpp"
+// #include "Form.hpp"
+
+class Enclosing 
+{
+    private:
+        int x;
+    
+    public:
+        Enclosing()
+        {
+
+        };
+    class Nested
+    {
+        public:
+            int y;
+        void funNested(Enclosing e)
+        {
+            e.x = 10;
+            std::cout << e.x << std::endl;
+        }
+    };
+};
 
 int main()
 {
-    try
-    {
+    Enclosing en1;
+    Enclosing::Nested *n1 = new Enclosing::Nested();
+    n1->funNested(en1);
+    // try
+    // {
     //     BureauCrat b("BureauCrat aymene", 150);
     //     std::cout << "*****************" << std::endl;
     //     std::cout << b << std::endl;
@@ -34,11 +59,11 @@ int main()
     //     std::cout << b << std::endl;
     //     b.signForm(f);
     //     std::cout << f << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
     
     return (0);
 }
