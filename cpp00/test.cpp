@@ -14,6 +14,8 @@ bool is_uppercase(const std::string &s)
 	return true;
 }
 
+
+
 int basicOp(char op, int val1, int val2) 
 {
 	switch (op)
