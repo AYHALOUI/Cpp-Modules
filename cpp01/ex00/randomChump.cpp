@@ -18,3 +18,4 @@ void randomChump( std::string name )
 	rundomZombie->announce();
 	delete rundomZombie;
 }
+
