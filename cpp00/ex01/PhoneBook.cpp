@@ -14,8 +14,9 @@
 
 PhoneBook::PhoneBook()
 {
-	
+	std::cout << "default constructor" << std::endl;
 }
+
 int PhoneBook::getNumContact()
 {
 	return (this->numContact);
@@ -32,9 +33,8 @@ std::string PhoneBook:: truncateString(std::string str, int maxLength)
 {
     if (str.length() <= maxLength)
         return str;
-    else{
+    else
         return str.substr(0, maxLength) + ".";
-    }
 }
 
 void PhoneBook::displayContacts()
