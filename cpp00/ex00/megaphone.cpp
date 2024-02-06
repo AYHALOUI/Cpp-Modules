@@ -12,6 +12,7 @@
 
 #include "iostream"
 
+
 int main(int ac, char **av) 
 {
     std::string name;
@@ -26,6 +27,7 @@ int main(int ac, char **av)
             std::cout << name[i] << "\n";
         }
     }
+    
     std::cout << name;
     return(0);
 }

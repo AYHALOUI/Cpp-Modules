@@ -14,7 +14,7 @@
 
 Contact::Contact()
 {
-	
+	std::cout << "Contact constructor" << std::endl;	
 }
 Contact::Contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret)
 {
