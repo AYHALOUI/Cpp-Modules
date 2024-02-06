@@ -77,7 +77,6 @@ void Contact::setDarkestSecret(std::string darkestSecret)
 }
 
 /*********************************************************************/
-
 void Contact::displayContact()
 {
 	std::cout << "******************************************************\n";
@@ -88,3 +87,4 @@ void Contact::displayContact()
 	std::cout << "Darkset Secret: " << this->darkestSecret << std::endl;
 	std::cout << "******************************************************\n";
 }
+/**********************************************************************/
