@@ -12,13 +12,12 @@
 
 #include "PhoneBook.hpp"
 
-
 int main(int ac, char **av)
 {
 	PhoneBook phonebook;
 	Contact newContact;
-	std::string commande;
 
+	std::string commande;
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
