@@ -20,7 +20,7 @@ int Account::_totalNbWithdrawals = 0;
 /***************************************************/
 Account::Account()
 {
-	
+	std::cout << "default constructor" << std::endl;
 }
 
 Account::Account(int initial_deposit)

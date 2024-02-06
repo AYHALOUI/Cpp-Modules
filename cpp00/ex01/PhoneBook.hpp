@@ -19,8 +19,8 @@
 class PhoneBook{
 
 	private:
-		Contact contacts[8];
-		int numContact;
+		Contact	contacts[8];
+		int		numContact;
 		
 	public:
 		PhoneBook();
@@ -32,5 +32,4 @@ class PhoneBook{
 		void displayContactByIndex(int index);
 		int getIndex(int index);
 };
-
 #endif
