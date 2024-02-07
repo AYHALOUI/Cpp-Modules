@@ -29,5 +29,4 @@ class HumanB
         void setWeapon(Weapon &typePTR);
         ~HumanB();
 };
-
 #endif

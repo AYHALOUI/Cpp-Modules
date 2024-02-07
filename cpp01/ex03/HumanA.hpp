@@ -28,5 +28,4 @@ class HumanA
         void attack();
         ~HumanA();
 };
-
 #endif
