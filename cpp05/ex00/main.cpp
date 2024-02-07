@@ -37,9 +37,19 @@ class Enclosing
 
 int main()
 {
-    Enclosing en1;
-    Enclosing::Nested *n1 = new Enclosing::Nested();
-    n1->funNested(en1);
+
+    int a,b;
+    float c;
+
+    a = 20;
+    b = 40;
+
+
+    std::cout << a << std::endl;
+    std::cout << a/b << std::endl;
+    // Enclosing en1;
+    // Enclosing::Nested *n1 = new Enclosing::Nested();
+    // n1->funNested(en1);
     // try
     // {
     //     BureauCrat b("BureauCrat aymene", 150);
