@@ -14,7 +14,6 @@
 
 int main()
 {	
-
 	std::string name = "HI THIS IS BRAIN";
 	std::string *stringPTR = &name;
 	std::string &stringREF = name;
@@ -30,5 +29,4 @@ int main()
 	std::cout << "Value of stringPTR: "<< *stringPTR << std::endl;
 	std::cout << "Value of stringREF: "<< stringREF << std::endl;
 	return (0);
-	
 }
