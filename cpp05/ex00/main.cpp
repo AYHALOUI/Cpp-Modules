@@ -38,15 +38,16 @@ class Enclosing
 int main()
 {
 
-    int a,b;
-    float c;
-
-    a = 20;
-    b = 40;
+    int a = 10;
+    char c = 'a';
 
 
-    std::cout << a << std::endl;
-    std::cout << a/b << std::endl;
+    (void)a;
+    int *q = (int *)&c;
+    std::cout << "****************\n";
+    std::cout << "|" <<  &c << "|" << std::endl;
+    std::cout << "****************\n";
+    std::cout << q << std::endl;
     // Enclosing en1;
     // Enclosing::Nested *n1 = new Enclosing::Nested();
     // n1->funNested(en1);

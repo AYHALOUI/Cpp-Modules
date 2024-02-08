@@ -18,8 +18,10 @@ class Array
         Array(void) : _array(NULL), _size(0) {}
         Array(unsigned int n) : _array(new T[n]), _size(n) {}
         Array(Array const &src) : _array(NULL), _size(0) { *this = src; }
-        ~Array(void) { delete [] _array; }
-
+        ~Array(void) 
+        { 
+            delete [] _array; 
+        }
         Array	&operator=(Array const &src)
         {
             if (this != &src)
