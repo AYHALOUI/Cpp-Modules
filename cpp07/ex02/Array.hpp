@@ -45,5 +45,4 @@ class Array
 
         int	size(void) const { return (_size); }
 };
-
 #endif
