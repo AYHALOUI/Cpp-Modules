@@ -9,7 +9,6 @@ class BureauCrat
     private:
         std::string name;
         int grade;
-    
     public:
         BureauCrat();
         BureauCrat(const BureauCrat &copy);
