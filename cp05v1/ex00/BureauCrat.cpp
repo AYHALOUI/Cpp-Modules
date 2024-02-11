@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+#include "BureauCrat.hpp"
 
 
 BureauCrat::BureauCrat()
@@ -6,7 +6,7 @@ BureauCrat::BureauCrat()
     std::cout << "Default Constructor" << std::endl;
 }
 
-BureauCrat::operator=(const BureauCrat &copy)
-{
+// BureauCrat::operator=(const BureauCrat &copy)
+// {
     
-}
+// }

@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 
+
 class BureauCrat
 {
     private:
