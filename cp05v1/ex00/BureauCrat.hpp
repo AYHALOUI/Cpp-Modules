@@ -7,12 +7,16 @@
 class BureauCrat
 {
     private:
-        std::string name;
+        const std::string name;
         int grade;
+    
     public:
         BureauCrat();
         BureauCrat(const BureauCrat &copy);
         BureauCrat &operator = (const BureauCrat &copy);
         ~BureauCrat();
+
+        /***************************************/
+        BureauCrat(const std::string name, int grade);
 };
 #endif
