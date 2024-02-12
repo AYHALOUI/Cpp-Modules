@@ -1,31 +1,17 @@
 #include "BureauCrat.hpp"
-#include <stdexcept>
-
-class Enclosing {
-
-    private:
-        int x;
-    
-    public:
-    class Nested {
-
-        public:
-        int y;
-
-        void NestedFun(Enclosing *e)
-        {
-            e->x = 10;
-            this->y = 30;
-            std::cout << e->x << std::endl;
-            std::cout << y << std::endl;
-        }
-    };
-};
-
 int main()
 {
+    std::cout << "*************************" << std::endl;
+    BureauCrat b1("aymene", 1);
+    // BureauCrat b2("haloui", 150);
+
+    // try
+    // {
+    //     b1.incrementGrade();
+    // }
+    // catch(...)
+    // {
+    //     std::cout << "Caught" << std::endl;
+    // }
     
-    Enclosing::Nested test;
-    test.NestedFun(new Enclosing());
-    return (0);
 }

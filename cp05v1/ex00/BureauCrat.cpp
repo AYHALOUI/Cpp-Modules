@@ -16,7 +16,7 @@ BureauCrat& BureauCrat::operator = (const BureauCrat &copy)
 {
     if (this == &copy)
         return (*this);
-    this->name = copy.name;
+    // this->name = copy.name;
     this->grade = copy.grade;
     return (*this);
 }
@@ -31,4 +31,29 @@ BureauCrat::~BureauCrat()
 BureauCrat::BureauCrat(const std::string name, int grade): name(name), grade(grade)
 {
     std::cout << "Constructor Parameterized Called" << std::endl;
+}
+
+
+std::string BureauCrat::getName()
+{
+    return (this->name);
+}
+
+int BureauCrat::getGrade()
+{
+    return (this->grade);
+}
+
+void BureauCrat::incrementGrade()
+{
+    this->grade --;
+    if (this->grade < 1)
+        throw GradeTooHighException();
+}
+
+void BureauCrat::decrementGrade()
+{
+    this->grade ++;
+    if (this->grade > 150)
+        throw GradeTooHighException();
 }
