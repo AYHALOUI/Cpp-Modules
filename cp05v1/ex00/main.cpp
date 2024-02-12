@@ -1,25 +1,18 @@
 #include "BureauCrat.hpp"
 
-void test(int x)
-{
-    if (x == 0)
-        throw BureauCrat::GradeTooHighException();
-    else
-        throw BureauCrat::GradeTooLowException();
-}
 int main()
 {
-    try
-    {
-        test(0);
+    BureauCrat *bureaucrat = new BureauCrat("aymene", 150); 
+    BureauCrat *bureaucrat2 = new BureauCrat("haloui", 1);
+
+   try {
+        bureaucrat->decrementGrade();
+        bureaucrat2->incrementGrade();
     }
-    catch (BureauCrat::GradeTooHighException &e)
-    {
-        std::cout << "Caught an exception: " << e.what() << std::endl;
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
     }
-    catch (BureauCrat::GradeTooLowException &e)
-    {
-        std::cout << "Caught an exception: " << e.what() << std::endl;
-    }
+    delete bureaucrat;
+    delete bureaucrat2;
     return (0);
 }
