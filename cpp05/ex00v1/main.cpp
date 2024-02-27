@@ -1,8 +1,12 @@
 #include "BureauCrat.hpp"
 
+
+
 int main()
 {
-    std::cout << "Hello" << std::endl;
+
+    //int grade = 1;
+    BureauCrat b("aymene", 1);
     return (0);
 }
 

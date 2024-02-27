@@ -25,10 +25,18 @@ class BureauCrat
 
 	public:
 		BureauCrat();
-		BureauCrat(const std::string name, int grade);
+		BureauCrat(const std::string& name, int grade);
 		BureauCrat(const BureauCrat& copy);
 		BureauCrat& operator = (const BureauCrat& copy);
 		~BureauCrat();
+
+		int getGrade() const;
+		const std::string& getName() const;
+
+		class GradeTooHighException:public std::exception
+		{
+			
+		};
 };
 
 #endif
