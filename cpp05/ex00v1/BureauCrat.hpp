@@ -33,10 +33,36 @@ class BureauCrat
 		int getGrade() const;
 		const std::string& getName() const;
 
-		class GradeTooHighException:public std::exception
+		void incrementBureaucratGrade();
+		void decrementBureaucratGrade();
+
+		class GradeTooHighException : public std::exception
 		{
-			
+			public:
+				GradeTooHighException()
+                {
+                    std::cout << "Default Constructor Called from GradeTooHighException" << std::endl;
+                }
+				const char* what() const throw()
+				{
+					return "Grade too low";
+				}
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				GradeTooLowException()
+                {
+                    std::cout << "Default Constructor Called from GradeTooLowException" << std::endl;
+                }
+				const char* what() const throw()
+				{
+					return "Grade too low";
+				}
 		};
 };
+
+std::ostream &operator << (std::ostream &out, const BureauCrat &BureauCrat);
 
 #endif

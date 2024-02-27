@@ -46,6 +46,10 @@ class BureauCrat
         class GradeTooLowException : public std::exception
         {
             public:
+                GradeTooLowException()
+                {
+                    std::cout << "Default COnstructor Called from GradeTooLowException" << std::end;
+                }
                 const char *what() const throw()
                 {
                     return ("Grade too low");
