@@ -45,7 +45,6 @@ class Form
                     return "Grade too low";
                 }
         };
-
         const std::string& getName() const;
         const int getGrade() const;
         const int getGradeExecute() const;
