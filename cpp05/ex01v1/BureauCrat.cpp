@@ -1,4 +1,5 @@
 #include "BureauCrat.hpp"
+#include <Form.hpp>
 
 BureauCrat::BureauCrat()
 {
@@ -62,4 +63,12 @@ std::ostream& operator << (std::ostream& out, const BureauCrat& bureauCrat)
 {
 	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
 	return out;
+}
+
+void BureauCrat::signForm()
+{
+	if (this->bureaucrat_grade <= 150 && this->bureaucrat_grade >= 1)
+		std::cout << this->bureaucrat_name << " signs " << std::endl;
+	else
+		std::cout << this->bureaucrat_name << " cannot sign " << std::endl;
 }

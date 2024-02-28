@@ -14,9 +14,9 @@ NAME = bureaucrat
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = #-Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp BureauCrat.cpp
+SRC = main.cpp BureauCrat.cpp Form.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp BureauCrat.hpp
+%.o: %.cpp BureauCrat.hpp Form.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

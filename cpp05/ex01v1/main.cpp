@@ -1,20 +1,20 @@
-#include "BureauCrat.hpp"
+#include "Form.hpp"
+// #include <iostream>
+// class Test{
 
+//     public:
+//         const std::string name;
+//         const int grade;
+//         Test(): name("default"), grade(150)
+//         {
+//             std::cout << "Default Constructor Called" << std::endl;
+//         }
 
+// };
 
 int main()
 {
-    try
-    {
-        BureauCrat b1 = BureauCrat("aymene", 200);
-        BureauCrat b2 = BureauCrat("haloui", 1);
-        b2.incrementBureaucratGrade();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
+    Form form("form1", false, 150, 150);
     return (0);
 }
 

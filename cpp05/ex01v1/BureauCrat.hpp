@@ -61,6 +61,8 @@ class BureauCrat
 					return "Grade too low";
 				}
 		};
+
+		void signForm();
 };
 
 std::ostream &operator << (std::ostream &out, const BureauCrat &BureauCrat);
