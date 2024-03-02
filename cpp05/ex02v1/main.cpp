@@ -1,17 +1,25 @@
-#include "Form.hpp"
+#include "AForm.hpp"
+
+// #include "iostream"
+// #include "string.h"
+
+// class Test {
+//     private: 
+//         int x;
+    
+//     public:
+//         Test()
+//         {
+//             std::cout << "default constructor called " << std::endl;
+//         }
+//         virtual void show() { = 0
+
+//         }
+// };
 
 int main()
 {
-    try
-    {
-        BureauCrat a("Amine", 1);
-        Form b("Form1", false, 1, 1);
-        a.signForm();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+
     return 0;
 }
 

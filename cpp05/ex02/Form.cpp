@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form():name(""), isSigned(false), gradeToSign(0), gradeToExecute(0)
+Form::Form():name(""), isSigned(false), gradeToSign(150), gradeToExecute(150)
 {
     std::cout << "Default Constructor Called from Form" << std::endl;
 }

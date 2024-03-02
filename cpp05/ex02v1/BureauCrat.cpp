@@ -1,5 +1,4 @@
 #include "BureauCrat.hpp"
-#include "Form.hpp"
 
 BureauCrat::BureauCrat()
 {
