@@ -29,9 +29,44 @@ AForm& AForm::operator = (const AForm& copy)
     return *this;
 }
 
-
 AForm::~AForm()
 {
     std::cout << "Destructor Called" << std::endl;
 }
 
+const std::string& AForm::getName() const
+{
+    return this->name;
+}
+
+const int AForm::getGrade() const
+{
+    return this->grade;
+}
+
+const int AForm::getGradeExecute() const
+{
+    return this->grade_execute;
+}
+
+bool AForm::getIsSigned() const
+{
+    return this->is_signed;
+}
+
+std::ostream &operator << (std::ostream &out, const AForm &AForm)
+{
+    out << "Form Name: " << AForm.getName() << std::endl;
+    out << "Form Grade: " << AForm.getGrade() << std::endl;
+    out << "Form Grade Execute: " << AForm.getGradeExecute() << std::endl;
+    out << "Form is Signed: " << AForm.getIsSigned() << std::endl;
+    return out;
+}
+
+void AForm::beSigned(const BureauCrat &bureaucrat)
+{
+    if (this->grade <= bureaucrat.getGrade())
+        this->is_signed = true;
+    else
+        throw GradeTooLowException();
+}
