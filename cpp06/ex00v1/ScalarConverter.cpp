@@ -50,7 +50,9 @@ void ScalarConverter::convertToInt()
 // function to check if a string nan or inf or -inf or +inf or -inff or +inff or inff or nanf
 bool is_nan(const std::string& input)
 {
-    if (input == "nan" || input == "inf" || input == "-inf" || input == "+inf" || input == "-inff" || input == "+inff" || input == "inff" || input == "nanf")
+    if (input == "nan" || input == "nanf" || 
+        input == "-inf" || input == "-inff" 
+        || input == "+inf" || input == "+inff")
         return true;
     return false;
 }
@@ -80,20 +82,34 @@ void ScalarConverter::convert(const std::string& input)
     {
         double d = std::stod(input);
         std::cout << "char: ";
-        if (d < 32 || d > 126)
-            std::cout << "Non displayable" << std::endl;
+        // condition of char inside ' ' and between 32 and 126
+        if (d >= 32 && d <= 126)
+            std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
         else
-            std::cout << static_cast<char>(d) << std::endl;
+            std::cout << "Non displayable" << std::endl;
         std::cout << "int: " << static_cast<int>(d) << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-        std::cout << "double: " << d << std::endl;
+        std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
+        std::cout << "double: " << d << ".0" << std::endl;
     }
     else if (is_nan(input))
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << input << std::endl;
-        std::cout << "double: " << input << std::endl;
+        if (input == "nan" || input == "nanf")
+        {
+            std::cout << "float: nanf" << std::endl;
+            std::cout << "double: nan" << std::endl;
+        }
+        else if (input == "-inf" || input == "-inff")
+        {
+            std::cout << "float: -inff" << std::endl;
+            std::cout << "double: -inf" << std::endl;
+        }
+        else if (input == "+inf" || input == "+inff")
+        {
+            std::cout << "float: +inff" << std::endl;
+            std::cout << "double: +inf" << std::endl;
+        }
     }
     else
         std::cout << "Invalid input" << std::endl;
