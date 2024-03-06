@@ -73,16 +73,16 @@ void ScalarConverter::convert(const std::string& input)
     if (input.length() == 1 && !isdigit(input[0]))
     {
         char c = input[0];
-        std::cout << "char: " << c << std::endl;
+        std::cout << "char: " << "'" << c << "'"<< std::endl;
         std::cout << "int: " << static_cast<int>(c) << std::endl;
         std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
         std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
     }
     else if (is_number(input))
     {
+        //std::cout << "Here" << std::endl;
         double d = std::stod(input);
         std::cout << "char: ";
-        // condition of char inside ' ' and between 32 and 126
         if (d >= 32 && d <= 126)
             std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
         else
