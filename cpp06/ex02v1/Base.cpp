@@ -15,7 +15,7 @@ Base* generate(void)
         case 2:
             return new C();
         default:
-            NULL;
+            return NULL;
     }
 }
 void identify(Base* p)
@@ -37,21 +37,21 @@ void identify(Base& p)
         dynamic_cast<A&>(p);
         std::cout << "Object type: A" << std::endl;
     }
-    catch(const std::bad_cast&)
+    catch(const std::exception&)
     {
         try
         {
             dynamic_cast<B&>(p);
             std::cout << "Object type: B" << std::endl;
         }
-        catch(const std::bad_cast&)
+        catch(const std::exception&)
         {
             try
             {
                 dynamic_cast<C&>(p);
                 std::cout << "Object type: C" << std::endl;
             }
-            catch(const std::bad_cast&)
+            catch(const std::exception& e)
             {
                 std::cout << "Object Unkown" << std::endl;
             }
