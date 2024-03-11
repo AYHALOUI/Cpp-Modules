@@ -1,71 +1,52 @@
 #include "Span.hpp"
 
-Span::Span() : _n(0)
-{
-    std::cout << "Default constructor called" << std::endl;
-}
+Span::Span() : numbers(), max_size(0) {}
 
-Span::Span(unsigned int n) : _n(n)
-{
-
-}
-
-Span::Span(const Span &copy)
+Span::Span(Span const &copy)
 {
     *this = copy;
 }
 
-Span::~Span()
+Span &Span::operator=(Span const &rhs)
 {
-    std::cout << "Destructor called" << std::endl;
+    if (this == &rhs)
+        return *this;
+   this->numbers = rhs.numbers;
+this->max_size = rhs.max_size;
+    return *this;
 }
 
-Span &Span::operator=(const Span &copy)
-{
-    if (this != &copy)
-    {
-        this->_n = copy._n;
-        this->_v = copy._v;
-    }
-    return (*this);
-}
+Span::~Span() {}
+
+Span::Span(unsigned int n) : numbers(), max_size(n) {}
 
 void Span::addNumber(int n)
 {
-    if (this->_v.size() < this->_n)
-        this->_v.push_back(n);
-    else
-        throw Span::FullException();
-}
-
-void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-{
-    if (this->_v.size() + std::distance(begin, end) <= this->_n)
-        this->_v.insert(this->_v.end(), begin, end);
-    else
-        throw Span::FullException();
+    if (numbers.size() >= max_size)
+        throw SpanFullException();
+    numbers.push_back(n);
 }
 
 int Span::shortestSpan()
 {
-    if (this->_v.size() <= 1)
-        throw Span::NoSpanException();
-    std::vector<int> tmp = this->_v;
-    std::sort(tmp.begin(), tmp.end());
-    int min = tmp[1] - tmp[0];
-    for (unsigned int i = 2; i < tmp.size(); i++)
+    if (numbers.size() <= 1)
+        throw SpanNoSpanException();
+    std::vector<int> sorted = numbers;
+    std::sort(sorted.begin(), sorted.end());
+    int min = sorted[1] - sorted[0];
+    for (size_t i = 1; i < sorted.size() - 1; i++)
     {
-        if (tmp[i] - tmp[i - 1] < min)
-            min = tmp[i] - tmp[i - 1];
+        if (sorted[i + 1] - sorted[i] < min)
+            min = sorted[i + 1] - sorted[i];
     }
-    return (min);
+    return min;
 }
 
 int Span::longestSpan()
 {
-    if (this->_v.size() <= 1)
-        throw Span::NoSpanException();
-    std::vector<int> tmp = this->_v;
-    std::sort(tmp.begin(), tmp.end());
-    return (tmp[tmp.size() - 1] - tmp[0]);
+    if (numbers.size() <= 1)
+        throw SpanNoSpanException();
+    int min = *std::min_element(numbers.begin(), numbers.end());
+    int max = *std::max_element(numbers.begin(), numbers.end());
+    return max - min;
 }

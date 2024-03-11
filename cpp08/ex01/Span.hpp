@@ -8,32 +8,36 @@
 class Span
 {
     private:
-        unsigned int _n;
-        std::vector<int> _v;
-        Span();
+        std::vector<int> numbers;
+        unsigned int max_size;
+    
     public:
-        Span(unsigned int n);
-        Span(const Span &copy);
+        Span();
+        Span(Span const &copy);
+        Span &operator=(Span const &rhs);
         ~Span();
-        Span &operator=(const Span &copy);
+
+        // Member functions
+        Span(unsigned int n);
         void addNumber(int n);
-        void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+        class SpanFullException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Span is full";
+                }
+        };
+        class SpanNoSpanException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "No span to find";
+                }
+        };
         int shortestSpan();
         int longestSpan();
-        class FullException : public std::exception
-        {
-            const char *what() const throw()
-            {
-                return ("Span is full");
-            }
-        };
-        class NoSpanException : public std::exception
-        {
-            const char *what() const throw()
-            {
-                return ("No span to find");
-            }
-        };
 };
 
 #endif
