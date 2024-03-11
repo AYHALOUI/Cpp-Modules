@@ -1,6 +1,17 @@
-#ifndef EASTFIND_HPP
-# define EASTFIND_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-template <typename T> 
+#include <iostream>
+#include <exception>
+#include <stdexcept>
+#include <vector>
+#include <list>
+#include <algorithm>
 
+
+
+template <typename T>
+typename T::iterator easyfind(T& container, int value);
+
+#include "easyfind.tpp"
 #endif
