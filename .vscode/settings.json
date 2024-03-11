@@ -74,7 +74,8 @@
     "numeric": "cpp",
     "random": "cpp",
     "numbers": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "*.tpp": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

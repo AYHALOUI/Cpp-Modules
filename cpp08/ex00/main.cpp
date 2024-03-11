@@ -2,19 +2,17 @@
 
 int main()
 {
-    std::vector<int> v;
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-
+    int arr[] = {1, 2, 3, 4, 5};
+    std::vector<int> numbers ;
+    for (size_t i = 0; i < 5; i++)
+        numbers.push_back(arr[i]);
     try
     {
-        std::cout << easyfind(v, 2) << std::endl;
-        std::cout << easyfind(v, 4) << std::endl;
+        std::cout << *easyfind(numbers, 1) << std::endl;
     }
-    catch (std::exception &e)
+    catch(const std::exception& e)
     {
-        std::cout << "Not found" << std::endl;
+        std::cerr << e.what() << '\n';
     }
     return (0);
 }
