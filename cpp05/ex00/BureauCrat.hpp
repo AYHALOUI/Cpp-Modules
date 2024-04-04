@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   BureauCrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/11/26 22:27:09 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/04 21:17:23 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class BureauCrat
 
 	public:
 		BureauCrat();
-		BureauCrat(const std::string& name, int grade);
 		BureauCrat(const BureauCrat& copy);
 		BureauCrat& operator = (const BureauCrat& copy);
 		~BureauCrat();
 
+
+		BureauCrat(const std::string& name, int grade);
 		int getGrade() const;
-		const std::string& getName() const;
+		const std::string getName() const;
 
 		void incrementBureaucratGrade();
 		void decrementBureaucratGrade();
@@ -63,6 +64,6 @@ class BureauCrat
 		};
 };
 
-std::ostream &operator << (std::ostream &out, const BureauCrat &BureauCrat);
+std::ostream& operator<< (std::ostream& out, const BureauCrat& BureauCrat);
 
 #endif

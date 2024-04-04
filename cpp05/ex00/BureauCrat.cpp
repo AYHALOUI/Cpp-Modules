@@ -39,7 +39,7 @@ int BureauCrat::getGrade() const
 	return this->bureaucrat_grade;
 }
 
-const std::string& BureauCrat::getName() const
+const std::string BureauCrat::getName() const
 {
 	return this->bureaucrat_name;
 }
@@ -60,6 +60,6 @@ void BureauCrat::decrementBureaucratGrade()
 
 std::ostream& operator << (std::ostream& out, const BureauCrat& bureauCrat)
 {
-	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
+	out << bureauCrat.getName() << ", bureaucrat grade " << bureauCrat.getGrade() << ".\n";
 	return out;
 }
