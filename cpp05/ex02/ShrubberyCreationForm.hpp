@@ -1,10 +1,7 @@
-#ifndef SHRUUBERYCREATIONFORM_HPP
-#define SHRUUBERYCREATIONFORM_HPP
+#ifndef ShurbberyCreationForm_HPP
+#define ShurbberyCreationForm_HPP
 
-#include <string.h>
-#include <iostream>
 #include "AForm.hpp"
-#include "fstream"
 
 class ShrubberyCreationForm : public AForm
 {
@@ -12,12 +9,18 @@ class ShrubberyCreationForm : public AForm
         std::string target;
 
     public:
+        /* orhtodox canonical form */
         ShrubberyCreationForm();
-        ShrubberyCreationForm(const std::string &target);
-        ShrubberyCreationForm(const ShrubberyCreationForm &copy);
+        ShrubberyCreationForm(const ShrubberyCreationForm& copy);
         ShrubberyCreationForm& operator = (const ShrubberyCreationForm& copy);
-        virtual ~ShrubberyCreationForm();
-        void execute(BureauCrat const & executor) const; 
+        ~ShrubberyCreationForm();
+
+        // /* Constructor Parametrized */
+        ShrubberyCreationForm(std::string target);
+
+        // /* Getters */
+        std::string getTarget() const;
+        void execute(BureauCrat const & executor) const;
 };
 
 #endif

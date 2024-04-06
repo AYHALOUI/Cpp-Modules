@@ -1,41 +1,49 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 {
-    this->target = "default";
+    this->target = "default_target";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", 72, 45), target(target)
 {
-    std::cout << "Copy Constructor Called from RobotomyRequestForm" << std::endl;
-    this->target = copy.target;
+    std::cout << "Constructor Parametrized from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator = (const RobotomyRequestForm &copy)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): AForm(copy), target(copy.target)
 {
-    std::cout << "Assignation Operator Called from RobotomyRequestForm" << std::endl;
+    std::cout << "Copy constructor called from RobotomyRequestForm" << std::endl;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+{
+    std::cout << "Assignation operator called from RobotomyRequestForm" << std::endl;
     if (this == &copy)
         return (*this);
-    Form::operator=(copy);
     this->target = copy.target;
     return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "Destructor Called from RobotomyRequestForm" << std::endl;
+    std::cout << "Destructor called from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45)
+std::string RobotomyRequestForm::getTarget() const
 {
-    std::cout << "Constructor parametrazed Called from RobotomyRequestForm" << std::endl;
-    this->target = target;
+    return (this->target);
 }
 
-void RobotomyRequestForm::execute(BureauCrat const &executor) const
+void RobotomyRequestForm::execute(BureauCrat const & executor) const
 {
-    if (this->getIsSigned() == false)
-        throw Form::FormNotSignedException();
+    int time_to_robotomize = rand() % 2;
     if (executor.getGrade() > this->getGradeToExecute())
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
+    if (this->getSignedForm() == false)
+        throw AForm::FormNotSignedException();
+    std::cout << "Drilling noises..." << std::endl;
+    if (time_to_robotomize == 0)
+        std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
+    else
+        std::cout << this->getTarget() << " has failed to be robotomized" << std::endl;
 }

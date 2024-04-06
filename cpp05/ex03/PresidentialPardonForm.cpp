@@ -1,43 +1,46 @@
 #include "PresidentialPardonForm.hpp"
 
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
-    this->target = "default";
+    std::cout << "PresidentialPardonForm Default constructor called" << std::endl;
+    this->target = "default_target";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form(copy)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
-    std::cout << "Copy Constructor Called from PresidentialPardonForm" << std::endl;
-    this->target = copy.target;
+    std::cout << "Constructor Parametrized from PresidentialPardonForm" << std::endl;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator = (const PresidentialPardonForm &copy)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm(copy), target(copy.target)
 {
-    std::cout << "Assignation Operator Called from PresidentialPardonForm" << std::endl;
+    std::cout << "Copy constructor called from PresidentialPardonForm" << std::endl;
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
+{
+    std::cout << "Assignation operator called from PresidentialPardonForm" << std::endl;
     if (this == &copy)
         return (*this);
-    Form::operator=(copy);
     this->target = copy.target;
     return (*this);
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-    std::cout << "Destructor Called from PresidentialPardonForm" << std::endl;
+    std::cout << "Destructor called from PresidentialPardonForm" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5)
+std::string PresidentialPardonForm::getTarget() const
 {
-    std::cout << "Constructor parametrazed Called from PresidentialPardonForm" << std::endl;
-    this->target = target;
+    return (this->target);
 }
 
-void PresidentialPardonForm::execute(BureauCrat const &executor) const
+void PresidentialPardonForm::execute(BureauCrat const & executor) const
 {
-    if (this->getIsSigned() == false)
-        throw Form::FormNotSignedException();
     if (executor.getGrade() > this->getGradeToExecute())
-        throw Form::GradeTooLowException();
-    std::cout << this->target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+        throw AForm::GradeTooLowException();
+    if (!this->getSignedForm() == false)
+        throw AForm::FormNotSignedException();
+    std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }

@@ -1,8 +1,6 @@
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef RobotomyRequestForm_HPP
+#define RobotomyRequestForm_HPP
 
-#include <string.h>
-#include <iostream>
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
@@ -11,10 +9,18 @@ class RobotomyRequestForm : public AForm
         std::string target;
 
     public:
+        /* orhtodox canonical form */
         RobotomyRequestForm();
-        RobotomyRequestForm(const std::string &target);
-        RobotomyRequestForm(const RobotomyRequestForm &copy);
+        RobotomyRequestForm(const RobotomyRequestForm& copy);
         RobotomyRequestForm& operator = (const RobotomyRequestForm& copy);
-        virtual ~RobotomyRequestForm();
-        void execute(BureauCrat const & executor) const; 
+        ~RobotomyRequestForm();
+
+        // /* Constructor Parametrized */
+        RobotomyRequestForm(std::string target);
+
+        // /* Getters */
+        std::string getTarget() const;
+        void execute(BureauCrat const & executor) const;
 };
+
+#endif

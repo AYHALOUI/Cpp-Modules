@@ -1,24 +1,25 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
+#include "AForm.hpp"
 
-#include <iostream>
-#include <string>
-#include "Form.hpp"
-
-
-class PresidentialPardonForm : public Form
+class PresidentialPardonForm : public AForm
 {
     private:
         std::string target;
 
     public:
+        /* orhtodox canonical form */
         PresidentialPardonForm();
-        PresidentialPardonForm(const PresidentialPardonForm &copy);
-        PresidentialPardonForm &operator = (const PresidentialPardonForm &copy);
+        PresidentialPardonForm(const PresidentialPardonForm& copy);
+        PresidentialPardonForm& operator = (const PresidentialPardonForm& copy);
         ~PresidentialPardonForm();
 
+        // /* Constructor Parametrized */
         PresidentialPardonForm(std::string target);
-        void execute(BureauCrat const &executor) const;
+
+        // /* Getters */
+        std::string getTarget() const;
+        void execute(BureauCrat const & executor) const;
 };
 
 #endif

@@ -1,24 +1,26 @@
-# ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ShurbberyCreationForm_HPP
+#define ShurbberyCreationForm_HPP
 
-#include <iostream>
-#include <string>
-#include "Form.hpp"
-#include <fstream>
+#include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
     private:
         std::string target;
-        
+
     public:
+        /* orhtodox canonical form */
         ShrubberyCreationForm();
-        ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-        ShrubberyCreationForm &operator = (const ShrubberyCreationForm &copy);
+        ShrubberyCreationForm(const ShrubberyCreationForm& copy);
+        ShrubberyCreationForm& operator = (const ShrubberyCreationForm& copy);
         ~ShrubberyCreationForm();
 
+        // /* Constructor Parametrized */
         ShrubberyCreationForm(std::string target);
-        void execute(BureauCrat const &executor) const;
+
+        // /* Getters */
+        std::string getTarget() const;
+        void execute(BureauCrat const & executor) const;
 };
 
 #endif

@@ -1,55 +1,67 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
-
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
-    this->target = "default";
+    std::cout << "ShrubberyCreationForm Default constructor called" << std::endl;
+    this->target = "default_target";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form(copy)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
-    std::cout << "Copy Constructor Called from ShrubberyCreationForm" << std::endl;
-    this->target = copy.target;
+    std::cout << "Constructor Parametrized from ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm &copy)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy), target(copy.target)
 {
-    std::cout << "Assignation Operator Called from ShrubberyCreationForm" << std::endl;
+    std::cout << "Copy constructor called from ShrubberyCreationForm" << std::endl;
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
+{
+    std::cout << "Assignation operator called from ShrubberyCreationForm" << std::endl;
     if (this == &copy)
         return (*this);
-    Form::operator=(copy);
     this->target = copy.target;
     return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "Destructor Called from ShrubberyCreationForm" << std::endl;
+    std::cout << "Destructor called from ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
+std::string ShrubberyCreationForm::getTarget() const
 {
-    std::cout << "Constructor parametrazed Called from ShrubberyCreationForm" << std::endl;
-    this->target = target;
+    return (this->target);
 }
 
-void ShrubberyCreationForm::execute(BureauCrat const &executor) const
+void ShrubberyCreationForm::execute(BureauCrat const & executor) const
 {
-    std::string filename = this->target + "_shrubbery";
-    if (this->getIsSigned() == false)
-        throw Form::FormNotSignedException();
     if (executor.getGrade() > this->getGradeToExecute())
-        throw Form::GradeTooLowException();
-    std::ofstream file;
-    file.open(filename.c_str());
-    file << "       _-_" << std::endl;
-    file << "    /~~   ~~\\" << std::endl;
-    file << " /~~         ~~\\" << std::endl;
-    file << "{               }" << std::endl;
-    file << " \\  _-     -_  /" << std::endl;
-    file << "   ~  \\\\ //  ~" << std::endl;
-    file << "_- -   | | _- _" << std::endl;
-    file << "  _ -  | |   -_" << std::endl;
-    file << "      // \\\\" << std::endl;
-    file.close();
+        throw AForm::GradeTooLowException();
+    if (this->getSignedForm() == false)
+        throw AForm::FormNotSignedException();
+    std::string fileName = this->target + "_shrubbery";
+    std::ofstream outFileName(fileName);
+
+    if (outFileName.is_open())
+    {
+        outFileName << "   oxoxoo    ooxoo" << std::endl;
+        outFileName << "  ooxoxo oo  oxoxooo" << std::endl;
+        outFileName << " oooo xxoxoo ooo ooox" << std::endl;
+        outFileName << " oxo o oxoxo  xoxxoxo" << std::endl;
+        outFileName << "  oxo xooxoooo o ooo" << std::endl;
+        outFileName << "    ooo\\oo\\  /o/o" << std::endl;
+        outFileName << "        \\  \\/ /" << std::endl;
+        outFileName << "         |   /" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "         | D|" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "  ______/____\\____" << std::endl;
+        outFileName.close();
+    }
+    else
+        std::cout << "Error: could not open file" << std::endl;
 }

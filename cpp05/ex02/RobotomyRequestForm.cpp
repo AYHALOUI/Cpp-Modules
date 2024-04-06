@@ -1,43 +1,49 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", false, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 {
-    this->target = "default";
+    this->target = "default_target";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", false, 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", 72, 45), target(target)
 {
-    std::cout << "RobotomyRequestForm Parametrazed Called" << std::endl;
+    std::cout << "Constructor Parametrized from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm(copy), target(copy.target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): AForm(copy), target(copy.target)
 {
-    std::cout << "RobotomyRequestForm Copy Constructor Called" << std::endl;
+    std::cout << "Copy constructor called from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &copy)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 {
+    std::cout << "Assignation operator called from RobotomyRequestForm" << std::endl;
     if (this == &copy)
         return (*this);
     this->target = copy.target;
-    return *this;
+    return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "RobotomyRequestForm Destructor Called" << std::endl;
+    std::cout << "Destructor called from RobotomyRequestForm" << std::endl;
 }
 
-void RobotomyRequestForm::execute(BureauCrat const &executor) const
+std::string RobotomyRequestForm::getTarget() const
 {
-    if (this->getIsSigned() == false)
-        throw AForm::FormNotSignedException();
-    if (executor.getGrade() > this->getGradeExecute())
+    return (this->target);
+}
+
+void RobotomyRequestForm::execute(BureauCrat const & executor) const
+{
+    int time_to_robotomize = rand() % 2;
+    if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
-    // obotomyRequestForm: Required grades: sign 72, exec 45 Makes some drilling noises. Then, informs that <target> has been robotomized successfully 50% of the time. Otherwise, informs that the robotomy failed
+    if (this->getSignedForm() == false)
+        throw AForm::FormNotSignedException();
     std::cout << "Drilling noises..." << std::endl;
-    if (rand() % 2 == 0)
-        std::cout << this->target << " has been robotomized successfully" << std::endl;
+    if (time_to_robotomize == 0)
+        std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
     else
-        std::cout << "Robotomization failed" << std::endl;
+        std::cout << this->getTarget() << " has failed to be robotomized" << std::endl;
 }

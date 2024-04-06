@@ -40,7 +40,7 @@ int BureauCrat::getGrade() const
 	return this->bureaucrat_grade;
 }
 
-const std::string& BureauCrat::getName() const
+const std::string BureauCrat::getName() const
 {
 	return this->bureaucrat_name;
 }
@@ -59,16 +59,29 @@ void BureauCrat::decrementBureaucratGrade()
 		throw GradeTooLowException();
 }
 
+const char* BureauCrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high";
+}
+
+const char* BureauCrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
+}
+
 std::ostream& operator << (std::ostream& out, const BureauCrat& bureauCrat)
 {
 	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
 	return out;
 }
 
-void BureauCrat::signForm()
+void BureauCrat::signForm(Form& form)
 {
-	if (this->bureaucrat_grade <= 150 && this->bureaucrat_grade >= 1)
-		std::cout << this->bureaucrat_name << " signs " << std::endl;
+	if (this->bureaucrat_grade <= form.getGradeToSign())
+	{
+		form.beSigned(*this);
+		std::cout << this->bureaucrat_name << " signs " << form.getNameForm() << std::endl;
+	}
 	else
-		std::cout << this->bureaucrat_name << " cannot sign " << std::endl;
+		std::cout << this->bureaucrat_name << " cannot sign " << form.getNameForm() << " because his grade is too low" << std::endl;
 }

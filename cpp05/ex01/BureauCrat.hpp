@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   BureauCrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/11/26 22:27:09 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/05 23:10:33 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ class BureauCrat
 		int					bureaucrat_grade;
 
 	public:
+		/* orhtodox canonical form */
 		BureauCrat();
 		BureauCrat(const std::string& name, int grade);
 		BureauCrat(const BureauCrat& copy);
 		BureauCrat& operator = (const BureauCrat& copy);
 		~BureauCrat();
-
+		
+		/*Getters*/
 		int getGrade() const;
-		const std::string& getName() const;
+		const std::string getName() const;
 
 		void incrementBureaucratGrade();
 		void decrementBureaucratGrade();
@@ -39,30 +41,17 @@ class BureauCrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				GradeTooHighException()
-                {
-                    std::cout << "Default Constructor Called from GradeTooHighException" << std::endl;
-                }
-				const char* what() const throw()
-				{
-					return "Grade too low";
-				}
+				const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				GradeTooLowException()
-                {
-                    std::cout << "Default Constructor Called from GradeTooLowException" << std::endl;
-                }
-				const char* what() const throw()
-				{
-					return "Grade too low";
-				}
+				const char* what() const throw();
 		};
 
-		void signForm();
+		/* Last Function added to this Class */
+		void signForm(Form& form);
 };
 
 std::ostream &operator << (std::ostream &out, const BureauCrat &BureauCrat);

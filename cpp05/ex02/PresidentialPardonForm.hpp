@@ -1,9 +1,5 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
-
-#include <string.h>
-#include <iostream>
-
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
@@ -12,12 +8,18 @@ class PresidentialPardonForm : public AForm
         std::string target;
 
     public:
+        /* orhtodox canonical form */
         PresidentialPardonForm();
-        PresidentialPardonForm(const std::string &target);
-        PresidentialPardonForm(const PresidentialPardonForm &copy);
+        PresidentialPardonForm(const PresidentialPardonForm& copy);
         PresidentialPardonForm& operator = (const PresidentialPardonForm& copy);
-        virtual ~PresidentialPardonForm();
-        void execute(BureauCrat const & executor) const; 
+        ~PresidentialPardonForm();
+
+        // /* Constructor Parametrized */
+        PresidentialPardonForm(std::string target);
+
+        // /* Getters */
+        std::string getTarget() const;
+        void execute(BureauCrat const & executor) const;
 };
 
 #endif

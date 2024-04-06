@@ -1,11 +1,18 @@
-#include "Form.hpp"
+ #include "Form.hpp"
+#include <iostream>
+
 
 int main()
 {
     try
     {
-        BureauCrat a("Amine", 1);
-        Form b("Form1", false, 1, 1);
+        BureauCrat a("aymene", 1);
+        Form f("Form", 2, 1);
+
+        std::cout << a;
+        std::cout << f;
+
+        f.beSigned(a);
         a.signForm();
     }
     catch(const std::exception& e)

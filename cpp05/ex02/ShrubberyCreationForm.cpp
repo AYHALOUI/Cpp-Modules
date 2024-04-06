@@ -1,58 +1,67 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm():AForm("ShrubberyCreationForm", false, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
-    std::cout << "Default Constructor Called" << std::endl;
+    std::cout << "ShrubberyCreationForm Default constructor called" << std::endl;
+    this->target = "default_target";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target):AForm("ShrubberyCreationForm", false, 145, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
-    std::cout << "Constructor Parametrazed Called" << std::endl;
+    std::cout << "Constructor Parametrized from ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy):AForm(copy), target(copy.target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy), target(copy.target)
 {
-    std::cout << "Copy Constructor Called" << std::endl;
+    std::cout << "Copy constructor called from ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator = (const ShrubberyCreationForm& copy)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
+    std::cout << "Assignation operator called from ShrubberyCreationForm" << std::endl;
     if (this == &copy)
         return (*this);
     this->target = copy.target;
-    return *this;
+    return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << "Destructor called from ShrubberyCreationForm" << std::endl;
+}
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+    return (this->target);
 }
 
 void ShrubberyCreationForm::execute(BureauCrat const & executor) const
 {
+    if (executor.getGrade() > this->getGradeToExecute())
+        throw AForm::GradeTooLowException();
+    if (this->getSignedForm() == false)
+        throw AForm::FormNotSignedException();
     std::string fileName = this->target + "_shrubbery";
     std::ofstream outFileName(fileName);
 
-    if (this->getIsSigned() == false)
-        throw AForm::FormNotSignedException();
-    if (executor.getGrade() > this->getGradeExecute())
-        throw AForm::GradeTooLowException();
-    
-    
     if (outFileName.is_open())
     {
-        outFileName << "       _-_\n";
-        outFileName << "    /~~   ~~\\\n";
-        outFileName << " /~~         ~~\\\n";
-        outFileName << "{               }\n";
-        outFileName << " \\  _-     -_  /\n";
-        outFileName << "   ~  \\\\ //  ~\n";
-        outFileName << "_- -   | | _- _\n";
-        outFileName <<  "  _ -  | |   -_\n";
-        outFileName << "      // \\\\\n";
+        outFileName << "   oxoxoo    ooxoo" << std::endl;
+        outFileName << "  ooxoxo oo  oxoxooo" << std::endl;
+        outFileName << " oooo xxoxoo ooo ooox" << std::endl;
+        outFileName << " oxo o oxoxo  xoxxoxo" << std::endl;
+        outFileName << "  oxo xooxoooo o ooo" << std::endl;
+        outFileName << "    ooo\\oo\\  /o/o" << std::endl;
+        outFileName << "        \\  \\/ /" << std::endl;
+        outFileName << "         |   /" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "         | D|" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "         |  |" << std::endl;
+        outFileName << "  ______/____\\____" << std::endl;
         outFileName.close();
-        std::cout << "File " << fileName << " has been created" << std::endl;
     }
     else
-        std::cout << "Error: Could not open file" << std::endl;
+        std::cout << "Error: could not open file" << std::endl;
 }
