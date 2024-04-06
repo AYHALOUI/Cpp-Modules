@@ -1,11 +1,11 @@
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 
-BureauCrat::BureauCrat()
+Bureaucrat::Bureaucrat()
 {
-	std::cout << "Default Constructor Called" << std::endl;
+	std::cout << "Default Constructor Called From Bureaucrat" << std::endl;
 }
 
-BureauCrat::BureauCrat(const std::string& name, int grade): bureaucrat_name(name), bureaucrat_grade(grade)
+Bureaucrat::Bureaucrat(const std::string& name, int grade): bureaucrat_name(name), bureaucrat_grade(grade)
 {
 	std::cout << "Constructor Paramitrazed Called" << std::endl;
 	if (this->bureaucrat_grade < 1)
@@ -14,13 +14,13 @@ BureauCrat::BureauCrat(const std::string& name, int grade): bureaucrat_name(name
 		throw GradeTooLowException();
 }
 
-BureauCrat::BureauCrat(const BureauCrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 {
 	std::cout << "Copy Constructor Called" << std::endl;
 	*this = copy;
 }
 
-BureauCrat& BureauCrat::operator = (const BureauCrat& copy)
+Bureaucrat& Bureaucrat::operator = (const Bureaucrat& copy)
 {
 	std::cout << "Assignation Operator Called" << std::endl;
 	if (this == &copy)
@@ -29,37 +29,47 @@ BureauCrat& BureauCrat::operator = (const BureauCrat& copy)
 	return (*this);
 }
 
-BureauCrat::~BureauCrat()
+Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Destructor Called" << std::endl;
 }
 
-int BureauCrat::getGrade() const
+int Bureaucrat::gerBureaucratGrade() const
 {
 	return this->bureaucrat_grade;
 }
 
-const std::string BureauCrat::getName() const
+const std::string Bureaucrat::getBureaucratName() const
 {
 	return this->bureaucrat_name;
 }
 
-void BureauCrat::incrementBureaucratGrade()
+void Bureaucrat::incrementBureaucratGrade()
 {
 	this->bureaucrat_grade--;
 	if (this->bureaucrat_grade < 1)
 		throw GradeTooHighException();
 }
 
-void BureauCrat::decrementBureaucratGrade()
+void Bureaucrat::decrementBureaucratGrade()
 {
 	this->bureaucrat_grade++;
 	if (this->bureaucrat_grade < 1)
 		throw GradeTooLowException();
 }
 
-std::ostream& operator << (std::ostream& out, const BureauCrat& bureauCrat)
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	out << bureauCrat.getName() << ", bureaucrat grade " << bureauCrat.getGrade() << ".\n";
+	return "Grade too high";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
+}
+
+std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureaucrat)
+{
+	out << bureaucrat.getBureaucratName() << ", bureaucrat grade " << bureaucrat.gerBureaucratGrade() << std::endl;
 	return out;
 }

@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-
+#include "Bureaucrat.hpp"
 
 
 int main()
@@ -12,7 +12,7 @@ int main()
         // PresidentialPardonForm *presidential = new PresidentialPardonForm("presidential");
         // RobotomyRequestForm *robotomy = new RobotomyRequestForm("robotomy");
         ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("shrubbery");
-        BureauCrat *bureaucrat = new BureauCrat("bureaucrat", 130);
+        Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 130);
         // BureauCrat *bureaucrat2 = new BureauCrat("bureaucrat2", 150);
         // BureauCrat *bureaucrat3 = new BureauCrat("bureaucrat3", 100);
 

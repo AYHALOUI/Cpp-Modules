@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/06 02:43:03 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/06 16:02:42 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 class AForm;
 
-class BureauCrat
+class Bureaucrat
 {
 	private:
 		const std::string	bureaucrat_name;
@@ -29,11 +29,11 @@ class BureauCrat
 
 	public:
 		/* orhtodox canonical form */
-		BureauCrat();
-		BureauCrat(const std::string& name, int grade);
-		BureauCrat(const BureauCrat& copy);
-		BureauCrat& operator = (const BureauCrat& copy);
-		~BureauCrat();
+		Bureaucrat();
+		Bureaucrat(const std::string& name, int grade);
+		Bureaucrat(const Bureaucrat& copy);
+		Bureaucrat& operator = (const Bureaucrat& copy);
+		~Bureaucrat();
 		
 		/*Getters*/
 		int getGrade() const;
@@ -60,6 +60,6 @@ class BureauCrat
 		void executeForm(AForm const & form);
 };
 
-std::ostream &operator << (std::ostream &out, const BureauCrat &BureauCrat);
+std::ostream &operator << (std::ostream &out, const Bureaucrat &BureauCrat);
 
 #endif

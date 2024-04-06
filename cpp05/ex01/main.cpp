@@ -6,14 +6,14 @@ int main()
 {
     try
     {
-        BureauCrat a("aymene", 1);
-        Form f("Form", 2, 1);
+        Bureaucrat a("aymene", 1);
+        Form f("haloui", 2, 1);
 
         std::cout << a;
         std::cout << f;
 
         f.beSigned(a);
-        a.signForm();
+        a.signForm(f);
     }
     catch(const std::exception& e)
     {

@@ -36,7 +36,7 @@ std::string ShrubberyCreationForm::getTarget() const
     return (this->target);
 }
 
-void ShrubberyCreationForm::execute(BureauCrat const & executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();

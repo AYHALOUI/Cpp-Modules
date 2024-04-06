@@ -1,10 +1,10 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 
-class BureauCrat;
+class Bureaucrat;
 class AForm
 {
     private:
@@ -29,7 +29,7 @@ class AForm
         int getGradeToExecute() const;
 
         /* additional functions */
-        void beSigned(const BureauCrat &bureaucrat);
+        void beSigned(const Bureaucrat &bureaucrat);
 
         class GradeTooHighException : public std::exception
         {
@@ -50,7 +50,7 @@ class AForm
         };
 
         /* overide function */
-        virtual void execute(BureauCrat const & executor) const = 0;
+        virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm& form);

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 
 
 class Form
@@ -30,7 +30,7 @@ class Form
         int getGradeToExecute() const;
 
         /* additional functions */
-        void beSigned(const BureauCrat &bureaucrat);
+        void beSigned(const Bureaucrat &bureaucrat);
 
 
         class GradeTooHighException : public std::exception
