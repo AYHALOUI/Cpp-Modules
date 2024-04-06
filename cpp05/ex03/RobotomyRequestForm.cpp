@@ -34,7 +34,7 @@ std::string RobotomyRequestForm::getTarget() const
     return (this->target);
 }
 
-void RobotomyRequestForm::execute(BureauCrat const & executor) const
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     int time_to_robotomize = rand() % 2;
     if (executor.getGrade() > this->getGradeToExecute())

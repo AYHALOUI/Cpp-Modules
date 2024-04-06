@@ -9,7 +9,7 @@ int main()
     try
     {
         Intern *intern = new Intern();
-        BureauCrat *bureaucrat = new BureauCrat("bureaucrat", 130);
+        Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 130);
         AForm *form = intern->makeForm("shrubbery creation", "shrubbery");
         form->beSigned(*bureaucrat);
         form->execute(*bureaucrat);
