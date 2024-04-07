@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/07 21:35:39 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 21:59:15 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ class Bureaucrat
 		void incrementBureaucratGrade();
 		void decrementBureaucratGrade();
 
+		/* Last Function added to this Class */
+		void signForm(AForm &form);
+
+		void executeForm(AForm const & form);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -53,11 +58,6 @@ class Bureaucrat
 			public:
 				const char* what() const throw();
 		};
-
-		/* Last Function added to this Class */
-		void signForm(AForm &form);
-
-		void executeForm(AForm const & form);
 };
 
 std::ostream& operator<< (std::ostream& out, const Bureaucrat& BureauCrat);

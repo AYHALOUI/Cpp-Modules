@@ -18,7 +18,7 @@ class Form
         /* orhtodox canonical form */
         Form();
         Form(const Form &copy);
-        Form &operator=(const Form &copy);
+        Form &operator= (const Form &copy);
         ~Form();
 
         Form(std::string name, int grade_to_sign, int grade_to_execute);

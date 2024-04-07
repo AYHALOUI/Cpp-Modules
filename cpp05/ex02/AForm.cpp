@@ -29,6 +29,7 @@ AForm& AForm::operator= (const AForm &copy)
 
 AForm::~AForm()
 {
+    std::cout << "Destructor Called from AForm" << std::endl;
 }
 
 std::string AForm::getNameForm() const 
@@ -51,6 +52,22 @@ int AForm::getGradeToExecute() const
     return (this->grade_to_execute);
 }
 
+std::ostream& operator<< (std::ostream& out, const AForm& aform)
+{
+   out << "Name of Form: " << aform.getNameForm() << std::endl;
+   out << "Signed Form: " << aform.getNameForm() << std::endl;
+   out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
+   out << "Grade To Execute it: " << aform.getGradeToExecute() << std::endl;
+   return out;
+}
+
+void AForm::beSigned(const Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.gerBureaucratGrade() >= this->grade_to_sign)
+        throw GradeTooLowException();
+    this->signed_form = true;
+}
+
 
 const char* AForm::GradeTooLowException:: what() const throw()
 {
@@ -65,20 +82,4 @@ const char* AForm::GradeTooHighException:: what() const throw()
 const char* AForm::FormNotSignedException:: what() const throw()
 {
     return ("Form not signed");
-}
-
-std::ostream& operator<< (std::ostream& out, const AForm& aform)
-{
-   out << "Name of Form: " << aform.getNameForm() << std::endl;
-   out << "Signed Form: " << aform.getNameForm() << std::endl;
-   out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
-   out << "Grade To Execute it: " << aform.getGradeToExecute() << std::endl;
-   return out;
-}
-
-void AForm::beSigned(const Bureaucrat &bureaucrat)
-{
-    if (bureaucrat.getGrade() >= this->grade_to_sign)
-        throw GradeTooLowException();
-    this->signed_form = true;
 }

@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 	(*this) = copy;
 }
 
-Bureaucrat& Bureaucrat::operator = (const Bureaucrat& copy)
+Bureaucrat& Bureaucrat::operator= (const Bureaucrat& copy)
 {
 	std::cout << "Assignation Operator Called from Bureaucrat" << std::endl;
 	if (this == &copy)
@@ -59,6 +59,12 @@ void Bureaucrat::decrementBureaucratGrade()
 		(throw GradeTooLowException());
 }
 
+std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureaucrat)
+{
+	out << bureaucrat.getBureaucratName() << ", bureaucrat grade " << bureaucrat.gerBureaucratGrade() << std::endl;
+	return (out);
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
@@ -67,10 +73,4 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low");
-}
-
-std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureaucrat)
-{
-	out << bureaucrat.getBureaucratName() << ", bureaucrat grade " << bureaucrat.gerBureaucratGrade() << std::endl;
-	return (out);
 }

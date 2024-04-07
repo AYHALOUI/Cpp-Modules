@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat()
 	std::cout << "Default Constructor Called from Bureaucrat" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade): bureaucrat_name(name), bureaucrat_grade(grade)
+Bureaucrat::Bureaucrat(const std::string bureaucrat_name, int bureaucrat_grade): bureaucrat_name(bureaucrat_name), bureaucrat_grade(bureaucrat_grade)
 {
 	std::cout << "Constructor Paramitrazed Called from Bureaucrat" << std::endl;
 	if (this->bureaucrat_grade < 1)
@@ -35,12 +35,12 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Destructor Called from Bureaucrat" << std::endl;
 }
 
-int Bureaucrat::getGrade() const
+int Bureaucrat::getBureaucratGrade() const
 {
 	return (this->bureaucrat_grade);
 }
 
-const std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getBureaucratName() const
 {
 	return (this->bureaucrat_name);
 }
@@ -59,19 +59,9 @@ void Bureaucrat::decrementBureaucratGrade()
 		(throw GradeTooLowException());
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureauCrat)
 {
-	return ("Grade too high");
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("Grade too low");
-}
-
-std::ostream& operator << (std::ostream& out, const Bureaucrat& bureauCrat)
-{
-	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
+	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade" << bureauCrat.getBureaucratGrade() << std::endl;
 	return (out);
 }
 
@@ -95,4 +85,14 @@ void Bureaucrat::executeForm(AForm const & form)
 	}
 	else
 		std::cout << this->bureaucrat_name << " cannot execute " << form.getNameForm() << " because his grade is too low" << std::endl;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }

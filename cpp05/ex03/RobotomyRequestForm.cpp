@@ -37,7 +37,7 @@ std::string RobotomyRequestForm::getTarget() const
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     int time_to_robotomize = rand() % 2;
-    if (executor.getGrade() > this->getGradeToExecute())
+    if (executor.getBureaucratGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
     if (this->getSignedForm() == false)
         throw AForm::FormNotSignedException();

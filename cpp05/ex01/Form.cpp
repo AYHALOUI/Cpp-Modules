@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : name_form("form"), signed_form(false), grade_to_sign(0), grade_to_execute(0)
+Form::Form() : name_form("form"), signed_form(false), grade_to_sign(150), grade_to_execute(150)
 {
 }
 
@@ -48,17 +48,6 @@ int Form::getGradeToExecute() const
     return (this->grade_to_execute);
 }
 
-
-const char* Form::GradeTooLowException:: what() const throw()
-{
-    return ("Grade too low");
-}
-
-const char* Form::GradeTooHighException:: what() const throw()
-{
-    return ("Grade too high");
-}
-
 std::ostream& operator<< (std::ostream& out, const Form& form)
 {
    out << "Name of Form: " << form.getNameForm() << std::endl;
@@ -74,4 +63,14 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
         this->signed_form = true;
     else
         throw GradeTooLowException();
+}
+
+const char* Form::GradeTooLowException:: what() const throw()
+{
+    return ("Grade too low");
+}
+
+const char* Form::GradeTooHighException:: what() const throw()
+{
+    return ("Grade too high");
 }

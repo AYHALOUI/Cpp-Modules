@@ -9,9 +9,9 @@ AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute) : name_f
 {
     std::cout << "Parametrized Constructor Called from AForm" << std::endl;
     if (this->grade_to_sign < 1 || this->grade_to_execute < 1)
-        throw GradeTooHighException();
+        (throw GradeTooHighException());
      if (this->grade_to_sign > 150 || this->grade_to_execute > 150)
-        throw GradeTooLowException();
+        (throw GradeTooLowException());
 }
 
 AForm::AForm(const AForm &copy) : name_form(copy.name_form), signed_form(copy.signed_form), grade_to_sign(copy.grade_to_sign), grade_to_execute(copy.grade_to_execute)
@@ -52,6 +52,21 @@ int AForm::getGradeToExecute() const
     return (this->grade_to_execute);
 }
 
+std::ostream& operator<< (std::ostream& out, const AForm& aform)
+{
+   out << "Name of Form: " << aform.getNameForm() << std::endl;
+   out << "Signed Form: " << aform.getNameForm() << std::endl;
+   out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
+   out << "Grade To Execute it: " << aform.getGradeToExecute() << std::endl;
+   return (out);
+}
+
+void AForm::beSigned(const Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.getBureaucratGrade() >= this->grade_to_sign)
+        (throw GradeTooLowException());
+    this->signed_form = true;
+}
 
 const char* AForm::GradeTooLowException:: what() const throw()
 {
@@ -66,20 +81,4 @@ const char* AForm::GradeTooHighException:: what() const throw()
 const char* AForm::FormNotSignedException:: what() const throw()
 {
     return ("Form not signed");
-}
-
-std::ostream& operator<< (std::ostream& out, const AForm& aform)
-{
-   out << "Name of Form: " << aform.getNameForm() << std::endl;
-   out << "Signed Form: " << aform.getNameForm() << std::endl;
-   out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
-   out << "Grade To Execute it: " << aform.getGradeToExecute() << std::endl;
-   return (out);
-}
-
-void AForm::beSigned(const Bureaucrat &bureaucrat)
-{
-    if (bureaucrat.getGrade() >= this->grade_to_sign)
-        (throw GradeTooLowException());
-    this->signed_form = true;
 }

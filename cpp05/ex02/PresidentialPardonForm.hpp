@@ -11,7 +11,7 @@ class PresidentialPardonForm : public AForm
         /* orhtodox canonical form */
         PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm& copy);
-        PresidentialPardonForm& operator = (const PresidentialPardonForm& copy);
+        PresidentialPardonForm& operator= (const PresidentialPardonForm& copy);
         ~PresidentialPardonForm();
 
         // /* Constructor Parametrized */
@@ -19,7 +19,7 @@ class PresidentialPardonForm : public AForm
 
         // /* Getters */
         std::string getTarget() const;
-        
+
         void execute(Bureaucrat const & executor) const;
 };
 

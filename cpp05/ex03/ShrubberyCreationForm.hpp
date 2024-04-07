@@ -15,10 +15,10 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm& operator= (const ShrubberyCreationForm& copy);
         ~ShrubberyCreationForm();
 
-        // /* Constructor Parametrized */
+        /* Constructor Parametrized */
         ShrubberyCreationForm(std::string target);
 
-        // /* Getters */
+        /* Getters */
         std::string getTarget() const;
         void execute(Bureaucrat const & executor) const;
 };

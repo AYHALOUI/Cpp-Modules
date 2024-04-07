@@ -16,6 +16,7 @@ Bureaucrat::Bureaucrat(const std::string bureacrat_name, int grade): bureaucrat_
 		(throw GradeTooLowException());
 }
 
+
 Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 {
 	std::cout << "Copy Constructor Called from Bureaucrat" << std::endl;
@@ -60,16 +61,6 @@ void Bureaucrat::decrementBureaucratGrade()
 		(throw GradeTooLowException());
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return ("Grade too high");
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("Grade too low");
-}
-
 std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureauCrat)
 {
 	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade" << bureauCrat.gerBureaucratGrade() << std::endl;
@@ -85,4 +76,14 @@ void Bureaucrat::signForm(Form& form)
 	}
 	else
 		std::cout << this->bureaucrat_name << " cannot sign " << form.getNameForm() << " because his grade is too low" << std::endl;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }

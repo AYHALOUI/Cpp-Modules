@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/07 21:43:13 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 22:04:12 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,22 @@ class Bureaucrat
 	public:
 		/* orhtodox canonical form */
 		Bureaucrat();
-		Bureaucrat(const std::string& name, int grade);
+		Bureaucrat(const std::string bureaucrat_name, int bureaucrat_grade);
 		Bureaucrat(const Bureaucrat& copy);
 		Bureaucrat& operator= (const Bureaucrat& copy);
 		~Bureaucrat();
 		
 		/*Getters*/
-		int getGrade() const;
-		const std::string getName() const;
+		int getBureaucratGrade() const;
+		const std::string getBureaucratName() const;
 
 		void incrementBureaucratGrade();
 		void decrementBureaucratGrade();
+		
+		/* Last Function added to this Class */
+		void signForm(AForm &form);
+
+		void executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::exception
 		{
@@ -53,11 +58,6 @@ class Bureaucrat
 			public:
 				const char* what() const throw();
 		};
-
-		/* Last Function added to this Class */
-		void signForm(AForm &form);
-
-		void executeForm(AForm const & form);
 };
 
 std::ostream& operator<< (std::ostream &out, const Bureaucrat &BureauCrat);

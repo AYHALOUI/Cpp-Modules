@@ -10,6 +10,7 @@ int main()
     {
         Intern *intern = new Intern();
         Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 130);
+
         AForm *form = intern->makeForm("shrubbery creation", "shrubbery");
         form->beSigned(*bureaucrat);
         form->execute(*bureaucrat);
@@ -18,6 +19,8 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
+    
     return 0;
 }
 

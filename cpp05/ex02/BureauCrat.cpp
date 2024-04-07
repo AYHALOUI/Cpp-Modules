@@ -60,16 +60,6 @@ void Bureaucrat::decrementBureaucratGrade()
 		(throw GradeTooLowException());
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return ("Grade too high");
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("Grade too low");
-}
-
 std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureauCrat)
 {
 	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade " << bureauCrat.gerBureaucratGrade() << std::endl;
@@ -96,4 +86,14 @@ void Bureaucrat::executeForm(AForm const & form)
 	}
 	else
 		std::cout << this->bureaucrat_name << " cannot execute " << form.getNameForm() << " because his grade is too low" << std::endl;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }
