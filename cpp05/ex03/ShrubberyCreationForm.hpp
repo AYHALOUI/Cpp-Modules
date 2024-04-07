@@ -12,7 +12,7 @@ class ShrubberyCreationForm : public AForm
         /* orhtodox canonical form */
         ShrubberyCreationForm();
         ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-        ShrubberyCreationForm& operator = (const ShrubberyCreationForm& copy);
+        ShrubberyCreationForm& operator= (const ShrubberyCreationForm& copy);
         ~ShrubberyCreationForm();
 
         // /* Constructor Parametrized */

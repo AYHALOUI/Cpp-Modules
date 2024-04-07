@@ -11,7 +11,7 @@ class PresidentialPardonForm : public AForm
         /* orhtodox canonical form */
         PresidentialPardonForm();
         PresidentialPardonForm(const PresidentialPardonForm& copy);
-        PresidentialPardonForm& operator = (const PresidentialPardonForm& copy);
+        PresidentialPardonForm& operator= (const PresidentialPardonForm& copy);
         ~PresidentialPardonForm();
 
         // /* Constructor Parametrized */

@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
     std::cout << "Copy constructor called from PresidentialPardonForm" << std::endl;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
+PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPardonForm &copy)
 {
     std::cout << "Assignation operator called from PresidentialPardonForm" << std::endl;
     if (this == &copy)
@@ -39,8 +39,8 @@ std::string PresidentialPardonForm::getTarget() const
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     if (executor.getGrade() > this->getGradeToExecute())
-        throw AForm::GradeTooLowException();
+        (throw AForm::GradeTooLowException());
     if (!this->getSignedForm() == false)
-        throw AForm::FormNotSignedException();
+        (throw AForm::FormNotSignedException());
     std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }

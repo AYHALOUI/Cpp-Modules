@@ -12,7 +12,7 @@ class Intern
         /* orhtodox canonical form */
         Intern();
         Intern(const Intern& copy);
-        Intern& operator = (const Intern& copy);
+        Intern& operator= (const Intern& copy);
         ~Intern();
 
         AForm *makeForm(std::string formName, std::string target);

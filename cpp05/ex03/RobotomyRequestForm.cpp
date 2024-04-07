@@ -15,7 +15,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): AForm
     std::cout << "Copy constructor called from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& copy)
 {
     std::cout << "Assignation operator called from RobotomyRequestForm" << std::endl;
     if (this == &copy)
@@ -42,7 +42,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     if (this->getSignedForm() == false)
         throw AForm::FormNotSignedException();
     std::cout << "Drilling noises..." << std::endl;
-    if (time_to_robotomize == 0)
+    if (!time_to_robotomize)
         std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
     else
         std::cout << this->getTarget() << " has failed to be robotomized" << std::endl;

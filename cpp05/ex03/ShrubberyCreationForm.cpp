@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
     std::cout << "Copy constructor called from ShrubberyCreationForm" << std::endl;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
+ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreationForm &copy)
 {
     std::cout << "Assignation operator called from ShrubberyCreationForm" << std::endl;
     if (this == &copy)

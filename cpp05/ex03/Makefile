@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 17:37:06 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/06 16:52:51 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/07 21:50:16 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
+%.o: %.cpp %.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

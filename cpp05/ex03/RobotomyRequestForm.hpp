@@ -12,7 +12,7 @@ class RobotomyRequestForm : public AForm
         /* orhtodox canonical form */
         RobotomyRequestForm();
         RobotomyRequestForm(const RobotomyRequestForm& copy);
-        RobotomyRequestForm& operator = (const RobotomyRequestForm& copy);
+        RobotomyRequestForm& operator= (const RobotomyRequestForm& copy);
         ~RobotomyRequestForm();
 
         // /* Constructor Parametrized */
