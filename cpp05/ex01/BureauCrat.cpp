@@ -1,48 +1,49 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : bureaucrat_name("default_name")
 {
-	std::cout << "Default Constructor Called" << std::endl;
+	std::cout << "Default Constructor Called from Bureaucrat" << std::endl;
+	this->bureaucrat_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(const std::string bureacrat_name, int grade): bureaucrat_name(bureacrat_name), bureaucrat_grade(grade)
 {
 	std::cout << "Constructor Paramitrazed Called" << std::endl;
 	if (this->bureaucrat_grade < 1)
-		throw GradeTooHighException();
+		(throw GradeTooHighException());
 	if (this->bureaucrat_grade > 150)
-		throw GradeTooLowException();
+		(throw GradeTooLowException());
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
-	*this = copy;
+	std::cout << "Copy Constructor Called from Bureaucrat" << std::endl;
+	(*this) = copy;
 }
 
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& copy)
 {
-	std::cout << "Assignation Operator Called" << std::endl;
+	std::cout << "Assignation Operator Called from Bureaucrat" << std::endl;
 	if (this == &copy)
-		return *this;
+		return (*this);
 	this->bureaucrat_grade = copy.bureaucrat_grade;
 	return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor Called" << std::endl;
+	std::cout << "Destructor Called from Bureaucrat" << std::endl;
 }
 
-int Bureaucrat::getGrade() const
+int Bureaucrat::gerBureaucratGrade() const
 {
-	return this->bureaucrat_grade;
+	return (this->bureaucrat_grade);
 }
 
-const std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getBureaucratName() const
 {
-	return this->bureaucrat_name;
+	return (this->bureaucrat_name);
 }
 
 void Bureaucrat::incrementBureaucratGrade()
@@ -71,7 +72,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream& operator << (std::ostream& out, const Bureaucrat& bureauCrat)
 {
-	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
+	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade" << bureauCrat.gerBureaucratGrade() << std::endl;
 	return out;
 }
 

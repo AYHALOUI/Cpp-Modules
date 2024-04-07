@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/06 17:23:41 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 18:12:13 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Bureaucrat
 		~Bureaucrat();
 		
 		/*Getters*/
-		int getGrade() const;
-		const std::string getName() const;
+		int gerBureaucratGrade() const;
+		const std::string getBureaucratName() const;
 
 		void incrementBureaucratGrade();
 		void decrementBureaucratGrade();

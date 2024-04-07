@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 17:37:06 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/06 15:12:38 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/07 18:03:37 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp
+%.o: %.cpp %.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:

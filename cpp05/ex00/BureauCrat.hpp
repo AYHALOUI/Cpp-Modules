@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/06 17:24:35 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 18:04:05 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ class Bureaucrat
 		/* orhtodox canonical form */
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat& copy);
-		Bureaucrat& operator = (const Bureaucrat& copy);
+		Bureaucrat& operator= (const Bureaucrat& copy);
 		~Bureaucrat();
 
 
-		Bureaucrat(const std::string& name, int grade);
+		Bureaucrat(const std::string bureaucrat_name, int bureaucrat_grade);
 
 		/* Getters */
 		int gerBureaucratGrade() const;

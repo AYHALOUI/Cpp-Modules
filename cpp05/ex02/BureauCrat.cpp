@@ -1,12 +1,13 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): bureaucrat_name("default_name")
 {
 	std::cout << "Default Constructor Called" << std::endl;
+	this->bureaucrat_grade = 150;
 }
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade): bureaucrat_name(name), bureaucrat_grade(grade)
+Bureaucrat::Bureaucrat(const std::string bureaucrat_name, int bureaucrat_grade): bureaucrat_name(bureaucrat_name), bureaucrat_grade(bureaucrat_grade)
 {
 	std::cout << "Constructor Paramitrazed Called" << std::endl;
 	if (this->bureaucrat_grade < 1)
@@ -35,14 +36,14 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Destructor Called" << std::endl;
 }
 
-int Bureaucrat::getGrade() const
+int Bureaucrat::gerBureaucratGrade() const
 {
-	return this->bureaucrat_grade;
+	return (this->bureaucrat_grade);
 }
 
-const std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getBureaucratName() const
 {
-	return this->bureaucrat_name;
+	return (this->bureaucrat_name);
 }
 
 void Bureaucrat::incrementBureaucratGrade()
@@ -71,7 +72,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream& operator << (std::ostream& out, const Bureaucrat& bureauCrat)
 {
-	out << bureauCrat.getName() << ",  bureaucrat grade" << bureauCrat.getGrade() << std::endl;
+	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade " << bureauCrat.gerBureaucratGrade() << std::endl;
 	return out;
 }
 

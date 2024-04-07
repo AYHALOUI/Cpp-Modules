@@ -1,11 +1,14 @@
 #include "Bureaucrat.hpp"
 
+
+
+
 int main()
 {
     try
     {
         Bureaucrat b1 = Bureaucrat("aymene", 150);
-        Bureaucrat b2 = Bureaucrat("haloui", 2);
+        Bureaucrat b2 = Bureaucrat("haloui", 0);
         b2.incrementBureaucratGrade();
 
         std::cout << b1 ;
