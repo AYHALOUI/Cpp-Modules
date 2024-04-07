@@ -50,27 +50,27 @@ void Bureaucrat::incrementBureaucratGrade()
 {
 	this->bureaucrat_grade--;
 	if (this->bureaucrat_grade < 1)
-		throw GradeTooHighException();
+		(throw GradeTooHighException());
 }
 
 void Bureaucrat::decrementBureaucratGrade()
 {
 	this->bureaucrat_grade++;
 	if (this->bureaucrat_grade < 1)
-		throw GradeTooLowException();
+		(throw GradeTooLowException());
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high";
+	return ("Grade too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low";
+	return ("Grade too low");
 }
 
-std::ostream& operator << (std::ostream& out, const Bureaucrat& bureauCrat)
+std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureauCrat)
 {
 	out << bureauCrat.getBureaucratName() << ",  bureaucrat grade" << bureauCrat.gerBureaucratGrade() << std::endl;
 	return out;

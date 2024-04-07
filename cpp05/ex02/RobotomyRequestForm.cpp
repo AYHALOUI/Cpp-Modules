@@ -15,7 +15,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): AForm
     std::cout << "Copy constructor called from RobotomyRequestForm" << std::endl;
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm &copy)
 {
     std::cout << "Assignation operator called from RobotomyRequestForm" << std::endl;
     if (this == &copy)

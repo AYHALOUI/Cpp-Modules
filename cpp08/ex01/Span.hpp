@@ -14,7 +14,7 @@ class Span
     public:
         Span();
         Span(Span const &copy);
-        Span &operator=(Span const &rhs);
+        Span& operator= (Span const &rhs);
         ~Span();
 
         // Member functions

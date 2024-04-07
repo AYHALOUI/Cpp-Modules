@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:44:49 by ahaloui           #+#    #+#             */
-/*   Updated: 2023/09/24 10:30:08 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 17:26:02 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(const Fixed &copy);
-		Fixed &operator = (const Fixed &copy);
+		Fixed& operator = (const Fixed &copy);
 		~Fixed();
 
 		int getRawBits( void ) const;

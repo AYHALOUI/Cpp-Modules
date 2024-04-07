@@ -76,7 +76,8 @@
     "numbers": "cpp",
     "map": "cpp",
     "*.tpp": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "__tree": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

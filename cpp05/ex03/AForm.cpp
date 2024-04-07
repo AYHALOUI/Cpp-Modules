@@ -29,6 +29,7 @@ AForm& AForm::operator= (const AForm &copy)
 
 AForm::~AForm()
 {
+    std::cout << "Destructor Called from AForm" << std::endl;
 }
 
 std::string AForm::getNameForm() const 
@@ -73,12 +74,12 @@ std::ostream& operator<< (std::ostream& out, const AForm& aform)
    out << "Signed Form: " << aform.getNameForm() << std::endl;
    out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
    out << "Grade To Execute it: " << aform.getGradeToExecute() << std::endl;
-   return out;
+   return (out);
 }
 
 void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() >= this->grade_to_sign)
-        throw GradeTooLowException();
+        (throw GradeTooLowException());
     this->signed_form = true;
 }

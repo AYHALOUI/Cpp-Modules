@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BureauCrat.hpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:37:04 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/06 16:02:42 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/07 21:43:13 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& copy);
-		Bureaucrat& operator = (const Bureaucrat& copy);
+		Bureaucrat& operator= (const Bureaucrat& copy);
 		~Bureaucrat();
 		
 		/*Getters*/
@@ -60,6 +60,6 @@ class Bureaucrat
 		void executeForm(AForm const & form);
 };
 
-std::ostream &operator << (std::ostream &out, const Bureaucrat &BureauCrat);
+std::ostream& operator<< (std::ostream &out, const Bureaucrat &BureauCrat);
 
 #endif

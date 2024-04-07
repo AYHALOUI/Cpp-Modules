@@ -17,7 +17,7 @@ class AForm
         /* orhtodox canonical form */
         AForm();
         AForm(const AForm &copy);
-        AForm &operator=(const AForm &copy);
+        AForm& operator= (const AForm &copy);
         virtual ~AForm();
 
         AForm(std::string name, int grade_to_sign, int grade_to_execute);
@@ -53,6 +53,6 @@ class AForm
         virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream& operator<<(std::ostream& out, const AForm& form);
+std::ostream& operator<< (std::ostream& out, const AForm& form);
 
 #endif
