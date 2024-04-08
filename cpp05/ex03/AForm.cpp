@@ -70,15 +70,15 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 
 const char* AForm::GradeTooLowException:: what() const throw()
 {
-    return ("Grade too low");
+    return "AForm grade is too low!";
 }
 
 const char* AForm::GradeTooHighException:: what() const throw()
 {
-    return ("Grade too high");
+    return "AForm grade is too high!";
 }
 
 const char* AForm::FormNotSignedException:: what() const throw()
 {
-    return ("Form not signed");
+    return "AForm Not Found!";
 }

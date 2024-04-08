@@ -27,14 +27,12 @@ Intern::~Intern()
 
 AForm* Intern::makeForm(std::string forme_name, std::string target)
 {
-    // array of forms
     AForm *objects_templates[3] = { 
         new ShrubberyCreationForm(target), 
         new RobotomyRequestForm(target), 
         new PresidentialPardonForm(target)
     };
 
-    // array of forms names
     std::string forms_names[3] = {
         "Shrubbery",
         "Robotomy",
