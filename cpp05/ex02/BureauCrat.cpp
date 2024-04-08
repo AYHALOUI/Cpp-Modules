@@ -66,26 +66,30 @@ std::ostream& operator<< (std::ostream& out, const Bureaucrat& bureauCrat)
 	return (out);
 }
 
-void Bureaucrat::signForm(AForm& form)
+void Bureaucrat::signForm(AForm& aform)
 {
-	if (this->bureaucrat_grade <= form.getGradeToSign())
+	try
 	{
-		form.beSigned(*this);
-		std::cout << this->bureaucrat_name << " signs " << form.getNameForm() << std::endl;
+		aform.beSigned(*this);
+		std::cout << this->bureaucrat_name << " signed " << aform.getNameForm() << std::endl;
 	}
-	else
-		std::cout << this->bureaucrat_name << " cannot sign " << form.getNameForm() << " because his grade is too low" << std::endl;
+	catch(const std::exception& e)
+	{
+		std::cout << this->bureaucrat_name << " cannot sign " << aform.getNameForm() << " because " << e.what() << std::endl;
+	}
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const & aform)
 {
-	if (this->bureaucrat_grade <= form.getGradeToExecute())
+	try
 	{
-		form.execute(*this);
-		std::cout << this->bureaucrat_name << " executed " << form.getNameForm() << std::endl;
+		aform.execute(*this);
+		std::cout << this->bureaucrat_name << " executed " << aform.getNameForm() << std::endl;
 	}
-	else
-		std::cout << this->bureaucrat_name << " cannot execute " << form.getNameForm() << " because his grade is too low" << std::endl;
+	catch(const std::exception& e)
+	{
+		std::cout << this->bureaucrat_name << " cannot execute " << aform.getNameForm() << " because " << e.what() << std::endl;
+	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

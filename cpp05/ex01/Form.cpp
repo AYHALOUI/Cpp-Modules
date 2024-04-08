@@ -6,6 +6,7 @@ Form::Form() : name_form("form"), signed_form(false), grade_to_sign(150), grade_
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute) : name_form(name), signed_form(false), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
 {
+    std::cout << "Constructor Paramitrazed Called from Form" << std::endl;
     if (this->grade_to_sign < 1 || this->grade_to_execute < 1)
         throw GradeTooHighException();
      if (this->grade_to_sign > 150 || this->grade_to_execute > 150)
@@ -50,10 +51,11 @@ int Form::getGradeToExecute() const
 
 std::ostream& operator<< (std::ostream& out, const Form& form)
 {
-   out << "Name of Form: " << form.getNameForm() << std::endl;
-   out << "Signed Form: " << form.getNameForm() << std::endl;
-   out << "Grade To Sign it: " << form.getGradeToSign() << std::endl;
-   out << "Grade To Execute it: " << form.getGradeToExecute() << std::endl;
+    out << "-------------- Form Information: ----------------- " << std::endl;
+    out << "Name of Form: " << form.getNameForm() << std::endl;
+    out << "Signed Form: " << form.getNameForm() << std::endl;
+    out << "Grade To Sign it: " << form.getGradeToSign() << std::endl;
+    out << "Grade To Execute it: " << form.getGradeToExecute() << std::endl;
    return out;
 }
 
