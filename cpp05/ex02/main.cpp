@@ -6,29 +6,30 @@
 
 int main()
 {
-   
     try
     {
-        // PresidentialPardonForm *presidential = new PresidentialPardonForm("presidential");
-        // RobotomyRequestForm *robotomy = new RobotomyRequestForm("robotomy");
-        ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("shrubbery");
-        Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 130);
-        // BureauCrat *bureaucrat2 = new BureauCrat("bureaucrat2", 150);
-        // BureauCrat *bureaucrat3 = new BureauCrat("bureaucrat3", 100);
+        Bureaucrat bureaucrat("John", 1);
+        ShrubberyCreationForm shrubberyForm("home");
+        RobotomyRequestForm robotomyForm("John");
+        PresidentialPardonForm pardonForm("Jane");
 
-        // presidential->beSigned(*bureaucrat);
-        // presidential->execute(*bureaucrat);
+        std::cout << "* --------------- Sign Form ------------------ *" << std::endl;
 
-        // robotomy->beSigned(*bureaucrat2);
-        // robotomy->execute(*bureaucrat2);
+        bureaucrat.signForm(shrubberyForm);
+        bureaucrat.signForm(robotomyForm);
+        bureaucrat.signForm(pardonForm);
 
-        shrubbery->beSigned(*bureaucrat);
-        shrubbery->execute(*bureaucrat);
-    }
-    catch(const std::exception& e)
-    {
-       std::cout << "Exception caught: " << e.what() << std::endl;
-    }
+        std::cout << "* ---------------- Executed ------------------ *" << std::endl;
+        bureaucrat.executeForm(shrubberyForm);
+        bureaucrat.executeForm(robotomyForm);
+        bureaucrat.executeForm(pardonForm);
+
+        std::cout << "* ----------------- Grade ------------------- *" << std::endl;
+   }
+   catch(const std::exception& e)
+   {
+    std::cerr << e.what() << '\n';
+   }
     return 0;
 }
 

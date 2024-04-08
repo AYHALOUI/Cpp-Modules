@@ -6,8 +6,8 @@ int main()
 {
     try
     {
-        Bureaucrat a("aymene", 45);
-        Form f("haloui", 60, 1);
+        Bureaucrat a("aymene", 40);
+        Form f("haloui", 60, 150);
 
         std::cout << "*---------------------------------*" << std::endl;
         std::cout << a;

@@ -54,7 +54,7 @@ int AForm::getGradeToExecute() const
 
 std::ostream& operator<< (std::ostream& out, const AForm& aform)
 {
-    out << "-------------- Form Information: ----------------- " << std::endl;
+    out << "* -------------- Form Information: ----------------- *" << std::endl;
     out << "Name of Form: " << aform.getNameForm() << std::endl;
     out << "Signed Form: " << aform.getNameForm() << std::endl;
     out << "Grade To Sign it: " << aform.getGradeToSign() << std::endl;
@@ -64,7 +64,7 @@ std::ostream& operator<< (std::ostream& out, const AForm& aform)
 
 void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getBureaucratGrade() >= this->grade_to_sign)
+    if ((bureaucrat.getBureaucratGrade()) >= this->grade_to_sign)
         (throw GradeTooLowException());
     this->signed_form = true;
 }
@@ -81,5 +81,5 @@ const char* AForm::GradeTooHighException:: what() const throw()
 
 const char* AForm::FormNotSignedException:: what() const throw()
 {
-    return "AForm Not Found!";
+    return "AForm Not Signed!";
 }
