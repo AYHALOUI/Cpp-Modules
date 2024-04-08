@@ -25,29 +25,37 @@ Intern::~Intern()
 }
 
 
-AForm* Intern::makeForm(std::string forme_name, std::string target)
+int Intern::getFormIndex(std::string form_name)
 {
-    AForm *objects_templates[3] = { 
-        new ShrubberyCreationForm(target), 
-        new RobotomyRequestForm(target), 
-        new PresidentialPardonForm(target)
-    };
-
-    std::string forms_names[3] = {
-        "Shrubbery",
-        "Robotomy",
-        "Presidential"
+    std::string form_template[3] = 
+    {   "ShrubberyRequestForm",
+        "RobotomyRequestForm",
+        "PresidentialPardonForm"
     };
 
     for (int i = 0; i < 3; i++)
     {
-        if (forme_name == forms_names[i])
-        {
-            std::cout << "Intern creates " << forms_names[i] << " form" << std::endl;
-            return (objects_templates[i]);
-        }
+        if (form_template[i] == form_name)
+            return (i+1);
     }
-    throw FormNotFoundException();
+    return 0;
+}
+
+AForm* Intern::makeForm(std::string forme_name, std::string target)
+{
+    int index_of_form = getFormIndex(forme_name);
+    if (!index_of_form)
+        throw FormNotFoundException();
+    switch (index_of_form)
+    {
+        case 1:
+            return (new ShrubberyCreationForm(target));
+        case 2:
+            return (new RobotomyRequestForm(target));
+        case 3:
+            return (new PresidentialPardonForm(target));
+    }
+    return (NULL);
 }
 
 const char* Intern::FormNotFoundException::what() const throw()

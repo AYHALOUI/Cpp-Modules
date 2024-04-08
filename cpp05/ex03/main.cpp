@@ -2,7 +2,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
-
+#include "Bureaucrat.hpp"
 
 // function to check leaks
 void checkLeaks()
@@ -14,17 +14,18 @@ int main()
 {
     try
     {
-        Intern *intern = new Intern();
-        Bureaucrat *bureaucrat = new Bureaucrat("bureaucrat", 130);
+        Intern intern;
+        AForm *form = intern.makeForm("ShrubberyRequestForm", "Bender");
+        Bureaucrat bureaucrat("aymene", 180);
 
-        AForm *form = intern->makeForm("Shrubbery", "shrubbery");
-        
-        bureaucrat->signForm(*form);
-        bureaucrat->executeForm(*form);
+        std::cout << "--------------------------------" << std::endl;
 
-        delete bureaucrat;
+        bureaucrat.signForm(*form);
+        bureaucrat.executeForm(*form);
+
+        std::cout << "--------------------------------" << std::endl;
+
         delete form;
-        delete intern;
     }
     catch(const std::exception& e)
     {
