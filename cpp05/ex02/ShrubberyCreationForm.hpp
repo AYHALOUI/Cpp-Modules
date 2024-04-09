@@ -9,16 +9,17 @@ class ShrubberyCreationForm : public AForm
         std::string target;
 
     public:
+
         /* orhtodox canonical form */
         ShrubberyCreationForm();
         ShrubberyCreationForm(const ShrubberyCreationForm& copy);
         ShrubberyCreationForm& operator= (const ShrubberyCreationForm& copy);
         ~ShrubberyCreationForm();
 
-        // /* Constructor Parametrized */
+        /* Constructor Parametrized */
         ShrubberyCreationForm(std::string target);
 
-        // /* Getters */
+        /* Getters */
         std::string getTarget() const;
         void execute(Bureaucrat const & executor) const;
 };

@@ -9,16 +9,17 @@ class RobotomyRequestForm : public AForm
         std::string target;
 
     public:
+    
         /* orhtodox canonical form */
         RobotomyRequestForm();
         RobotomyRequestForm(const RobotomyRequestForm& copy);
         RobotomyRequestForm& operator= (const RobotomyRequestForm& copy);
         ~RobotomyRequestForm();
 
-        // /* Constructor Parametrized */
+        /* Constructor Parametrized */
         RobotomyRequestForm(std::string target);
 
-        // /* Getters */
+        /* Getters */
         std::string getTarget() const;
         void execute(Bureaucrat const & executor) const;
 };

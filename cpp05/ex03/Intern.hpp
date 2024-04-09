@@ -15,7 +15,7 @@ class Intern
         Intern& operator= (const Intern& copy);
         ~Intern();
 
-        int getFormIndex(std::string form_name);
+        int getIndexFormTemplate(std::string form_name);
         AForm *makeForm(std::string form_name, std::string target);
         class FormNotFoundException : public std::exception
         {

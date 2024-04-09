@@ -9,6 +9,7 @@ class ShrubberyCreationForm : public AForm
         std::string target;
 
     public:
+    
         /* orhtodox canonical form */
         ShrubberyCreationForm();
         ShrubberyCreationForm(const ShrubberyCreationForm& copy);

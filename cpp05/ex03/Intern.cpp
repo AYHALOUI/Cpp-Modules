@@ -25,7 +25,7 @@ Intern::~Intern()
 }
 
 
-int Intern::getFormIndex(std::string form_name)
+int Intern::getIndexFormTemplate(std::string form_name)
 {
     std::string form_template[3] = 
     {   "ShrubberyRequestForm",
@@ -43,7 +43,7 @@ int Intern::getFormIndex(std::string form_name)
 
 AForm* Intern::makeForm(std::string forme_name, std::string target)
 {
-    int index_of_form = getFormIndex(forme_name);
+    int index_of_form = getIndexFormTemplate(forme_name);
     if (!index_of_form)
         throw FormNotFoundException();
     switch (index_of_form)

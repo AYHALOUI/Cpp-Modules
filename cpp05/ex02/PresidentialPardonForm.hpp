@@ -14,10 +14,10 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm& operator= (const PresidentialPardonForm& copy);
         ~PresidentialPardonForm();
 
-        // /* Constructor Parametrized */
+        /* Constructor Parametrized */
         PresidentialPardonForm(std::string target);
 
-        // /* Getters */
+        /* Getters */
         std::string getTarget() const;
 
         void execute(Bureaucrat const & executor) const;

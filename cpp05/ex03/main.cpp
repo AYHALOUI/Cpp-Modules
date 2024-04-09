@@ -4,35 +4,31 @@
 #include "Intern.hpp"
 #include "Bureaucrat.hpp"
 
-// function to check leaks
-void checkLeaks()
-{
-    system("leaks ex03");
-}
 
 int main()
 {
     try
     {
         Intern intern;
-        AForm *form = intern.makeForm("ShrubberyRequestForm", "Bender");
-        Bureaucrat bureaucrat("aymene", 180);
+        AForm *form;
+        Bureaucrat bureaucrat("aymene", 120);
 
-        std::cout << "--------------------------------" << std::endl;
+        std::cout << "---------- Sign and Execute Form ----------" << std::endl;
 
+        form = intern.makeForm("ShrubberyRequestForm", "ahaloui");
         bureaucrat.signForm(*form);
         bureaucrat.executeForm(*form);
 
-        std::cout << "--------------------------------" << std::endl;
+        std::cout << "------------ Destructors ------------" << std::endl;
 
         delete form;
+
+        std::cout << "------------------ End -----------------" << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
-    
-    atexit(checkLeaks);
     return 0;
 }
 

@@ -50,7 +50,7 @@ void Bureaucrat::incrementBureaucratGrade()
 {
 	this->bureaucrat_grade--;
 	if (this->bureaucrat_grade < 1)
-		throw GradeTooHighException();
+		(throw GradeTooHighException());
 }
 
 void Bureaucrat::decrementBureaucratGrade()

@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 17:37:06 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/07 22:36:21 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/08 21:26:51 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC_CPP = main.cpp Bureaucrat.CPP
+SRC_CPP = main.cpp Bureaucrat.cpp
 
 SRC_HPP = Bureaucrat.hpp
 

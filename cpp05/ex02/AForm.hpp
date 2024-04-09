@@ -17,10 +17,10 @@ class AForm
         /* orhtodox canonical form */
         AForm();
         AForm(const AForm &copy);
-        AForm &operator=(const AForm &copy);
+        AForm &operator= (const AForm &copy);
         virtual ~AForm();
 
-        AForm(std::string name, int grade_to_sign, int grade_to_execute);
+        AForm(std::string name_form, int grade_to_sign, int grade_to_execute);
 
         /* Getters */
         std::string getNameForm() const;
@@ -54,6 +54,6 @@ class AForm
         
 };
 
-std::ostream& operator<<(std::ostream& out, const AForm& form);
+std::ostream& operator<< (std::ostream& out, const AForm& form);
 
 #endif
