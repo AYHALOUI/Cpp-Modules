@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/ahaloui/Desktop/cpp_last_v1/cpp05/ex03",
-      "program": "/Users/ahaloui/Desktop/cpp_last_v1/cpp05/ex03/build/Debug/outDebug"
+      "cwd": "/Users/ahaloui/Desktop/cpp_last_v1/cpp06/ex00v1",
+      "program": "/Users/ahaloui/Desktop/cpp_last_v1/cpp06/ex00v1/build/Debug/outDebug"
     }
   ]
 }
