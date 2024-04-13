@@ -80,7 +80,7 @@ void ScalarConverter::convert(const std::string& input)
     }
     else if (is_number(input))
     {
-        //std::cout << "Here" << std::endl;
+        std::cout << "Here" << std::endl;
         double d = std::stod(input);
         std::cout << "char: ";
         if (d >= 32 && d <= 126)
