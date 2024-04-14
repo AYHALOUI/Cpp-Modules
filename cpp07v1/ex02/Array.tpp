@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 22:15:43 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/13 23:42:25 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/14 16:41:19 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Array<T>::Array(unsigned int n)
 {
     std::cout << "Constructor Parametrazed Called From Array" << std::endl;
     this->array_length = n;
-    this->add_array = new T [this->array_length];
+    this->add_array = new T[this->array_length];
 }
 
 template <typename T>
@@ -47,7 +47,6 @@ Array<T>& Array<T>::operator= (const Array& copy)
         return (*this);
     this->array_length = copy.array_length;
     this->add_array = new T[this->array_length];
-    /* Copy Elemets */
     for (unsigned int i = 0; i < this->array_length; i++)
         this->add_array[i] = copy.add_array[i];
     return (*this);

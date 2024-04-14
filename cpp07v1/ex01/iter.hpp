@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 22:16:08 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/13 22:16:09 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/14 16:42:22 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void iter (T* add_array, size_t array_length, F function)
     {
         function(add_array[i]);
     }
-    
 }
 
 template <typename T>

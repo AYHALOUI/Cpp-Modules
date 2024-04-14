@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 22:15:54 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/13 23:45:42 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/13 23:58:23 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,15 @@ int main()
         stringArr[i] += " ahaloui";
         std::cout << stringArrCopy[i] << std::endl;
     }
+
+    try 
+    {
+        std::cout << stringArrCopy[10] << std::endl;    
+    } catch (const std::exception& e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
     
     std::cout << "*------------- End of the program --------------*" << std::endl;
-    atexit(ff);
+    //atexit(ff);
     return (0);
 }

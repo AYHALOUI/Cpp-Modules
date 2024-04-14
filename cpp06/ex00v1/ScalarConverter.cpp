@@ -57,11 +57,29 @@ bool is_nan(const std::string& input)
     return false;
 }
 
-// function to check if a string
-// is a valid number
-bool is_number(const std::string& input)
+bool is_number(const std::string input)
 {
+    int index = 0;
+    int count = 0;
+
+    if (input[index] == '+' || input[index] == '-')
+        index++;
+    if (input[index] != '+' && input[index] != '-' && !isdigit(input[index]))
+        return (false);
     for (size_t i = 0; i < input.length(); i++)
+    {
+        if (input[i] == '.')
+            count++;
+    }
+    if (count > 1)
+        return (false);
+ 
+    if (input[input.length() - 1] != 'f' && !isdigit(input[input.length() - 1]))
+    {
+        std::cout << "Invalid input111212" << std::endl;
+        return (false);
+    }
+    for (size_t i = index; i < input.length(); i++)
     {
         if (!isdigit(input[i]) && input[i] != '.' && input[i] != 'f')
             return false;
@@ -72,6 +90,7 @@ void ScalarConverter::convert(const std::string& input)
 {
     if (input.length() == 1 && !isdigit(input[0]))
     {
+        std::cout << "--------- Here --------------" << std::endl;
         char c = input[0];
         std::cout << "char: " << "'" << c << "'"<< std::endl;
         std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -80,19 +99,35 @@ void ScalarConverter::convert(const std::string& input)
     }
     else if (is_number(input))
     {
-        std::cout << "Here" << std::endl;
+        std::cout << "---------- Here1 ---------" << std::endl;
         double d = std::stod(input);
         std::cout << "char: ";
         if (d >= 32 && d <= 126)
             std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
-        else
+        else if ((d >= 0 && d <= 31) || d == 127)
             std::cout << "Non displayable" << std::endl;
+        else
+            std::cout << "impossible" << std::endl;
+
+        // to Int
         std::cout << "int: " << static_cast<int>(d) << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
-        std::cout << "double: " << d << ".0" << std::endl;
+
+        // to float
+        if ((int(d) - static_cast<float>(d)) != 0)
+            std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+        else
+            std::cout << "float: " << static_cast<float>(d) << ".0f" << std::endl;
+
+        // to double
+        if ((int(d) - static_cast<double>(d)) != 0)
+            std::cout << "double: " << static_cast<double>(d) << std::endl;
+        else
+            std::cout << "double: " << static_cast<double>(d) << ".0" << std::endl;
     }
     else if (is_nan(input))
     {
+       
+        std::cout << "---------- Here2 --------------" << std::endl;
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
         if (input == "nan" || input == "nanf")

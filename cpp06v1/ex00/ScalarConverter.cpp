@@ -29,35 +29,35 @@ bool is_float(std::string str)
     return (false);
 }
 
-datatype checkType(std::string str)
-{
-    if (is_float(str))
-    {
-        try
-        {
-            std::stof(str);
-            return (TYPE_FLOAT);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-            return (TYPE_INVALID);
-        }
-    }
-    else
-    {
-        try
-        {
-            std::stoi(str);
-            return (TYPE_INT);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-            return (TYPE_INVALID);
-        }
-    }
-}
+// datatype checkType(std::string str)
+// {
+//     if (is_float(str))
+//     {
+//         try
+//         {
+//             std::stof(str);
+//             return (TYPE_FLOAT);
+//         }
+//         catch(const std::exception& e)
+//         {
+//             std::cerr << e.what() << '\n';
+//             return (TYPE_INVALID);
+//         }
+//     }
+//     else
+//     {
+//         try
+//         {
+//             std::stoi(str);
+//             return (TYPE_INT);
+//         }
+//         catch(const std::exception& e)
+//         {
+//             std::cerr << e.what() << '\n';
+//             return (TYPE_INVALID);
+//         }
+//     }
+// }
 
 
 
