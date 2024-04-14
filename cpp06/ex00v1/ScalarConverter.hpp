@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/14 21:27:41 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/14 23:11:24 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
@@ -23,9 +37,8 @@ class ScalarConverter
     public:
 
         std::string getInput() const;
-        void setInput(const std::string& input);
-        void convertToInt();
-        static void convert(const std::string& input);
+
+        static void convert(const std::string input);
         
 };
 

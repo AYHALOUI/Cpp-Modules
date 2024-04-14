@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 18:55:50 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/12 18:55:52 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/14 21:42:53 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = convert
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = ScalarConverter.cpp main.cpp
 

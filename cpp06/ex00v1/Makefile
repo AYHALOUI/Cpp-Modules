@@ -1,8 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/14 21:27:36 by ahaloui           #+#    #+#              #
+#    Updated: 2024/04/14 21:27:54 by ahaloui          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+
 NAME = convert
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = ScalarConverter.cpp main.cpp
 

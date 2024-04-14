@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/14 21:27:47 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/14 23:50:06 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "ScalarConverter.hpp"
 
 
@@ -73,12 +87,8 @@ bool is_number(const std::string input)
     }
     if (count > 1)
         return (false);
- 
     if (input[input.length() - 1] != 'f' && !isdigit(input[input.length() - 1]))
-    {
-        std::cout << "Invalid input111212" << std::endl;
         return (false);
-    }
     for (size_t i = index; i < input.length(); i++)
     {
         if (!isdigit(input[i]) && input[i] != '.' && input[i] != 'f')
@@ -86,7 +96,7 @@ bool is_number(const std::string input)
     }
     return true;
 }
-void ScalarConverter::convert(const std::string& input)
+void ScalarConverter::convert(const std::string input)
 {
     if (input.length() == 1 && !isdigit(input[0]))
     {
@@ -127,7 +137,6 @@ void ScalarConverter::convert(const std::string& input)
     else if (is_nan(input))
     {
        
-        std::cout << "---------- Here2 --------------" << std::endl;
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
         if (input == "nan" || input == "nanf")
