@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 01:30:12 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/15 02:03:34 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/15 02:13:44 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,6 @@ void ScalarConverter::convert(std::string str)
         print_simple_case(str[0]);
     else if (is_valide_number(str))
     {
-        std::cout << "string: " << str << std::endl;
         toChar(str);
         toInt(str);
         toFloat(str);
