@@ -5,20 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/23 17:37:06 by ahaloui           #+#    #+#              #
-#    Updated: 2023/11/26 18:04:37 by ahaloui          ###   ########.fr        #
+#    Created: 2024/04/15 01:30:37 by ahaloui           #+#    #+#              #
+#    Updated: 2024/04/15 02:00:10 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = serialize
+NAME = serialization
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Serializer.cpp
+SRC_CPP = Serializer.cpp main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+SRC_HPP = Serializer.hpp
+
+OBJ = $(SRC_CPP:.cpp=.o)
 
 RM = rm -f
 
@@ -27,7 +29,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp $(SRC_HPP)
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
@@ -37,4 +39,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
-

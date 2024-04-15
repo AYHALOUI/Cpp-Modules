@@ -1,27 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:28:24 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:06:32 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Base.hpp"
 #include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
-
-
-int main(void)
+int main() 
 {
-//  //mai
-    Base* obj1 = generate();
-    Base* obj2 = generate();
+    std::cout <<  "-------------------------------------------" << std::endl;
+    Base *ptr = generate();
+    A a;
 
-    std::cout << "Object 1: ";
-    identify(obj1);
-
-    std::cout << "Object 2: ";
-    identify(obj2);
-
-    delete obj1;
-    delete obj2;
-
-    Base *base = generate();
+    Base& base = a;
+    std::cout <<  "-------------------------------------------" << std::endl;
+    identify(ptr);
     identify(base);
-    identify(*base);
-    delete base;
-    return (0);
+    std::cout << "--------- End of Program ---------" << std::endl;
+    return (1); 
 }

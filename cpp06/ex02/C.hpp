@@ -1,14 +1,23 @@
-#ifndef C_HPP
-# define C_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   C.hpp                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:28:29 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:07:33 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include "Base.hpp"
-# include <iostream>
-# include <string>
+
+#ifndef C_HPP
+#define C_HPP
+
+#include "Base.hpp"
 
 class C : public Base
 {
-    public:
-        C();
-        virtual ~C();
+
 };
 #endif

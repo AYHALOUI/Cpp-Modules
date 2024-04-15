@@ -1,49 +1,82 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:28:46 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:06:59 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
 #include "C.hpp"
+#include "B.hpp"
+#include "A.hpp"
 
-Base::~Base()
-{
-    std::cout << "Destructor called from Base" << std::endl;
-}
 
-Base *generate(void)
+Base* generate(void)
 {
-    int r = std::rand() % 3;
-    std::cout << "Random number: " << r << std::endl;
-    switch (r) {
-        case 0:
-            return new A();
+    std::srand((unsigned)time(NULL)); 
+    int index_of_object = (std::rand() %  10);
+
+    switch(index_of_object)
+    {
         case 1:
-            return new B();
+            return (new A());
         case 2:
-            return new C();
+            return (new B());
+        case 3:
+            return (new C());
         default:
-            return NULL;
+            return (NULL);
     }
 }
 
-void identify(Base *p)
+void identify(Base* p)
 {
     if (dynamic_cast<A *>(p))
-        std::cout << "A" << std::endl;
+        std::cout << "Object From Class A" << std::endl;
     else if (dynamic_cast<B *>(p))
-        std::cout << "B" << std::endl;
+        std::cout << "Object From Class B" << std::endl;
     else if (dynamic_cast<C *>(p))
-        std::cout << "C" << std::endl;
+        std::cout << "Object From Class C" << std::endl;
     else
-        std::cout << "Unknown" << std::endl;
+        std::cout <<  "Failed To Cast" << std::endl;
 }
 
-void identify(Base &p)
+void identify(Base& p)
 {
-    if (dynamic_cast<A *>(&p))
-        std::cout << "A" << std::endl;
-    else if (dynamic_cast<B *>(&p))
-        std::cout << "B" << std::endl;
-    else if (dynamic_cast<C *>(&p))
-        std::cout << "C" << std::endl;
-    else
-        std::cout << "Unknown" << std::endl;
+    try
+    {
+        void(dynamic_cast<A &>(p));
+        std::cout << "Object From Class A" << std::endl;
+    }
+    catch(const std::bad_cast& e)
+    {
+        try
+        {
+            void(dynamic_cast<B &>(p));
+            std::cout << "Object From Class B" << std::endl;
+        }
+        catch(const std::bad_cast& e)
+        {
+            try
+            {
+                void(dynamic_cast<B &>(p));
+                std::cout << "Object From Class C" << std::endl;
+            }
+            catch(const std::bad_cast& e)
+            {
+               std::cout <<  "Failed To Cast" << std::endl;
+            }
+        }
+    }
+}
+
+Base::~Base()
+{
+    std::cout << "Destructor Called from Base" << std::endl;
 }

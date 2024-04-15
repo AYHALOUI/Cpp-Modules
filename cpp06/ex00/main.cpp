@@ -1,13 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:30:18 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:15:37 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScalarConverter.hpp"
 
-int main(int argc, char **argv)
+int main (int ac, char **av)
 {
-    if (argc != 2)
+    try
     {
-        std::cout << "Error: Invalid number of arguments." << std::endl;
-        return (1);
+        if (ac != 2)
+            throw std::invalid_argument("Number of args are not Valid");
+        ScalarConverter::convert(av[1]);
     }
-    std::string literal = argv[1];
-    ScalarConverter::convert(literal);
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return (0);
 }
