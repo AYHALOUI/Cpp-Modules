@@ -1,5 +1,17 @@
-#include "ScalarConverter.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:30:18 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 01:33:26 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include "ScalarConverter.hpp"
 
 int main (int ac, char **av)
 {
@@ -15,13 +27,5 @@ int main (int ac, char **av)
     {
         std::cerr << e.what() << '\n';
     }
-
-    // int nb = std::atoi(av[1]);
-    // std::cout << nb << std::endl;
-
-    // double b = atof(av[1]);
-    // std::cout << b << std::endl;
-    //std::cout << static_cast<int>(1221.f) << std::endl;
-    // std::cout << b << std::endl;
     return (0);
 }

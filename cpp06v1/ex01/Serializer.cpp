@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:30:42 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:07:52 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Serializer.hpp"
 
 Serializer::Serializer()
@@ -13,9 +26,8 @@ Serializer::Serializer(const Serializer& copy)
 
 Serializer& Serializer::operator= (const Serializer& copy)
 {
+    (void)copy;
     std::cout << "Assigment Operator Called from Serializer" << std::endl;
-    if (this == &copy)
-        return (*this);
     return (*this);
 }
 

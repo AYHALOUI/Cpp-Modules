@@ -1,29 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:30:28 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:03:57 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef SCALAR_CONVERTER_HPP
 #define SCALAR_CONVERTER_HPP
 
 #include <iostream>
 #include <string>
-#include <sstream>
-#include <iomanip>
-#include <limits>
-#include <cctype>
-#include <cmath>
-#include <cstdlib>
 
-enum datatype {
-    TYPE_INT,
-    TYPE_LONG,
-    TYPE_FLOAT,
-    TYPE_DOUBLE,
-    TYPE_INVALID
-};
 
 class ScalarConverter {
-
-    private:
-        ScalarConverter();
         
     public:
+        ScalarConverter();
         ScalarConverter(const ScalarConverter& copy);
         ScalarConverter& operator= (const ScalarConverter& copy);
         ~ScalarConverter();
@@ -35,8 +33,11 @@ class ScalarConverter {
 
         /* parsing functions */
         static int count_nb_point(std::string number);
+        static int count_nb_f(std::string number);
         static bool is_valide_number(std::string number);
         static bool is_pseudo_literals (std::string str);
+        static bool check_if_float(std::string number);
+        static bool chec_if_f_in_end(std::string number);
 
 
         /* convert functions */

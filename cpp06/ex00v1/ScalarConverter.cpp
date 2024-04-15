@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 21:27:47 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/14 23:50:06 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/15 01:57:11 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,9 @@ std::string ScalarConverter::getInput() const
     return input;
 }
 
-void ScalarConverter::setInput(const std::string& input)
-{
-    this->input = input;
-}
 
-void ScalarConverter::convertToInt()
-{
-    // std::cout << "ScalarConverter convertToInt ..." << std::endl;
-    // int i = std::stoi(input);
-    // std::cout << "int: " << i << std::endl;
-}
+
+
 
 
 // function to check if a string nan or inf or -inf or +inf or -inff or +inff or inff or nanf

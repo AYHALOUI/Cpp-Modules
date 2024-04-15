@@ -1,9 +1,16 @@
-#include "Serializer.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:27:41 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 01:59:55 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ff()
-{
-    system("leaks serializatio");
-}
+#include "Serializer.hpp"
 
 int main()
 {
@@ -14,8 +21,6 @@ int main()
 
     std::cout << "********************************" << std::endl;
     uintptr_t value_ptr =  Serializer::serialize(person);
-    std::cout << value_ptr << std::endl;
-    std::cout << "********************************" << std::endl;
     Data *newPerson = Serializer::deserialize(value_ptr);
     std::cout << newPerson->name << std::endl;
     std::cout << newPerson->age << std::endl;

@@ -1,5 +1,17 @@
-#include "ScalarConverter.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:30:12 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:03:34 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
 {
@@ -39,6 +51,37 @@ int ScalarConverter::count_nb_point(std::string number)
     return (count);
 }
 
+bool ScalarConverter::check_if_float(std::string number)
+{
+    for (size_t i = 0; i < number.length(); i++)
+    {
+        if (number[i] == 'f')
+            return (true);
+    }
+    return (false);
+}
+
+bool ScalarConverter::chec_if_f_in_end(std::string number)
+{
+    if (check_if_float(number))
+    {
+        if (number[number.length() - 1] != 'f')
+            return (false);
+    }
+    return (true);
+}
+
+int ScalarConverter::count_nb_f(std::string number)
+{
+    int count = 0;
+    for (size_t i = 0; i < number.length(); i++)
+    {
+        if (number[i] == 'f')
+            count++;
+    }
+    return (count);
+}
+
 bool ScalarConverter::is_valide_number(std::string number)
 {
     int index = 0;
@@ -48,7 +91,9 @@ bool ScalarConverter::is_valide_number(std::string number)
     if (number[index] == '+' || number[index] == '-')
         index++;
     if (!isdigit((number[index])) 
-        || count_nb_point(number) > 1)
+        || count_nb_point(number) > 1 || count_nb_f(number) > 1)
+        return (false);
+    if (!chec_if_f_in_end(number))
         return (false);
     for (size_t i = index; i < number.length(); i++)
     {
@@ -125,13 +170,11 @@ void ScalarConverter::print_pseudo_literals (std::string str)
 
 void ScalarConverter::convert(std::string str)
 {
-    if (str.length() == 1)
-    {
-        if (!isdigit(str[0]))
-            print_simple_case(str[0]);
-    }
+    if (str.length() == 1 && !isdigit(str[0]))
+        print_simple_case(str[0]);
     else if (is_valide_number(str))
     {
+        std::cout << "string: " << str << std::endl;
         toChar(str);
         toInt(str);
         toFloat(str);

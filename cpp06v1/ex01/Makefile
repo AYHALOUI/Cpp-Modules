@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/15 01:30:37 by ahaloui           #+#    #+#              #
+#    Updated: 2024/04/15 02:00:10 by ahaloui          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = serialization
 
 CPP = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_CPP = Serializer.cpp main.cpp
 

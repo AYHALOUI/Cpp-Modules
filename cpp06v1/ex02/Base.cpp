@@ -1,13 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 01:28:46 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/15 02:06:59 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Base.hpp"
 #include "C.hpp"
 #include "B.hpp"
 #include "A.hpp"
 
-
-Base::~Base()
-{
-    std::cout << "Destructor Called from Base" << std::endl;
-}
 
 Base* generate(void)
 {
@@ -64,7 +72,11 @@ void identify(Base& p)
             {
                std::cout <<  "Failed To Cast" << std::endl;
             }
-            
         }
     }
+}
+
+Base::~Base()
+{
+    std::cout << "Destructor Called from Base" << std::endl;
 }
