@@ -1,27 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/15 19:04:52 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/16 14:35:48 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "whatever.hpp"
 
-
-
-
-// int main()
-// {
-
-//     int a = 10;
-//     int b = 20;
-
-//     std::cout << "---- Test for function Swap ----" << std::endl;
-//     std::cout << "---- after swaping the values ----" << std::endl;
-//     swap(a,b);
-//     std::cout <<"a: " << a << std::endl;
-//     std::cout <<"b: " << b << std::endl;
-//     std::cout << "---- Test for functions Min and Max ----" << std::endl;
-//     std::cout << "Min is: " << min (a, b) << std::endl;
-//     std::cout << "Max is: " << max (a, b) << std::endl;
-//     return 0;
-// } 
-
-int main( void ) 
-{
+int main( void ) {
     int a = 2;
     int b = 3;
     ::swap( a, b );
@@ -36,4 +28,31 @@ int main( void )
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return 0;
 }
-   
+
+// class Awesome
+// {
+//   public:
+//     Awesome(void) : _n(0) {}
+//     Awesome( int n ) : _n( n ) {}
+//     Awesome & operator= (Awesome & a) { _n = a._n; return *this; }
+//     bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+//     bool operator!=( Awesome const & rhs ) const{ return (this->_n != rhs._n); }
+//     bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+//     bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+//     bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+//     bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+//     int get_n() const { return _n; }
+//   private:
+//     int _n;
+// };
+// std::ostream & operator<< (std::ostream & o, const Awesome &a) { o << a.get_n(); return o; }
+
+// int main(void)
+// {
+// 	  Awesome a(2), b(4);
+//     swap(a, b);
+//     std::cout << a << " " << b << std::endl;
+//     std::cout << max(a, b) << std::endl;
+//     std::cout << min(a, b) << std::endl;
+//     return (0);
+// }

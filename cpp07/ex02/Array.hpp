@@ -1,68 +1,42 @@
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/13 22:16:01 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/16 14:06:28 by ahaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include <iostream>
-# include <string>
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
+
+#include <iostream>
 
 template <typename T>
-class Array {
-
+class Array
+{
     private:
-        T* array;
-        unsigned int length;
-    
+        T* add_array;
+        unsigned int array_length;
 
     public:
-        Array()
-        {
-            this->array = NULL;
-            this->length = 0;
-        }
+        /* Orthodox Canonical Form */
+        Array();
+        Array(unsigned int n);
+        Array(const Array& copy);
+        Array& operator= (const Array& copy);
 
-        Array(unsigned int n)
-        {
-            this->length = n;
-            this->array = new T[this->length];
-        }
+        /* Subscript Operator */
+        T& operator[] (int position);
+        
+        /* Getter */
+        unsigned int size() const;
 
-        Array(const Array& copy)
-        {
-            std::cout << "Copy Constructor Called";
-            this->length = copy.length;
-            this->array = new T[this->length];
-            for (unsigned int i = 0; i < this->length; i++)
-                this->array[i] = copy.array[i];
-        }
-
-        Array& operator = (const Array& copy)
-        {
-            if (this == &copy)
-                return (*this);
-            if (this->array)
-                delete[] this->array;
-            this->length = copy.length;
-            this->array = new T[this->length];
-            for (unsigned int i = 0; i < this->length; i++)
-                this->array[i] = copy.array[i];
-            return (*this);
-        }
-
-        T& operator[] (unsigned int index)
-        {
-            if (index >= this->length)
-                throw new std::exception();
-            return this->array[index];
-        }
-
-        unsigned int size()
-        {
-            return this->length;
-        }
-
-        ~Array()
-        {
-            delete[] this->array;
-        }
+        ~Array();
 };
-#endif
+#include "Array.tpp"
 
+#endif

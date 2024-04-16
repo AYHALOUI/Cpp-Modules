@@ -6,19 +6,21 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 17:37:06 by ahaloui           #+#    #+#              #
-#    Updated: 2023/11/26 18:04:37 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/15 19:08:30 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = arry
+NAME = array
 
 CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC_CPP = main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+SRC_HPP = Array.hpp Array.tpp
+
+OBJ = $(SRC_CPP:.cpp=.o)
 
 RM = rm -f
 
@@ -27,7 +29,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp Array.hpp
+%.o: %.cpp $(SRC_HPP)
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
