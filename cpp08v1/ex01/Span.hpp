@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 14:29:53 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/18 21:42:43 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ class Span
         void addNumber (int element);
         int shortestSpan ();
         int longestSpan();
+        void addNumber (std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
+        /* getter */
+        std::vector<int> getVectorNumbers() const;
+        
+
+        /* Exception Class */
         class VectorOfSpanException : public std::exception 
         {
             public:

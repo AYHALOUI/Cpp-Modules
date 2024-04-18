@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 14:33:11 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/18 21:54:34 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,19 @@ int Span::longestSpan()
     std::sort(temp.begin(), temp.end());
     return (temp.at(this->vector_numbers.size() - 1) 
         - temp.at(0));
+}
+
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    std::cout << "addNumber Called from Span" << std::endl;
+    if (vector_numbers.size() > vector_size)
+        throw (VectorOfSpanException());
+    vector_numbers.insert(vector_numbers.begin()+1, begin, end);
+}
+
+std::vector<int> Span::getVectorNumbers() const
+{
+    return (this->vector_numbers);
 }
 
 const char* Span::VectorOfSpanException:: what() const throw()
