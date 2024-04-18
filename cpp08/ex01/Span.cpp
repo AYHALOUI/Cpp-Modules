@@ -11,8 +11,8 @@ Span &Span::operator=(Span const &rhs)
 {
     if (this == &rhs)
         return *this;
-   this->numbers = rhs.numbers;
-this->max_size = rhs.max_size;
+    this->numbers = rhs.numbers;
+    this->max_size = rhs.max_size;
     return *this;
 }
 

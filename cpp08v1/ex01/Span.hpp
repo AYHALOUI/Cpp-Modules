@@ -6,7 +6,42 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/16 22:35:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/18 14:29:53 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
+#include <iostream>
+#include <vector>
+#include <algorithm> // Include the algorithm header for std::sort
+
+class Span
+{
+    private:
+        unsigned int vector_size;
+        std::vector<int> vector_numbers;
+    
+    public:
+        /* Orthodox Canonical Form */
+        Span();
+        Span(const Span& copy);
+        Span& operator= (const Span& copy);
+        ~Span();
+
+        /* Constructor Parametrized */
+        Span (unsigned int vector_size);
+        
+        /* Member Functions */
+        void addNumber (int element);
+        int shortestSpan ();
+        int longestSpan();
+
+        class VectorOfSpanException : public std::exception 
+        {
+            public:
+				const char* what() const throw();
+        };
+};
+#endif
