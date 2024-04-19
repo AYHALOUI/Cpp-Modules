@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/19 21:08:26 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 22:13:58 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ class Span
         void addNumber (int element);
         int shortestSpan ();
         int longestSpan();
-
-        // int generateRandomNumber();
-        void addNumber (std::vector<int>::iterator begin, std::vector<int>::iterator end);
+        
+        /* addRange */
+        void addRange (std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
         /* getter */
         std::vector<int> getVectorNumbers() const;
-        
 
         /* Exception Class */
         class VectorOfSpanException : public std::exception 

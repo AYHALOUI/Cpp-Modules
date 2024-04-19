@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/19 21:20:50 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 22:13:41 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static int generateRandomNumber()
     return (rand() % 100);
 }
 
-void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
     std::cout << "addNumber Called from Span" << std::endl;
     if (vector_numbers.size() + std::distance(begin, end) > vector_size)

@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:02 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/19 22:09:44 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 22:22:23 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main()
         srand(time(NULL));
         Span sp = Span(10000);
         std::vector<int> vec(10000);
-        sp.addNumber(vec.begin(), vec.end());
+        sp.addRange(vec.begin(), vec.end());
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
         std::cout << "--------------------------------" << std::endl;
@@ -57,6 +57,7 @@ int main()
         for (std::vector<int>::iterator it = vec_sp.begin(); it != vec_sp.end(); it++)
             std::cout << *it << " ";
         std::cout << std::endl;
+        std::cout << "--------------------------------" << std::endl;
     }
     return (0);
 }
