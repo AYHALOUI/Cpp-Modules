@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:37:16 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/19 17:29:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 22:12:58 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,63 +77,5 @@ int main()
         }
         std::stack<int> s(mstack);
     }
-
-    /*---------------------- Example of queue ------------------------*/
-
-    // First In First Out
-    // std::queue<int> myQueue;
-    // myQueue.push(10);
-    // myQueue.push(20);
-    // myQueue.push(30);
-    // myQueue.push(40);
-
-    // // print the queue elements
-    // while (!myQueue.empty())
-    // {
-    //     std::cout << myQueue.front() << std::endl;
-    //     myQueue.pop();
-    // }
-
-    
-    /*---------------------- Example of stack ------------------------*/
-    // Last In First Out 
-
-    // std::stack<int, std::vector<int> > mstack;
-
-    // mstack.push(5);
-    // mstack.push(17);
-    // mstack.push(3);
-    // mstack.push(5);
-
-    // std::cout << "---------\n";
-    // // print the stack elements
-    // while (!mstack.empty())
-    // {
-    //     std::cout << mstack.top() << std::endl;
-    //     mstack.pop();
-    // }
-    
-    /*--------------------- Example of deque -------------------- */
-    // std::deque<int> myDeque;
-
-    // myDeque.push_back(10);
-    // myDeque.push_back(20);
-    // myDeque.push_back(30);
-
-    // // Insert elements at the front
-    // myDeque.push_front(5);
-    // myDeque.push_front(15);
-
-    // std::deque<int>::iterator it;
-    // for (it = myDeque.begin(); it != myDeque.end(); it++)
-    //     std::cout << *it << std::endl;
-    // myDeque.pop_front();
-    // myDeque.pop_back();
-    // std::cout << std::endl;
-    
-    // for (it = myDeque.begin(); it != myDeque.end(); it++)
-    //     std::cout << *it << std::endl;
-    
-    /*---------------------------------------------------------------*/
     return (0);
 }
