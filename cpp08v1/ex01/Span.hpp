@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 21:42:43 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 21:08:26 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ctime>
 #include <algorithm> // Include the algorithm header for std::sort
 
 class Span
@@ -37,6 +38,8 @@ class Span
         void addNumber (int element);
         int shortestSpan ();
         int longestSpan();
+
+        // int generateRandomNumber();
         void addNumber (std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
         /* getter */

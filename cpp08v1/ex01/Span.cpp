@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:35:21 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 21:54:34 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 21:20:50 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void Span::addNumber(int element)
 int Span::shortestSpan ()
 {
     if (this->vector_numbers.size() <= 1)
-        return (this->vector_numbers.at(0));
+        (throw std::runtime_error("Vector is Empty"));
     /* Algorithm of shortest_value */
     std::vector<int> temp = this->vector_numbers;
     std::sort(temp.begin(), temp.end());
@@ -70,19 +70,25 @@ int Span::longestSpan()
 {
     /* Algorithm of longest_value */
     if (this->vector_numbers.size() <= 1)
-        return (this->vector_numbers.at(0));
+        (throw std::runtime_error("Vector is Empty"));
     std::vector<int> temp = this->vector_numbers;
     std::sort(temp.begin(), temp.end());
     return (temp.at(this->vector_numbers.size() - 1) 
         - temp.at(0));
 }
 
+static int generateRandomNumber()
+{
+    return (rand() % 100);
+}
+
 void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
     std::cout << "addNumber Called from Span" << std::endl;
-    if (vector_numbers.size() > vector_size)
+    if (vector_numbers.size() + std::distance(begin, end) > vector_size)
         throw (VectorOfSpanException());
-    vector_numbers.insert(vector_numbers.begin()+1, begin, end);
+    std::generate(begin, end, generateRandomNumber);
+    vector_numbers.insert(vector_numbers.end(), begin, end);
 }
 
 std::vector<int> Span::getVectorNumbers() const

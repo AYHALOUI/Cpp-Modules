@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:37:22 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 20:58:07 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:25:45 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 #include <deque>
 
 
-template <typename T, typename Container = std::deque<T> >
-class MutantStack : public std::stack<T, Container>
+template <typename T, typename container_type = std::deque<T> >
+class MutantStack : public std::stack<T, container_type>
 {
     public:
         MutantStack();
@@ -31,11 +31,7 @@ class MutantStack : public std::stack<T, Container>
         MutantStack &operator= (const MutantStack &copy);
         ~MutantStack();
 
-        // typedef typename std::stack<T>::zxx::iterator iterator;
-        // iterator begin();
-        // iterator end();
-
-        typedef typename std::stack<T, Container>::container_type::iterator iterator;
+        typedef typename std::stack<T, container_type>::container_type::iterator iterator;
 
         iterator begin();
         iterator end();

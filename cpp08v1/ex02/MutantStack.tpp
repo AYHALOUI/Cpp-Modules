@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:37:26 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/18 20:38:19 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:26:21 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,14 @@ MutantStack<T, Container>::~MutantStack()
     std::cout << "Destructor called from MutantStack" << std::endl;
 }
 
-// template <typename T, typename Container>
-// typename MutantStack<T>::iterator MutantStack<T, Container>::begin()
-// {
-//     return (std::stack<T>::c.begin());
-// }
-
-// template <typename T>
-// typename MutantStack<T>::iterator MutantStack<T>::end()
-// {
-//     return (std::stack<T>::c.end());
-// }
-
-template <typename T, typename Container>
-typename MutantStack<T, Container>::iterator MutantStack<T, Container>::begin()
+template <typename T, typename container_type>
+typename MutantStack<T, container_type>::iterator MutantStack<T, container_type>::begin()
 {
     return (this->c.begin());
 }
 
-template <typename T, typename Container>
-typename MutantStack<T, Container>::iterator MutantStack<T, Container>::end()
+template <typename T, typename container_type>
+typename MutantStack<T, container_type>::iterator MutantStack<T, container_type>::end()
 {
     return (this->c.end());
 }
