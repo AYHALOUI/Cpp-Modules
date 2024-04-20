@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/20 21:46:22 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/20 23:15:14 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,12 @@ class BitcoinExchange
         ~BitcoinExchange();
 
         void read_data_db(std::string filename);
-        // std::map<std::string, std::string> getBitcoinValues() const;
         std::map<std::string, std::string> getBitcoinValues() const;
+
+        void parse_data(std::string data);
+        int check_date(std::string date);
+        void print_data();
+        
+
 };
 #endif

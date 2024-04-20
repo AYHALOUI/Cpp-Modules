@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:34 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/20 21:47:36 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/20 23:23:58 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,9 @@ int main(int ac, char **av)
         return 1;
     }
     BitcoinExchange exchange;
-    exchange.read_data_db(av[1]);
-    std::map<std::string, std::string> data = exchange.getBitcoinValues();
-    std::map<std::string, std::string>::iterator it = data.begin();
-    while (it != data.end())
-    {
-        std::cout << it->first << " : " << it->second << std::endl;
-        it++;
-    }
+    exchange.read_data_db("data.csv");
+    exchange.parse_data(av[1]);
+    // std::map<std::string, std::string> data = exchange.getBitcoinValues();
+    // exchange.print_data();
     return 0;
 }
