@@ -6,12 +6,12 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 20:13:00 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/20 20:13:02 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/20 20:21:14 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = bitcoinexchange
+NAME = btc
 
 CPP = c++
 
