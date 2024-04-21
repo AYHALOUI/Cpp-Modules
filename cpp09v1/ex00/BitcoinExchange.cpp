@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:05 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/21 22:52:45 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/21 23:42:41 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,9 +166,15 @@ void BitcoinExchange::parse_data (std::string filename)
         std::istringstream iss(line);
         std::getline(iss, key, '|');
         std::getline(iss, value, '|');
-
+        
+        if (key.length() == 0 || value.length() == 0)
+        {
+            std::cout << "Error: wrong file format1111" << std::endl;
+            continue ;
+        }
+        
         if (!check_key(key.substr(0, key.length() - 1))
-            || !check_value(value.substr(1, value.length() - 1)) 
+            || !check_value(value.substr(1, value.length() - 1))
                 || !isValidDateFormat(key.substr(0, key.length() - 1))
                     || count_dot(value.substr(1, value.length() - 1)) > 1
                         || !isValidYear(key.substr(0, key.length() - 1))
