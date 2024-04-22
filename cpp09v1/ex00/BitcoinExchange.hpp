@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/20 23:15:14 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/22 15:10:55 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ class BitcoinExchange
         std::map<std::string, std::string> getBitcoinValues() const;
 
         void parse_data(std::string data);
-        int check_date(std::string date);
-        void print_data();
+        // int check_date(std::string date);
+        //void print_data();
+
+        double findBitcoinPrice(std::string key);
         
 
 };

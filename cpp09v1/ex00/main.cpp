@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:34 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/20 23:23:58 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/22 15:11:15 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main(int ac, char **av)
 {
+    (void)ac;
+    (void)av;
     if (ac != 2)
     {
         std::cout << "Usage: ./convert [string]" << std::endl;
@@ -22,7 +24,38 @@ int main(int ac, char **av)
     BitcoinExchange exchange;
     exchange.read_data_db("data.csv");
     exchange.parse_data(av[1]);
-    // std::map<std::string, std::string> data = exchange.getBitcoinValues();
-    // exchange.print_data();
+    //std::map<std::string, std::string> data = exchange.getBitcoinValues();
+    //exchange.print_data();
+
+    // initialize container
+    // std::map<int, int> mp;
+ 
+    // insert elements in random order
+    // mp.insert(std::make_pair(1, 10));
+    // // mp.insert(std::make_pair(2, 20));
+    // //  mp.insert(std::make_pair(2, 100));
+    // mp.insert(std::make_pair(3, 30));
+    // mp.insert(std::make_pair(4, 40));
+    // for (auto it = mp.begin(); it != mp.end(); it++)
+    // {
+    //     std::cout << (*it).first << " " << (*it).second << std::endl;
+    // }
+    
+ 
+    // when 2 is present
+    // auto it = mp.lower_bound(2);
+    // std::cout << "The lower bound of key 2 is ";
+    // std::cout << (*it).first << " " << (*it).second << std::endl;
+ 
+    // // when 3 is not present
+    // // points to next greater after 3
+    // it = mp.lower_bound(3);
+    // std::cout << "The lower bound of key 3 is ";
+    // std::cout << (*it).first << " " << (*it).second;
+ 
+    // // when 6 exceeds
+    // it = mp.lower_bound(6);
+    // std::cout << "\nThe lower bound of key 6 is ";
+    // std::cout << (*it).first << " " << (*it).second;
     return 0;
 }
