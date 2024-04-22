@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:12:05 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/21 23:42:41 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/22 11:20:19 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,8 +130,17 @@ bool isValidMonth(std::string date)
 bool isValisDay(std::string date)
 {
     int day = std::atoi(date.substr(8, 2).c_str());
-    if (day < 1 || day > 31)
-        return (false);
+    int mounth = std::atoi(date.substr(5, 2).c_str());
+    if (mounth == 2)
+    {
+        if (day < 1 || day > 29)
+            return (false);
+    }
+    else 
+    {
+        if (day < 1 || day > 31)
+            return (false);
+    }
     return (true);
 }
 
