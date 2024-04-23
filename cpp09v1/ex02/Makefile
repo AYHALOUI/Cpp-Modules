@@ -6,7 +6,7 @@
 #    By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 20:15:50 by ahaloui           #+#    #+#              #
-#    Updated: 2024/04/20 20:17:13 by ahaloui          ###   ########.fr        #
+#    Updated: 2024/04/23 21:33:18 by ahaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp BitcoinExchange.cpp
+SRC = main.cpp PmergeMe.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp BitcoinExchange.hpp
+%.o: %.cpp PmergeMe.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
