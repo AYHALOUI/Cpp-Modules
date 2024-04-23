@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/23 23:53:21 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/24 00:17:18 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void PmergeMe::sort_reorder_pairs()
     {
         std::cout << "[" << it->first << ", " << it->second << "]" << " ";
     }
+    std::cout << std::endl;
 }
 
 /************************************************/
@@ -104,7 +105,32 @@ std::vector<std::pair<int, int> > PmergeMe::get_unsorted_vector() const
     return unsorted_vector;
 }
 
-std::vector<std::pair<int, int> > PmergeMe::get_sorted_vector() const
+void PmergeMe::fill_deque()
 {
-    return sorted_vector;
+    for (size_t i = 0; i < unsorted_vector.size(); i++)
+    {
+        if (i == 0)
+        {
+            sorted_vector.push_back(unsorted_vector[i].second);
+            sorted_vector.push_back(unsorted_vector[i].first);
+            unsorted_vector[i].first = -1;
+            unsorted_vector[i].second = -1;
+        }
+        else
+        {
+            sorted_vector.push_back(unsorted_vector[i].first);
+            unsorted_vector[i].first = -1;
+        }
+    }
+}
+
+
+
+void PmergeMe::print_deque()
+{
+    for (std::deque<int>::iterator it = sorted_vector.begin(); it != sorted_vector.end(); it++)
+    {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
 }

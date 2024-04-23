@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/23 23:53:37 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/24 00:16:53 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PmergeMe
 {
     private:
         std::vector<std::pair<int, int> > unsorted_vector;
-        std::vector<std::pair<int, int> > sorted_vector;
+        std::deque<int> sorted_vector;
 
     public:
         PmergeMe();
@@ -41,7 +41,11 @@ class PmergeMe
         void reorder_pairs(std::pair<int, int> &p);
         void sort_reorder_pairs();
 
-        void cre
+        void fill_deque();
+        
+        void insert_deque(int n);
+
+        void print_deque();
 };
 
 #endif
