@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/23 22:29:55 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/23 23:53:37 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ class PmergeMe
         std::vector<std::pair<int, int> > get_sorted_vector() const;
 
         std::string join_args(int ac, char **av);
-
         int jacobsthal(int n);
-        // void merge (std::vector<int> &v1, int left, int mid, int right);
+
+        void reorder_pairs(std::pair<int, int> &p);
+        void sort_reorder_pairs();
+
+        void cre
 };
 
 #endif

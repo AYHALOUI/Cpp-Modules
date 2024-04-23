@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/23 22:34:28 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/23 23:53:21 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,39 @@ void PmergeMe::fill_vector(std::string str)
 std::string PmergeMe::join_args(int ac, char **av)
 {
     std::string str;
-    for (int i = 1; i < ac; i++)
+    int tmp = ac % 2 == 0 ? ac - 1 : ac;
+    for (int i = 1; i < tmp; i++)
     {
         str += av[i];
         if (i < ac - 1)
             str += " ";
     }
     return str;
+}
+void PmergeMe::reorder_pairs(std::pair<int, int> &p)
+{
+    if (p.first < p.second) {
+        std::swap(p.first, p.second);
+    }
+}
+
+void PmergeMe::sort_reorder_pairs()
+{
+    for (size_t i = 0; i < unsorted_vector.size(); i++)
+        reorder_pairs(unsorted_vector[i]);
+    // print unsorted vector after reordering
+    std::cout << "Unsorted vector after reordering: " << std::endl;
+    for (std::vector<std::pair<int, int> >::iterator it = unsorted_vector.begin(); it != unsorted_vector.end(); it++)
+    {
+        std::cout << "[" << it->first << ", " << it->second << "]" << " ";
+    } 
+    std::cout << std::endl;
+    std::cout << "after sorting:" << std::endl;
+    std::sort(unsorted_vector.begin(), unsorted_vector.end());
+    for (std::vector<std::pair<int, int> >::iterator it = unsorted_vector.begin(); it != unsorted_vector.end(); it++)
+    {
+        std::cout << "[" << it->first << ", " << it->second << "]" << " ";
+    }
 }
 
 /************************************************/
