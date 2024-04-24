@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:29 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/24 16:19:45 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:59:55 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,15 @@ class PmergeMe
         PmergeMe &operator=(const PmergeMe &copy);
         ~PmergeMe();
 
-        void fill_vector(std::string str);
-        std::vector<std::pair<int, int> > get_unsorted_vector() const;
-        std::vector<std::pair<int, int> > get_sorted_vector() const;
 
+        bool parse_args(int ac, char **av);
+        void fill_vector(std::string str);
         std::string join_args(int ac, char **av);
         int jacobsthal(int n);
 
         void reorder_pairs(std::pair<int, int> &p);
         void sort_reorder_pairs();
-
         void separate_vector();
-
-        // void fill_deque();
-        // void insert_deque(int n);
-        // void print_deque();
 };
 
 #endif

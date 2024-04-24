@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:46 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/24 15:14:00 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/24 18:06:25 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,14 @@
 int main(int ac, char **av)
 {
     PmergeMe p;
+    if (!p.parse_args(ac, av))
+    {
+        std::cout << "Error" << std::endl;
+        return (1);
+    }
     std::string str = p.join_args(ac, av);
     p.fill_vector(str);
     p.sort_reorder_pairs();
     p.separate_vector();
-   // p.generate_order_index();
-    // p.fill_deque();
-    // p.print_deque();
-    // std::vector<std::pair<int, int> > unsorted = p.get_unsorted_vector();
-    // for (std::vector<std::pair<int, int> >::iterator it = unsorted.begin(); it != unsorted.end(); it++)
-    // {
-    //     std::cout << it->first << " " << it->second << std::endl;
-    // }
-
-    
-    // p.sort_pairs();
-    // std::vector<std::pair<int, int> > sorted = p.get_sorted_vector();
-    // for (std::vector<std::pair<int, int> >::iterator it = sorted.begin(); it != sorted.end(); it++)
-    // {
-    //     std::cout << it->first << " " << it->second << std::endl;
-    // }
     return 0;
 }

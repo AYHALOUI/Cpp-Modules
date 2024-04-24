@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/24 16:33:40 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/24 21:02:12 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ std::string PmergeMe::join_args(int ac, char **av)
 	}
 	return str;
 }
-void PmergeMe::reorder_pairs(std::pair<int, int> &p)
+void PmergeMe::reorder_pairs(std::pair<int, int>& p)
 {
 	if (p.first < p.second) {
 		std::swap(p.first, p.second);
@@ -199,14 +199,22 @@ void PmergeMe::separate_vector()
 	}
 }
 
-bool find_element(std::vector<int> &compination_vector, int j)
+bool PmergeMe::parse_args (int ac , char **av)
 {
-	for (size_t i = 0; i < compination_vector.size(); i++)
+	for (int i = 1; i < ac; i++)
 	{
-		if (compination_vector[i] == j)
-			return true;
+		if (av[i][0] == '-')
+			return false;
 	}
-	return false;
+	for (int i = 1; i < ac; i++)
+	{
+		for (size_t j = 0; j < strlen(av[i]); j++)
+		{
+			if (!isdigit(av[i][j]) && av[i][j] != ' ')
+				return false;
+		}
+	}
+	return true;
 }
 
 // void PmergeMe::generate_order_index()
