@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:15:27 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/24 21:02:12 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/25 15:09:47 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,22 +156,24 @@ void PmergeMe::separate_vector()
 	for (size_t i = 3; i < jacobsthal_vector.size(); i++)
 	{
 		int tmp1 = jacobsthal_vector[i];
-		while (tmp1 > (int)pend_vector.size())
+		real_index_vector.push_back(tmp1);
+
+		if((size_t)tmp1 > pend_vector.size())
+		{
+			real_index_vector.pop_back();	
+		}
+	
+		while (real_index_vector.size() < pend_vector.size())
 		{
 			tmp1--;
-			continue;
-		}
-		
-		real_index_vector.push_back(tmp1);
-		int temp;
-		temp = tmp1;
-		temp--;
-		for (size_t j = temp; j > 0; j--)
-		{
-			if(std::find(jacobsthal_vector.begin(), jacobsthal_vector.end(), j) == jacobsthal_vector.end())
-				real_index_vector.push_back(j);
-			else
+			while (tmp1 > (int)pend_vector.size())
+			{
+				tmp1--;
+				continue;
+			}	
+			if(std::find(jacobsthal_vector.begin(), jacobsthal_vector.end(), tmp1) != jacobsthal_vector.end())
 				break;
+			real_index_vector.push_back(tmp1);
 		}
 	}
 	std::cout << std::endl;	
