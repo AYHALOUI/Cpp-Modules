@@ -6,7 +6,7 @@
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 20:14:08 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/21 18:23:30 by ahaloui          ###   ########.fr       */
+/*   Updated: 2024/04/27 16:16:39 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,19 +89,19 @@ int RPN::calculateRPN(std::string expression)
     {
         if (token != "+" && token != "-" && token != "*" && token != "/")
         {
-            if (atoi(token.c_str()) > 9 
+           if (atoi(token.c_str()) > 9 
                 || atol(token.c_str()) < INT_MIN)
             {
-                std::cout << "Error" << std::endl;
+                std::cout << "Error11" << std::endl;
                 exit(1);
             }
-            operands.push(std::atoi(token.c_str()));   
+            operands.push(std::atoi(token.c_str()));    
         }
         else
         {
            if (operands.size() < 2)
            {
-               std::cout << "Error" << std::endl;
+               std::cout << "Error0" << std::endl;
                exit(1);
            }
            int b = operands.top();
@@ -115,7 +115,14 @@ int RPN::calculateRPN(std::string expression)
             else if (token == "*")
                 operands.push(a * b);
             else if (token == "/")
-                operands.push(a / b);
+            {
+                if (b == 0)
+                {
+                    std::cout << "Error" << std::endl;
+                    exit(1);
+                }
+                operands.push(a / b);   
+            }
         }
         iss >> token;
     }

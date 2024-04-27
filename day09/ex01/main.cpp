@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahaloui <ahaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 20:14:52 by ahaloui           #+#    #+#             */
-/*   Updated: 2024/04/27 14:40:34 by ahaloui          ###   ########.fr       */
+/*   Created: 2024/04/20 20:14:57 by ahaloui           #+#    #+#             */
+/*   Updated: 2024/04/27 16:44:00 by ahaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RPN.hpp"
 
-#ifndef RPN_HPP
-#define RPN_HPP
-
-#include <iostream>
-#include <string>
-#include <stack>
-#include <sstream>
-
-class RPN
+int main(int ac, char **av)
 {
-    public:
-        RPN();
-        RPN(const RPN &copy);
-        RPN &operator=(const RPN &copy);
-        ~RPN();
-        // bool parseExpression(std::string expression);
-        int calculateRPN(std::string expression);
-};
-#endif
+    if (ac != 2)
+    {
+        std::cout << "Usage: ./RPN \"expression\"" << std::endl;
+        return (1);
+    }
+    RPN rpn;
+    std::cout << rpn.calculate_rpn(av[1]) << std::endl;;
+    return 0;
+}
